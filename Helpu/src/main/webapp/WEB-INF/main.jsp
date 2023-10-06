@@ -7,18 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-	 <!-- 헤더 부분 -->
-     <div id = "wrap">
-        <div id = "header">
-            <div id="topBtn">
-                <a href="#">로그아웃</a>
-                <span>|</span>
-                <a href="#">마이페이지</a>
-                <span>|</span>
-                <a href="#">장바구니</a>
-            </div>
-            <form action=""></form>
-        </div>
+	 <div id="wrap">
+		<!-- 헤더 부분 -->
+		<div id="header">
+			<div id="topBtn">
+				<a href="#">로그아웃</a>
+				<span>|</span>
+				<a href="#">마이페이지</a>
+				<span>|</span>
+				<a href="#">장바구니</a>
+			</div>
 
+		<!-- 로고 및 검색창 -->
+			<div class="box">
+				<img alt="로고" src="#">
+				<!-- 검색창 -->
+				<div class="schBar">
+					<span class="icon"><i class="fa fa-search"></i></span>
+					<input type="search" id="search" placeholder="Search" />
+				</div>
+			</div>
+
+		</div>
 </body>
 </html>
