@@ -10,7 +10,7 @@
 <body>
 	 <div class="container">
         <img src="./img/logo.png" alt="logo">
-        <h2>안전한 먹거리,</h2>
+        <h2>안전한 먹거리</h2>
         <h2>한 번의 검색으로</h2>
         <h2>손쉽게 <span>Check In!</span></h2>
 
