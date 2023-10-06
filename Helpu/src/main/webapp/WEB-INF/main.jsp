@@ -17,7 +17,7 @@
 				<span>|</span>
 				<a href="#">장바구니</a>
 			</div>
-dddddfasdasdfasdfasdfasdfasd
+
 		<!-- 로고 및 검색창 -->
 			<div class="box">
 				<img alt="로고" src="#">
@@ -27,6 +27,10 @@ dddddfasdasdfasdfasdfasdfasd
 					<input type="search" id="search" placeholder="Search" />
 				</div>
 			</div>
+			
+			<div id = "nav">s
+			
+			
 
 		</div>
 </body>
