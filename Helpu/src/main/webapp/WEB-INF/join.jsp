@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="#" method="post">
 		<table border="1">
 			<tr>
 				<td>회원아이디:</td>

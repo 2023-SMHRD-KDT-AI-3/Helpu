@@ -35,9 +35,15 @@ public class FrontController extends HttpServlet {
 		System.out.println("결과 : " + result);
 
 		String url = "";
+		
+		// 초기화면 이동
 		if (result.equals("start.do")) {
 			start gostart = new start();
 			url = gostart.execute(request, response);
+		// 로그인 화면 이동
+		}else if(result.equals("join.do")){
+			join gojoin = new join();
+			url = gojoin.execute(request, response);
 		}
 		// 각각의 기능에서 받은 url로 이동
 		RequestDispatcher rd = request.getRequestDispatcher(url);
