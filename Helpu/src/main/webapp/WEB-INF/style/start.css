@@ -1,0 +1,81 @@
+/* 폰트 */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 전체 적용 */
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin:0px;
+    /* 전체 배경 적용 */
+    background-image: url('./img/배경.png');
+    /* 배경 패턴 반복 X */
+    background-repeat: no-repeat;
+    /* 페이지 전체에 이미지를 꽉 채울 경우 */
+    background-size: cover;
+}
+
+/* 반응형 */
+@media (max-width: 1023px) {
+    body {
+        margin: 0px;
+        background-image: url('./img/배경.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 전체 컨테이너 박스 여백처리 */
+
+.container {
+    margin-left: 20%;
+    margin-top: 6%;
+}
+
+
+
+/* 로고 이미지 사이즈 */
+img {
+    width: 180px;
+}
+
+/* 타이틀 제목 */
+h2 {
+    font-size: 48px;
+}
+
+/* 타이틀 제목 컬러 */
+span {
+    color: #FF6060;
+}
+
+p {
+   /* 옆으로 붙이기 위해서 inline-block 처리 */
+    display: inline-block;
+    float: left;
+    width: 80px;
+    background-color: black;
+    padding: 10px 20px 10px 20px;
+    /* 폰트 가운데 정렬 */
+    text-align: center;
+}
+
+/* 로그인 및  회원가입 버튼 a태그 속성 수정 */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 로그인 버튼 기준 오른쪽 여백 */
+.loginBtn {
+    margin-right: 20px;
+}
+
+/* 버튼 여백처리 */
+.mainBtn {
+    margin-top: 2%;
+}
+
