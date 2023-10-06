@@ -13,7 +13,6 @@
         <h2>안전한 먹거리</h2>
         <h2>한 번의 검색으로</h2>
         <h2>손쉽게 <span>Check In!</span></h2>
-		<p>ㅇㅇ</p>
         <div class="mainBtn">
             <p class="loginBtn"><a href="login.jsp">로그인</a></p>
             <p class="joinBtn"><a href="join.do">회원가입</a></p>
