@@ -17,7 +17,7 @@
 				<span>|</span>
 				<a href="#">장바구니</a>
 			</div>
-dddd
+dddddfasdasdfasdfasdfasdfasd
 		<!-- 로고 및 검색창 -->
 			<div class="box">
 				<img alt="로고" src="#">
