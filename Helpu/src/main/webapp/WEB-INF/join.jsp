@@ -7,27 +7,40 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h3>서비스 이용을 위해 정보를 입력해주세요.</h3>
 	<form action="#" method="post">
-		<table border="1">
-			<tr>
-				<td>회원아이디:</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>비밀번호:</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td>성별:</td>
-				<td><input type="radio" name="gender" value="남성">남성</td>
-				<td><input type="radio" name="gender" value="여성">여성</td>
-			</tr>
-			<tr>
-				<td>생년월일:</td>
-				<td><input type="date" name="birthdate"></td>
-			</tr>
+		<div>
+			<p>회원아이디</p>
 
-		</table>
+			<input type="text" name="id">
+
+			<p>비밀번호</p>
+
+			<input type="password" name="password">
+
+			<p>비밀번호 확인</p>
+
+			<input type="password" name="passwordCheck">
+
+			<p>성별</p>
+
+			<input type="radio" name="gender" value="male">남성 <input
+				type="radio" name="gender" value="female">여성
+
+			<p>생년월일:</p>
+
+			<input type="text" name="birthdate">
+
+			<p>Phone number</p>
+
+			<input type="text" name="phoneNumber">
+
+			<p>Address</p>
+
+			<input type="text" name="address"> <br>
+			<input type="submit"value="다음페이지로">
+
+		</div>
 	</form>
 </body>
 </html>
