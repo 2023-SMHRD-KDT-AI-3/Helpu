@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <form action="LoginServiece.do" method="post">
+        <form action="LoginService.do" method="post">
             <div>
                 <img src="" alt="">
                 <p>아이디</p>

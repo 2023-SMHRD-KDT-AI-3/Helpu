@@ -30,6 +30,7 @@ public class LoginService implements Command {
 					
 					// 로그인이라고 하는 메소드가 성공적으로 실행되면
 					// 해당 회원의 모든 정보를 리턴값으로 받아 올것!
+					System.out.println("!!!");
 					memberDTO info = dao.login(member);
 					
 					// info의 결과에 따라 페이지 이동 진행!
@@ -40,8 +41,10 @@ public class LoginService implements Command {
 						// request값으로 부터 받아와야 한다!
 						// HttpSession session = request.getSession();
 						// session.setAttribute("info", info);
-						url="gostart.do";
-					}else {
+						System.out.println("성공");
+						url="gomain.do";
+					}else{
+						System.out.println("실패");
 						url="gologin.do";
 					}
 					
