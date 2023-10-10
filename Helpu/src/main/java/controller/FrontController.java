@@ -40,14 +40,23 @@ public class FrontController extends HttpServlet {
 		if (result.equals("gostart.do")) {
 			gostart gostart = new gostart();
 			url = gostart.execute(request, response);
+			
 		// 회원가입 화면 이동
 		}else if(result.equals("gojoin.do")){
 			gojoin gojoin = new gojoin();
 			url = gojoin.execute(request, response);
+		
+		// 로그인 화면 이동
 		}else if(result.equals("gologin.do")) {
 			gologin gologin =new gologin();
 			url = gologin.execute(request, response);
+		
+		// 로그인 기능 수행
+		}else if(result.equals("LoginService.do")) {
+			LoginService loginservice = new LoginService();
+			url = loginservice.execute(request, response);
 		}
+		
 		// 각각의 기능에서 받은 url로 이동
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);

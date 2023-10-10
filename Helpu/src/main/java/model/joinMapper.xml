@@ -5,20 +5,20 @@
 	<!-- Member(web_member테이블)에 관한 sql 문장 파일! -->
 
 	<!-- 회원가입을 위한 sql문장 연결되어야 하는 데이터 값은 클래스의 필드이름을 기준으로 한다. -->
-	<insert id="join" parameterType="model.joinDTO">
-		insert into web_member
-		values(#{email},#{pw},#{birthdate},#{address},#{phone_number},#{gender})
+	<insert id="join" parameterType="model.memberDTO">
+		insert into tb_member
+		values(#{id},#{pw},#{birthdate},#{address},#{phone_number},#{gender})
 	</insert>
 
 	<!-- 로그인을 위한 sql문장 -->
-	<select id="login" parameterType="model.joinDTO"
-		resultType="model.joinDTO">
-		select * from web_member where email=#{email} and pw=#{pw}
+	<select id="login" parameterType="model.memberDTO"
+		resultType="model.memberDTO">
+		select * from tb_member where id=#{id} and pw=#{pw}
 	</select>
 
 	<!-- 가입의 여부를 판단할 수 있는 sql문장 -->
 	<select id="check" parameterType="string"
-		resultType="model.joinDTO">
+		resultType="model.memberDTO">
 		select * from web_member where email=#{email}
 	</select>
 

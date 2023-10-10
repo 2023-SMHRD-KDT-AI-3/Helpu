@@ -8,16 +8,14 @@
     </head>
 
     <body>
-        <form action="#" method="post">
+        <form action="LoginServiece.do" method="post">
             <div>
                 <img src="" alt="">
                 <p>아이디</p>
                 <input type="text" name="id">
                 <p>비밀번호</p>
                 <input type="password" name="pw">
-               <a href="#">
-                <p>로그인</p>
-               </a>
+               	<input type="submit" value="로그인">
             </div>
         </form>
     </body>
