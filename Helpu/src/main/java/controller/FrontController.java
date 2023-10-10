@@ -9,6 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import goPage.gobasjet;
+import goPage.gobaskert1;
+import goPage.gofavorites;
+import goPage.gohistory;
+import goPage.gojoin;
+import goPage.gologin;
+import goPage.gomain;
+import goPage.gomypage;
+import goPage.goproduct;
+import goPage.gostart;
+
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -55,7 +66,50 @@ public class FrontController extends HttpServlet {
 		}else if(result.equals("LoginService.do")) {
 			LoginService loginservice = new LoginService();
 			url = loginservice.execute(request, response);
+			
+		// 회원가입 페이지1 이동
+		}else if(request.equals("gobasjet.do")) {
+			gobasjet gobasjet =new gobasjet();
+			url = gobasjet.execute(request, response);
+			
+		// 회원가입 페이지2 이동
+		}else if(request.equals("gobaskert1.do")){
+			gobaskert1 gobaskert1 = new gobaskert1();
+			url = gobaskert1.execute(request, response);
+		
+		// 즐겨찾기 페이지 이동	
+		}else if(request.equals("gofavorites.do")) {
+			gofavorites gofavorites = new gofavorites();
+			url =gofavorites.execute(request, response);
+			
+		// 상품페이지 이동
+		}else if(request.equals("goproduct.do")) {
+			goproduct goproduct = new goproduct();
+			url = goproduct.execute(request, response);
+		
+		// 구매내역 페이지 이동
+		}else if(request.equals("gohistory.do")) {
+			gohistory gohistory = new gohistory();
+			url = gohistory.execute(request, response);
+			
+		// 메인페이지 이동 	
+		}else if(request.equals("gomain.do")) {
+			gomain gomain = new gomain();
+			url = gomain.execute(request, response);
+			
+		// 마이페이지 이동
+		}else if(request.equals("gomypage.do")) {
+			gomypage gomypage = new gomypage();
+			url = gomypage.execute(request, response);
+			
+		// 
 		}
+		
+		
+		
+		
+		
+		
 		
 		// 각각의 기능에서 받은 url로 이동
 		RequestDispatcher rd = request.getRequestDispatcher(url);

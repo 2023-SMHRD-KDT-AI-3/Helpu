@@ -1,15 +1,18 @@
-package controller;
+package goPage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class gologin implements Command {
+import controller.Command;
+
+public class gojoin implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "WEB-INF/login.jsp";
+		
+		
+		return "WEB-INF/join.jsp";
 	}
+
 }
-
-
