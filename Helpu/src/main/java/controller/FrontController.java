@@ -44,7 +44,6 @@ public class FrontController extends HttpServlet {
 		}else if(result.equals("gojoin.do")){
 			gojoin gojoin = new gojoin();
 			url = gojoin.execute(request, response);
-		// 로그인 화면 이동.
 		}else if(result.equals("gologin.do")) {
 			gologin gologin =new gologin();
 			url = gologin.execute(request, response);
@@ -54,5 +53,4 @@ public class FrontController extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-
 }

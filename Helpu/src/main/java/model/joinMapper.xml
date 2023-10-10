@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="model/joinMapo">
+
+	<!-- Member(web_member테이블)에 관한 sql 문장 파일! -->
+
+	<!-- 회원가입을 위한 sql문장 연결되어야 하는 데이터 값은 클래스의 필드이름을 기준으로 한다. -->
+	<insert id="join" parameterType="model.joinDTO">
+		insert into web_member
+		values(#{email},#{pw},#{birthdate},#{address},#{phone_number},#{gender})
+	</insert>
+
+	<!-- 로그인을 위한 sql문장 -->
+	<select id="login" parameterType="model.joinDTO"
+		resultType="model.joinDTO">
+		select * from web_member where email=#{email} and pw=#{pw}
+	</select>
+
+	<!-- 가입의 여부를 판단할 수 있는 sql문장 -->
+	<select id="check" parameterType="string"
+		resultType="model.joinDTO">
+		select * from web_member where email=#{email}
+	</select>
+
+</mapper>
