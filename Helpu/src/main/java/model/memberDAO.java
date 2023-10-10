@@ -37,4 +37,12 @@ public class memberDAO {
 
 		return dto;
 	}
+	
+	public int change(memberDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.update("change", dto);
+		sqlSession.close();
+
+		return cnt;
+	}
 }

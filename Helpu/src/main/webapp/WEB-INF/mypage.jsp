@@ -54,7 +54,7 @@ hr {
 	<span>
 	이곳에서 재설
 	</span>
-	<form action="#" method="post">
+	<form action="ChangeService.do" method="post">
 		<table>
 			<tr>
 				<td>이름</td>
@@ -78,8 +78,7 @@ hr {
 			</tr>
 			<tr>
 				<!-- 생년월일 -->
-				<td><input type="text" name="birth" placeholder="2023/10/05"
-					autofocus></td>
+				<td><input type="date" name="birth"	autofocus></td>
 			</tr>
 
 			<tr>
@@ -95,7 +94,7 @@ hr {
 				<td>비밀번호 확인</td>
 			</tr>
 			<tr>
-				<!-- 비밀전호 -->
+				<!-- 비밀번호 -->
 				<td><input type="text" name="pw" placeholder="password"
 					autofocus></td>
 				<!-- 비밀번호 확인 -->
@@ -202,11 +201,12 @@ hr {
 		<table>
 			<tr>
 				<td>
-					<button id="btn1">저장하지 않고 돌아가기</button> <script src=""></script>
+					<button id="btn1">저장하지 않고 돌아가기</button>
 				</td>
 
 				<td>
-					<button id="btn2">회원정보 수정 후 저장</button> <script src=""></script>
+                    
+					<button id="btn2"><input type="submit" value="회원정보 수정 후 저장"></button>
 				</td>
 			</tr>
 		</table>
