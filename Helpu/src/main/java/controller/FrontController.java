@@ -23,6 +23,7 @@ import goPage.gostart;
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// FrontController 패턴
@@ -46,74 +47,76 @@ public class FrontController extends HttpServlet {
 		System.out.println("결과 : " + result);
 
 		String url = "";
-		
+
 		// 초기화면 이동
 		if (result.equals("gostart.do")) {
 			gostart gostart = new gostart();
 			url = gostart.execute(request, response);
-			
-		// 회원가입 화면 이동
-		}else if(result.equals("gojoin.do")){
+
+			// 회원가입 화면 이동
+		} else if (result.equals("gojoin.do")) {
 			gojoin gojoin = new gojoin();
 			url = gojoin.execute(request, response);
-		
-		// 로그인 화면 이동
-		}else if(result.equals("gologin.do")) {
-			gologin gologin =new gologin();
+
+			// 로그인 화면 이동
+		} else if (result.equals("gologin.do")) {
+			gologin gologin = new gologin();
 			url = gologin.execute(request, response);
-		
-		// 로그인 기능 수행
-		}else if(result.equals("LoginService.do")) {
+
+			// 로그인 기능 수행
+		} else if (result.equals("LoginService.do")) {
 			LoginService loginservice = new LoginService();
 			url = loginservice.execute(request, response);
-			
-		// 회원가입 페이지1 이동
-		}else if(request.equals("gobasjet.do")) {
-			gobasjet gobasjet =new gobasjet();
+
+			// 회원가입 페이지1 이동
+		} else if (result.equals("gobasjet.do")) {
+			gobasjet gobasjet = new gobasjet();
 			url = gobasjet.execute(request, response);
-			
-		// 회원가입 페이지2 이동
-		}else if(request.equals("gobaskert1.do")){
+
+			// 회원가입 페이지2 이동
+		} else if (result.equals("gobaskert1.do")) {
 			gobaskert1 gobaskert1 = new gobaskert1();
 			url = gobaskert1.execute(request, response);
-		
-		// 즐겨찾기 페이지 이동	
-		}else if(request.equals("gofavorites.do")) {
+
+			// 즐겨찾기 페이지 이동
+		} else if (result.equals("gofavorites.do")) {
 			gofavorites gofavorites = new gofavorites();
-			url =gofavorites.execute(request, response);
-			
-		// 상품페이지 이동
-		}else if(request.equals("goproduct.do")) {
+			url = gofavorites.execute(request, response);
+
+			// 상품페이지 이동
+		} else if (result.equals("goproduct.do")) {
 			goproduct goproduct = new goproduct();
 			url = goproduct.execute(request, response);
-		
-		// 구매내역 페이지 이동
-		}else if(request.equals("gohistory.do")) {
+
+			// 구매내역 페이지 이동
+		} else if (result.equals("gohistory.do")) {
 			gohistory gohistory = new gohistory();
 			url = gohistory.execute(request, response);
-			
-		// 메인페이지 이동 	
-		}else if(request.equals("gomain.do")) {
+
+			// 메인페이지 이동
+		} else if (result.equals("gomain.do")) {
 			gomain gomain = new gomain();
 			url = gomain.execute(request, response);
-			
-		// 마이페이지 이동
-		}else if(request.equals("gomypage.do")) {
+
+			// 마이페이지 이동
+		} else if (result.equals("gomypage.do")) {
 			gomypage gomypage = new gomypage();
 			url = gomypage.execute(request, response);
-			
-		// 
+
+			//
 		}
-		
-		
-		
-		
-		
-		
-		
+
 		// 각각의 기능에서 받은 url로 이동
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		if (url != null) {
+			if (url.indexOf(".do") != -1) {
+				// url이 .do -> response.sendRedirect
+				response.sendRedirect(url);
+			} else {
+				// url이 .do가 아니면 -> forward
+				RequestDispatcher rd = request.getRequestDispatcher(url);
+				rd.forward(request, response);
+			}
+		}
 
 	}
 }

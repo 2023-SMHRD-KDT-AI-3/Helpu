@@ -43,8 +43,10 @@ public class LoginService implements Command {
 						// session.setAttribute("info", info);
 						System.out.println("성공");
 						url="gomain.do";
+						System.out.println("이동");
 					}else{
 						System.out.println("실패");
+						System.out.println("이동");
 						url="gologin.do";
 					}
 					
