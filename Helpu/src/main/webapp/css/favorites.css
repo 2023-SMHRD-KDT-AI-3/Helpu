@@ -1,0 +1,146 @@
+/* 외부에서 폰트 불러오기 : noto sans */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* -----------------Header----------------- */
+
+/* 전체 폰트 적용 및 기본 여백 삭제*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 전체 중앙 정렬 */
+#wrap {
+	margin: 0 auto;
+}
+
+
+/* 전체 header 크기 정의 */
+#header {
+	position: relative;
+	width: 100%;
+	background-color: gray;
+}
+
+/* 안쪽 header 크기 정의 및 중앙 정렬 */
+#innerHeader {
+	position: relative;
+	width: 1280px;
+	margin: 0 auto;
+}
+
+/* 로그아웃, 마이페이지, 장바구니 버튼 및 사용자 환영 안내글*/
+#topBtn {
+	position: absolute;
+	width: 100%;
+	background-color: red;
+	text-align: right;
+}
+
+/* 로고 및 검색창 */
+#schBox {
+	position: absolute;
+	width: 100%;
+	height: 90px;
+	top: 80px;
+	background: blue;
+}
+
+/* 로고 */
+#schBox>img {
+	transform: translate(15%, 30%);
+	margin-right: 50px;
+	line-height: 90px;
+}
+
+/* 검색창 박스 전체 속성 변경 */
+.schBar {
+	display: inline;
+}
+
+
+/* 검색바 설정*/
+#search {
+	width: 78%;
+	border: 1px solid #bbb;
+	border-radius: 100px;
+	padding: 10px 12px;
+	font-size: 14px;
+}
+
+/* 외부에서 끌어온 아이콘 css 전체 속성 */
+.material-symbols-outlined {
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 24
+}
+
+#schBox>div>a>span {
+	position: absolute;
+	top: 47%;
+	bottom: 50%;
+	right: 4.5%;
+}
+
+/* 메뉴바 */
+#nav {
+	position: absolute;
+	width: 100%;
+	background-color: yellow;
+	top: 170px;
+	display: flex;
+	justify-content: center;
+}
+
+#gnb {
+	list-style-type: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+/* 전체 메뉴 정렬 및 비율 조정*/
+#gnb>li {
+	float: left;
+	margin: 10px 7% 10px 7%;
+}
+
+/* 메뉴 안쪽 a태그 속성 정리 */
+#gnb>li>a {
+	color: black;
+	text-decoration: none;
+}
+
+/* -----------------container----------------- */
+
+#container {
+	position: relative;
+	width:1280px;
+	margin:0 auto;
+	top:240px;
+}
+
+
+.fvrContents {
+	position: absolute;
+	width: 1120px;
+}
+
+div.fvrImg {
+	width: 120px;
+	height: 180px;
+	background-color: red;
+}
+
+#container>div>h2 {
+	margin: 0px;
+}
