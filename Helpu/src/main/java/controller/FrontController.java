@@ -104,13 +104,6 @@ public class FrontController extends HttpServlet {
 			
 		// 
 		}
-		
-		
-		
-		
-		
-		
-		
 		// 각각의 기능에서 받은 url로 이동
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
