@@ -37,14 +37,15 @@ public class FrontController extends HttpServlet {
 		String url = "";
 		
 		// 초기화면 이동
-		if (result.equals("start.do")) {
+		if (result.equals("gostart.do")) {
 			gostart gostart = new gostart();
 			url = gostart.execute(request, response);
 		// 회원가입 화면 이동
-		}else if(result.equals("join.do")){
+		}else if(result.equals("gojoin.do")){
 			gojoin gojoin = new gojoin();
 			url = gojoin.execute(request, response);
-		}else if(result.equals("login.do")) {
+		// 로그인 화면 이동.
+		}else if(result.equals("gologin.do")) {
 			gologin gologin =new gologin();
 			url = gologin.execute(request, response);
 		}

@@ -14,8 +14,8 @@
         <h2>한 번의 검색으로</h2>
         <h2>손쉽게 <span>Check In!</span></h2>
         <div class="mainBtn">
-            <p class="loginBtn"><a href="login.jsp">로그인</a></p>
-            <p class="joinBtn"><a href="join.do">회원가입</a></p>
+            <p class="loginBtn"><a href="gologin.do">로그인</a></p>
+            <p class="joinBtn"><a href="gojoin.do">회원가입</a></p>
         </div>
     </div>
 </body>

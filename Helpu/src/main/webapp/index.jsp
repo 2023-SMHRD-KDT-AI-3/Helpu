@@ -5,7 +5,7 @@
 </head>
 <body>
 <%
-		response.sendRedirect("start.do");
+		response.sendRedirect("gostart.do");
 	%>
 </body>
 </html>
