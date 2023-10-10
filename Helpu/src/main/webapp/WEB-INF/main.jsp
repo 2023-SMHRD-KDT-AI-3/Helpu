@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<!-- 헤더 부분 -->
+		<!-- 헤더 부분test -->
 		<div id="header">
 			<div id="topBtn">
 				<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
