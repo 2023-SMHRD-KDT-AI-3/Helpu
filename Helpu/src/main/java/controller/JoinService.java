@@ -43,7 +43,7 @@ public class JoinService implements Command {
 			if (result  == 1) {
 				url = "gostart.do";
 			} else {
-				url = "gojoin1.do";
+				url = "gojoin.do";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

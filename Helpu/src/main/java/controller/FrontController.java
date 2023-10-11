@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import goPage.gofavorites;
 import goPage.gohistory;
-import goPage.gojoin1;
+import goPage.gojoin;
 import goPage.gologin;
 import goPage.gomain;
 import goPage.gomypage;
@@ -62,9 +62,9 @@ public class FrontController extends HttpServlet {
 			url = loginservice.execute(request, response);
 
 			// 회원가입 페이지1 이동
-		} else if (result.equals("gojoin1.do")) {
-			gojoin1 gojoin1 = new gojoin1();
-			url = gojoin1.execute(request, response);
+		} else if (result.equals("gojoin.do")) {
+			gojoin gojoin = new gojoin();
+			url = gojoin.execute(request, response);
 
 			// 회원가입 기능 수행
 		} else if(result.equals("JoinService.do")) {
