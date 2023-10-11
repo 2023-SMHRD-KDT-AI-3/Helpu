@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.Command;
 
-public class gobasjet implements Command {
+public class gobasket implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
