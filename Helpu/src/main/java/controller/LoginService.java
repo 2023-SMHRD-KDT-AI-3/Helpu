@@ -40,7 +40,7 @@ public class LoginService implements Command {
 						// request값으로 부터 받아와야 한다!
 						// HttpSession session = request.getSession();
 						// session.setAttribute("info", info);
-						url="gomain.do";
+						url="FillteringService.do";
 					}else{
 						url="gologin.do";
 					}
