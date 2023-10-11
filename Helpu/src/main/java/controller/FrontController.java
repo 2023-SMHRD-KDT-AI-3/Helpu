@@ -103,20 +103,26 @@ public class FrontController extends HttpServlet {
 			gomypage gomypage = new gomypage();
 			url = gomypage.execute(request, response);
 
+			// 정보수정기능
+		} else if (result.equals("ChangeService.do")) {
+			ChangeService changeservice = new ChangeService();
+			changeservice.execute(request, response);
+			
 			//
 		}
+		
 
-		// 각각의 기능에서 받은 url로 이동
-		if (url != null) {
-			if (url.indexOf(".do") != -1) {
-				// url이 .do -> response.sendRedirect
-				response.sendRedirect(url);
-			} else {
-				// url이 .do가 아니면 -> forward
-				RequestDispatcher rd = request.getRequestDispatcher(url);
-				rd.forward(request, response);
-			}
+	// 각각의 기능에서 받은 url로 이동
+	if(url!=null)
+	{
+		if (url.indexOf(".do") != -1) {
+			// url이 .do -> response.sendRedirect
+			response.sendRedirect(url);
+		} else {
+			// url이 .do가 아니면 -> forward
+			RequestDispatcher rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
 		}
-
 	}
-}
+
+}}

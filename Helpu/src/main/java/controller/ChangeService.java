@@ -63,7 +63,7 @@ public class ChangeService implements Command {
 					url = "gostart.do";
 				} else {
 					System.out.println("실패");
-					url = "gomypage.do";
+					url = "gomain.do";
 				}
 
 			} else {
