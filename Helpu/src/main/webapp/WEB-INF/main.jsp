@@ -29,13 +29,15 @@
 					<img alt="로고"
 						src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
 					<!-- 검색 박스 -->
-					<div class="schBar">
-						<!-- 검색창 -->
-						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
-						<!-- 검색 아이콘 -->
-						<a href="#"><span class="material-symbols-outlined">search</span></a>
-					</div>
+					<form action="#" method="post">
+						<div class="schBar">
+							<!-- 검색창 -->
+							<span class="icon"><i class="fa fa-search"></i></span> <input
+								type="search" id="search" placeholder="Search" name="search"/>
+							<!-- 검색 아이콘 -->
+							<a href="#"><span class="material-symbols-outlined">search</span></a>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!-- 메뉴바 -->
