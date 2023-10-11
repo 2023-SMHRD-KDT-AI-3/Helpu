@@ -21,6 +21,7 @@ public class memberDAO {
 
 	}
 
+	// 로그인 기능
 	public memberDTO login(memberDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		memberDTO info = sqlSession.selectOne("login", dto);
@@ -30,14 +31,15 @@ public class memberDAO {
 	}
 
 	// 회원의 가입 여부를 판단할 수 있는 비동기 통신용 메소드
-	public memberDTO check(String email) {
+	public memberDTO check(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		memberDTO dto = sqlSession.selectOne("check", email);
+		memberDTO dto = sqlSession.selectOne("check", id);
 		sqlSession.close();
 
 		return dto;
 	}
-	
+
+	// 회원 정보 수정
 	public int change(memberDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		int cnt = sqlSession.update("change", dto);

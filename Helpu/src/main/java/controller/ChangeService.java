@@ -23,13 +23,13 @@ public class ChangeService implements Command {
 			String input_check = request.getParameter("check");
 			String input_number = request.getParameter("number");
 			String input_address = request.getParameter("address");
-			String[] food = request.getParameterValues("food");
+			String[] m_allergy = request.getParameterValues("m_allergy");
 
 			memberDAO dao = new memberDAO();
 
 			String allergy = "";
-			for (int i = 0; i < food.length; i++) {
-				allergy += food[i] + ",";
+			for (int i = 0; i < m_allergy.length; i++) {
+				allergy += m_allergy[i] + ",";
 			}
 
 			HttpSession session = request.getSession();
@@ -39,8 +39,8 @@ public class ChangeService implements Command {
 			if (input_pw.equals(input_check)) {
 				String pw = (input_pw.equals(null)) ? login.getPw() : input_pw;
 				String number = (input_number.equals(null)) ? login.getPhone_number() : input_number;
-				String address = (input_address.equals(null)) ? login.getAddress() : input_address;
-				String allergys = (food.length == 0) ? login.getM_allergy() : allergy;
+				String address = (input_address.equals(null)) ? login.getM_address() : input_address;
+				String allergys = (m_allergy.length == 0) ? login.getM_allergy() : allergy;
 
 				// Member타입에 입력받은 값 담기
 				memberDTO member = new memberDTO();
@@ -48,7 +48,7 @@ public class ChangeService implements Command {
 				member.setId(login.getId());
 				member.setPw(pw);
 				member.setPhone_number(number);
-				member.setAddress(address);
+				member.setM_address(address);
 				member.setM_allergy(allergy);
 
 				int result = dao.change(member);

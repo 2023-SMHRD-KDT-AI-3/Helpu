@@ -9,11 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import goPage.gobasket;
 import goPage.gofavorites;
 import goPage.gohistory;
 import goPage.gojoin1;
-import goPage.gojoin2;
 import goPage.gologin;
 import goPage.gomain;
 import goPage.gomypage;
@@ -68,10 +66,10 @@ public class FrontController extends HttpServlet {
 			gojoin1 gojoin1 = new gojoin1();
 			url = gojoin1.execute(request, response);
 
-			// 회원가입 페이지2 이동
-		} else if (result.equals("gojoin2.do")) {
-			gojoin2 gojoin2 = new gojoin2();
-			url = gojoin2.execute(request, response);
+			// 회원가입 기능 수행
+		} else if(result.equals("JoinService.do")) {
+			JoinService JoinService = new JoinService();
+			url = JoinService.execute(request, response);
 
 			// 즐겨찾기 페이지 이동
 		} else if (result.equals("gofavorites.do")) {
@@ -103,15 +101,10 @@ public class FrontController extends HttpServlet {
 			ChangeService changeservice = new ChangeService();
 			changeservice.execute(request, response);
 
-			// 로그아웃 기능 실행
+			//
 		} else if (result.equals("logout.do")) {
 			logoutService logout = new logoutService();
 			url = logout.execute(request, response);
-			
-			// 장바구니페이지 이동
-		} else if (result.equals("gobasket.do")) {
-			gobasket gobasket = new gobasket();
-			url = gobasket.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동

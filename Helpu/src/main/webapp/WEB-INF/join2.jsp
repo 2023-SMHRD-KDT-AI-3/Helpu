@@ -20,14 +20,13 @@
 	justify-content: center;
 }
 
- .table {
+.table {
 	display: flex;
 	justify-content: center;
 	border-collapse: collapse;
 	border: 2px solid #d7d7d7;
 	border-radius: 50px;
-} 
-
+}
 
 .btn {
 	display: flex;
@@ -47,115 +46,90 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-
-
-	
-
-
-
-
-
+	<form action="JoinService.do" method="post">
 	<div class="HELFU">
 		<h2>HELFU'</h2>
 	</div>
-
-
-
-
 	<div class="HELFU2">
 		<p>가지고 있는 알레르기의 정보를 설정해주세요!</p>
 	</div>
-
-
-
 	<table class="table">
 		<tr>
-			<td><input type="checkbox" name="food" value="eggs"></td>
+			<td><input type="checkbox" name="m_allergy" value="eggs"></td>
 			<td>난류(가금류)</td>
 
-			<td><input type="checkbox" name="food" value="beef"></td>
+			<td><input type="checkbox" name="m_allergy" value="beef"></td>
 			<td>소고기</td>
 
-			<td><input type="checkbox" name="food" value="pork"></td>
+			<td><input type="checkbox" name="m_allergy" value="pork"></td>
 			<td>돼지고기</td>
 
-			<td><input type="checkbox" name="food" value="chicken"></td>
+			<td><input type="checkbox" name="m_allergy" value="chicken"></td>
 			<td>닭고기</td>
 
-			<td><input type="checkbox" name="food" value="shrimp"></td>
+			<td><input type="checkbox" name="m_allergy" value="shrimp"></td>
 			<td>새우</td>
 		</tr>
 
 		<tr>
-			<td><input type="checkbox" name="food" value="crab"></td>
+			<td><input type="checkbox" name="m_allergy" value="crab"></td>
 			<td>게</td>
 
-			<td><input type="checkbox" name="food" value="squid"></td>
+			<td><input type="checkbox" name="m_allergy" value="squid"></td>
 			<td>오징어</td>
 
-			<td><input type="checkbox" name="food" value="mackerel"></td>
+			<td><input type="checkbox" name="m_allergy" value="mackerel"></td>
 			<td>고등어</td>
 
-			<td><input type="checkbox" name="food" value="clam"></td>
+			<td><input type="checkbox" name="m_allergy" value="clam"></td>
 			<td>조개류</td>
 
-			<td><input type="checkbox" name="food" value="milk"></td>
+			<td><input type="checkbox" name="m_allergy" value="milk"></td>
 			<td>우유</td>
 		</tr>
 
 		<tr>
-			<td><input type="checkbox" name="food" value="peanut"></td>
+			<td><input type="checkbox" name="m_allergy" value="peanut"></td>
 			<td>땅콩</td>
 
-			<td><input type="checkbox" name="food" value="walnut"></td>
+			<td><input type="checkbox" name="m_allergy" value="walnut"></td>
 			<td>호두</td>
 
-			<td><input type="checkbox" name="food" value="pinenut"></td>
+			<td><input type="checkbox" name="m_allergy" value="pinenut"></td>
 			<td>잣</td>
 
-			<td><input type="checkbox" name="food" value="soybean"></td>
+			<td><input type="checkbox" name="m_allergy" value="soybean"></td>
 			<td>대두</td>
 
-			<td><input type="checkbox" name="food" value="peach"></td>
+			<td><input type="checkbox" name="m_allergy" value="peach"></td>
 			<td>복숭아</td>
 		</tr>
 
 		<tr>
-			<td><input type="checkbox" name="food" value="tomato"></td>
+			<td><input type="checkbox" name="m_allergy" value="tomato"></td>
 			<td>토마토</td>
 
-			<td><input type="checkbox" name="food" value="wheat"></td>
+			<td><input type="checkbox" name="m_allergy" value="wheat"></td>
 			<td>밀</td>
 
-			<td><input type="checkbox" name="food" value="buckwheat"></td>
+			<td><input type="checkbox" name="m_allergy" value="buckwheat"></td>
 			<td>메밀</td>
 
-			<td><input type="checkbox" name="food" value="acids"></td>
+			<td><input type="checkbox" name="m_allergy" value="acids"></td>
 			<td>이황산류</td>
 		</tr>
-		
-		
-		
-		
-		
+
 	</table>
 
 
 	<div class="btn">
 		<table>
 			<tr>
-				<td>
-					<button id="btn2">JOIN</button> <script src=""></script>
-				</td>
+				<td><input type="submit" value="완료"> </script></td>
 
 			</tr>
 		</table>
 	</div>
-	
-
-
-
+	</form>
 </body>
 </html>
