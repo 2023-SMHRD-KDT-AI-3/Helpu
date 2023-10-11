@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import goPage.gobasket;
 import goPage.gofavorites;
 import goPage.gohistory;
 import goPage.gojoin1;
@@ -102,10 +103,15 @@ public class FrontController extends HttpServlet {
 			ChangeService changeservice = new ChangeService();
 			changeservice.execute(request, response);
 
-			//
+			// 로그아웃 기능 실행
 		} else if (result.equals("logout.do")) {
 			logoutService logout = new logoutService();
 			url = logout.execute(request, response);
+			
+			// 장바구니페이지 이동
+		} else if (result.equals("gobasket.do")) {
+			gobasket gobasket = new gobasket();
+			url = gobasket.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동
