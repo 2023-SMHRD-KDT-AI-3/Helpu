@@ -17,8 +17,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-						<a href="#">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a> <span>|</span>
+						<a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p>000님 환영합니다!</p>
