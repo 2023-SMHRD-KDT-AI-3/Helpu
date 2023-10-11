@@ -9,11 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import goPage.gobasjet;
-import goPage.gobaskert1;
 import goPage.gofavorites;
 import goPage.gohistory;
-import goPage.gojoin;
+import goPage.gojoin1;
+import goPage.gojoin2;
 import goPage.gologin;
 import goPage.gomain;
 import goPage.gomypage;
@@ -53,11 +52,6 @@ public class FrontController extends HttpServlet {
 			gostart gostart = new gostart();
 			url = gostart.execute(request, response);
 
-			// 회원가입 화면 이동
-		} else if (result.equals("gojoin.do")) {
-			gojoin gojoin = new gojoin();
-			url = gojoin.execute(request, response);
-
 			// 로그인 화면 이동
 		} else if (result.equals("gologin.do")) {
 			gologin gologin = new gologin();
@@ -69,14 +63,14 @@ public class FrontController extends HttpServlet {
 			url = loginservice.execute(request, response);
 
 			// 회원가입 페이지1 이동
-		} else if (result.equals("gobasjet.do")) {
-			gobasjet gobasjet = new gobasjet();
-			url = gobasjet.execute(request, response);
+		} else if (result.equals("gojoin1.do")) {
+			gojoin1 gojoin1 = new gojoin1();
+			url = gojoin1.execute(request, response);
 
 			// 회원가입 페이지2 이동
-		} else if (result.equals("gobaskert1.do")) {
-			gobaskert1 gobaskert1 = new gobaskert1();
-			url = gobaskert1.execute(request, response);
+		} else if (result.equals("gojoin2.do")) {
+			gojoin2 gojoin2 = new gojoin2();
+			url = gojoin2.execute(request, response);
 
 			// 즐겨찾기 페이지 이동
 		} else if (result.equals("gofavorites.do")) {

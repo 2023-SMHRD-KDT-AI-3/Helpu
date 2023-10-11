@@ -128,7 +128,7 @@ hr {
 		<hr>
 		<table>
 			<tr>
-				<td><input type="checkbox" name="food" value="poultry"></td>
+				<td><input type="checkbox" name="food" value="eggs"></td>
 				<td>난류(가금류)</td>
 
 				<td><input type="checkbox" name="food" value="beef"></td>
@@ -156,7 +156,7 @@ hr {
 				<td><input type="checkbox" name="food" value="mackerel"></td>
 				<td>고등어</td>
 
-				<td><input type="checkbox" name="food" value="shellfish"></td>
+				<td><input type="checkbox" name="food" value="clam"></td>
 				<td>조개류</td>
 
 				<td><input type="checkbox" name="food" value="milk"></td>
@@ -170,7 +170,7 @@ hr {
 				<td><input type="checkbox" name="food" value="walnut"></td>
 				<td>호두</td>
 
-				<td><input type="checkbox" name="food" value="pineNut"></td>
+				<td><input type="checkbox" name="food" value="pinenut"></td>
 				<td>잣</td>
 
 				<td><input type="checkbox" name="food" value="soybean"></td>
@@ -190,7 +190,7 @@ hr {
 				<td><input type="checkbox" name="food" value="buckwheat"></td>
 				<td>메밀</td>
 
-				<td><input type="checkbox" name="food" value="disulfuricAcids"></td>
+				<td><input type="checkbox" name="food" value="acids"></td>
 				<td>이황산류</td>
 			</tr>
 

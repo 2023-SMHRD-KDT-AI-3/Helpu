@@ -5,14 +5,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.Command;
 
-public class gojoin implements Command{
+public class gojoin1 implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
 		
-		return "WEB-INF/join.jsp";
+		return "WEB-INF/join1.jsp";
 	}
 
 }
