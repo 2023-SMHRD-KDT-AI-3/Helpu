@@ -28,7 +28,7 @@
     		html+="<div>";
     		html+="<div class='textImg'>"+obj.pro_img+"</div>";
     		html+="<div class='Info'>";
-    		html+="<p>알레르기 유발 성분 N개 포함"</p>";
+    		html+="<p>알레르기 유발 성분 N개 포함</p>";
     		html+="<p>"+obj.pro_maker"</p>";
     		html+="<p>"+obj.pro_name+"</p>";
     		html+="<p>"+obj.pro_price+"</p>";
