@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,5 +25,6 @@ public class productDTO {
 	private String pro_ingredients;
 	private int pro_carbohydrate;
 	private int pro_cnt;
-	private String pro_haveIngredients;
+	private ArrayList<String> pro_haveIngredients = new ArrayList<String>();
+	private ArrayList<String> pro_m_haveIngredients = new ArrayList<String>();
 }
