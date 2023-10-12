@@ -68,7 +68,7 @@ public class FrontController extends HttpServlet {
 			url = gojoin.execute(request, response);
 
 			// 회원가입 기능 수행
-		} else if(result.equals("JoinService.do")) {
+		} else if (result.equals("JoinService.do")) {
 			JoinService JoinService = new JoinService();
 			url = JoinService.execute(request, response);
 
@@ -108,14 +108,19 @@ public class FrontController extends HttpServlet {
 			url = logout.execute(request, response);
 
 			//
-		} else if(result.equals("FillteringService.do")) {
+		} else if (result.equals("FillteringService.do")) {
 			FillteringService filltering = new FillteringService();
 			url = filltering.execute(request, response);
-			
-		} else if(result.equals("gobasket.do")) {
+
+		} else if (result.equals("gobasket.do")) {
 			gobasket gobasket = new gobasket();
 			url = gobasket.execute(request, response);
+			// 검색 기능
+		} else if (result.equals("SearchService.do")) {
+			searchService gosearch = new searchService();
+			url = gosearch.execute(request, response);
 		}
+
 		// 각각의 기능에서 받은 url로 이동
 //		if (url != null) {
 //			if (url.indexOf(".do") != -1) {
@@ -123,8 +128,8 @@ public class FrontController extends HttpServlet {
 //				response.sendRedirect(url);
 //			} else {
 //				// url이 .do가 아니면 -> forward
-				RequestDispatcher rd = request.getRequestDispatcher(url);
-				rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
 //			}
 //		}
 
