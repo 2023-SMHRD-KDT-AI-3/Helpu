@@ -7,12 +7,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.google.gson.Gson;
 
-import db.SqlSessionManagerFactory;
+import db.SqlSessionManager;
 
 public class productDAO {
 	
 	// SqlSessionManager를 통해서 만들어진 기능 불러오기
-	SqlSessionFactory sqlSessionFactory = SqlSessionManagerFactory.getSqlSession();
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
 	public String filltering() {
 

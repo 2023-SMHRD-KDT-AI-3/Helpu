@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="model.searchMapper">
+
+<!-- 검색기능을 위한 sql문 -->
+<!-- search타입이 string 타입이니 parameterType도 string 써준다. -->
+<!-- resultType(보내는값)은 searchDTO으로 보내준다. -->
+<select id="allList" parameterType="string"
+	resultType="model.searchDTO">
+	select * from tb_product where pro_name LIKE '%'||#{search}||'%'
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
