@@ -1,0 +1,76 @@
+/* 외부에서 폰트 불러오기 : noto sans */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.loginBox {
+	position: relative;
+	top: 170px;
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+	border-radius: 15px;
+	text-align: center;
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+}
+
+.loginBox>img {
+	width: 160px;
+	margin-top: 30px;
+	margin-bottom:12px;
+}
+
+.dataBox {
+	margin-top: 15px;
+	font-weight: 700;
+	text-align: left;
+	margin: 0 auto;
+	width: 300px;
+}
+
+.dataBox > p{
+	margin-top:10px;
+	font-weight: 700;
+    text-align: left;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.dataBox > input{
+	color: #d6d6d6;
+	border: 1.5px solid #4c4c4c;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.dataBox > input[type=text]:nth-child(2){
+	margin-bottom: 15px;
+}
+
+
+.dataBox > input[type=submit]:nth-child(6){
+	color: white;
+    font-size: 20px;
+    height: 50px;
+    background: #A2DD98;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
