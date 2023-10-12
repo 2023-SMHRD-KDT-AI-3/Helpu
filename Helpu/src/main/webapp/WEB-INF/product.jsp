@@ -44,8 +44,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-						<a href="#">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p>000님 환영합니다!</p>
@@ -60,8 +60,13 @@
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
 							type="search" id="search" placeholder="Search" />
-						<!-- 검색 아이콘 -->
-						<a href="#"><span class="material-symbols-outlined">search</span></a>
+						<!-- 검색 돋보기 아이콘 -->
+						<div class="iconBox">
+							<button type="button" onclick="search()" class="schIcon"
+								style='cursor: pointer;'>
+								<span class="material-symbols-outlined">search</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -75,7 +80,6 @@
 				</ul>
 			</div>
 		</div>
-
 
 		<div id="container">
 			<div id="productInfo">
@@ -266,24 +270,22 @@
 				<ul class="recentbox">
 					<li><a href="#"><img alt="임시이미지"
 						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a></li>
+						<p>제품명</p></a>
+						<hr></li>
 					<li><a href="#"><img alt="임시이미지"
 						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a></li>
+						<p>제품명</p></a>
+						<hr></li>
 					<li><a href="#"><img alt="임시이미지"
 						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a></li>
+						<p>제품명</p></a>
+						</li>
 				</ul>
 			</div>
 		</div>
 
-
 		
 		
-		
-		
-		<div id="footer"></div>
-
 
 	</div>
 </body>

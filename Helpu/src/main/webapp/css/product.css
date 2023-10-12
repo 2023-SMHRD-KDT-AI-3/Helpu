@@ -15,11 +15,15 @@
 }
 
 /* a태그 기본 스타일 리셋 */
-a{
+a {
 	text-decoration: none;
 	color: black;
 }
 
+
+li {
+	list-style-type: none;
+}
 
 /* 전체 중앙 정렬 */
 #wrap {
@@ -45,6 +49,11 @@ a{
 	position: absolute;
 	width: 100%;
 	text-align: right;
+}
+
+/* 사용자 환영 안내글 상단 여백 */
+#topBtn>p {
+	margin-top: 15px;
 }
 
 /* 로고 및 검색창 */
@@ -77,7 +86,7 @@ a{
 	font-size: 14px;
 }
 
-/* 외부에서 끌어온 아이콘 css 전체 속성 */
+/* 외부에서 끌어온 돋보기 아이콘 css 전체 속성 */
 .material-symbols-outlined {
 	font-variation-settings:
 		'FILL' 0,
@@ -86,12 +95,19 @@ a{
 		'opsz' 24
 }
 
-#schBox>div>a>span {
+.iconBox {
+	display: inline-block;
 	position: absolute;
 	top: 47%;
 	bottom: 50%;
 	right: 4.5%;
 }
+
+.schIcon {
+	background: white;
+	border: none;
+}
+
 
 /* 메뉴바 */
 #nav {
@@ -437,49 +453,64 @@ a{
 	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
 }
 
-/* 배너 영역 */
+/* ----------------------------- 배너 영역 -----------------------------  */
 
-#banner{
+/* 배너 띄우기 */
+#banner {
 	position: fixed;
-    top: 30%;
-    right: 10%;
-    z-index: 10;
-	
+	top: 25%;
+	right: 11%;
+	z-index: 10;
+
 }
 
-#banner > a > p{
+/* 마이페이지 즐겨찾기 장바구니 버튼 속성 */
+#banner>a>p {
 	width: 130px;
-    border-radius: 5px;
-    text-align: center;
-    padding: 7px;
-    margin-bottom: 15px;
-    background: red;
-}
-
-
-.recent{
 	border-radius: 5px;
-	background-color: blueviolet;
+	text-align: center;
+	padding: 7px;
+	margin-bottom: 15px;
+	background: red;
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
 }
 
-
-.recent>a>p{
+/* 최근 본 상품 버튼 */
+#banner>div>a>p {
 	width: 130px;
-    border-radius: 5px 5px 0 0 ;
-    text-align: center;
-    padding: 7px;
-    margin-bottom: 15px;
-    background: red;
+	border-radius: 5px 5px 0px 0px;
+	text-align: center;
+	padding: 7px 7px 7px 7px;
+	background: rgb(0, 64, 128);
+	margin: 0;
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
 }
 
 
-.recentbox{
-	padding-bottom: 20px;
-    list-style-type: none;
-    text-align: center;
+.recentbox {
+	/* ul 스타일 삭제 및 여백 리셋  */
+	margin: 0;
+	padding: 0;
+	background-color: rgb(255, 255, 255);
+	/* 가운데 정렬 */
+	text-align: center;
+	/* 그림자 설정 */
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+	/* 하단 여백 */
+	padding: 0 0 20px 0;
+	/* 하단 둥글기 설정 */
+	border-radius: 0 0 7px 7px;
 }
 
 /* 배너 상품이미지 사이즈 고정 */
-#banner > div > ul > li> a > img{
-	width:80px;
+.recentbox>li>a>img {
+	width: 80px;
+	margin-top: 10px;
+}
+
+/* 구분선 길이 */
+.recentbox>li>hr {
+	margin: 0 auto;
+	width: 80%;
+	margin-top: 10px;
 }

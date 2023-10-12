@@ -8,10 +8,21 @@
 /* -----------------Header----------------- */
 
 /* 전체 폰트 적용 및 기본 여백 삭제*/
-body {
+* {
 	margin: 0;
 	padding: 0;
 	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* a태그 기본 스타일 리셋 */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+li {
+	list-style-type: none;
 }
 
 /* 전체 중앙 정렬 */
@@ -24,7 +35,6 @@ body {
 #header {
 	position: relative;
 	width: 100%;
-	background-color: gray;
 }
 
 /* 안쪽 header 크기 정의 및 중앙 정렬 */
@@ -38,8 +48,12 @@ body {
 #topBtn {
 	position: absolute;
 	width: 100%;
-	background-color: red;
 	text-align: right;
+}
+
+/* 사용자 환영 안내글 상단 여백 */
+#topBtn>p {
+	margin-top: 15px;
 }
 
 /* 로고 및 검색창 */
@@ -47,8 +61,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 90px;
-	top: 80px;
-	background: blue;
+	top: 60px;
 }
 
 /* 로고 */
@@ -100,7 +113,7 @@ body {
 #nav {
 	position: absolute;
 	width: 100%;
-	background-color: yellow;
+	background-color: #8ED881;
 	top: 170px;
 	display: flex;
 	justify-content: center;
@@ -123,8 +136,8 @@ body {
 
 /* 메뉴 안쪽 a태그 속성 정리 */
 #gnb>li>a {
-	color: black;
-	text-decoration: none;
+	color: white;
+	font-weight: 500;
 }
 
 /* -----------------container----------------- */
@@ -136,28 +149,58 @@ body {
 	top: 214px;
 }
 
+
+/* 서브 메뉴 */
+
+/* 메뉴 전체 영역 */
 #leftMenu {
-	position: absolute;
-	top: 0;
+	position: relative;
+	float: left;
+	width: 180px;
+	top: 25px;
 	left: 0;
 }
 
+/* 각 버튼 속성 */
+.leftmenuBtn {
+	width: 100%;
+	background: red;
+    box-sizing: border-box;
+    padding: 7px;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    
+}
+/* 알레르기 추가 체크 서비스 버튼 */
+.leftmenuBtn3 {
+	margin:0;
+	border-radius: 7px 7px 0 0;
+}
+
+/* 체크박스 안쪽 영역 설정 */
 .checkboxMenu {
-	padding: 0px;
+	background-color: rgb(128, 255, 128);
+	border-radius: 0 0 7px 7px;
+	padding: 10px 10px 20px 10px;
+	box-sizing: border-box;
 }
 
-.checkboxMenu>li {
-	list-style-type: none;
+/* 적용하기 버튼 */
+#checkSubmit{
+	width:100%;
+	border:none;
+	border-radius: 5px;
+	padding : 5px 0 5px 0 ;
+	background-color: red;
+	margin-top:10px;
 }
 
-#leftMenu>a {
-	display: block;
-}
-
+/* 검색창 위치 영역 지정 */
 
 .schContents {
-	position: absolute;
-	left: 20%;
+	position: relative;
+	left: 18%;
 }
 
 /* 제품 속성 */
@@ -168,6 +211,9 @@ body {
 	padding: 25px;
 	line-height: 20px;
 	background: aquamarine;
+	border-radius: 8px;
+	box-shadow: 0 0 10px;
+
 }
 
 .product2 {
@@ -182,6 +228,26 @@ body {
 	top: 350px;
 	left: 500px;
 }
+
+
+
+/* 제품 이미지 */
+
+.textImg {
+	width: 130px;
+	height: 180px;
+	float: left;
+	margin-right: 50px;
+
+}
+
+/* 검색 시 뜨는 제품 인포 이미지 고정값 */
+.innertextImg {
+	width: 150px;
+	height: 150px;
+}
+
+
 
 /* 즐겨찾기, 장바구니 버튼 좌우정렬 처리 */
 .fvrbtnBox {
@@ -201,16 +267,64 @@ body {
 }
 
 
+/* ----------------------------- 배너 영역 -----------------------------  */
 
-.textImg {
-	width: 130px;
-	height: 180px;
-	background-color: red;
-	float: left;
-	margin-right: 50px;
+/* 배너 띄우기 */
+#banner {
+	position: fixed;
+	top: 25%;
+	right: 11%;
+	z-index: 10;
 
 }
 
-#container>div.schContents>div>div.Info>p:nth-child(1) {
-	margin: 5px;
+/* 마이페이지 즐겨찾기 장바구니 버튼 속성 */
+#banner>a>p {
+	width: 130px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 7px;
+	margin-bottom: 15px;
+	background: red;
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+}
+
+/* 최근 본 상품 버튼 */
+#banner>div>a>p {
+	width: 130px;
+	border-radius: 5px 5px 0px 0px;
+	text-align: center;
+	padding: 7px 7px 7px 7px;
+	background: rgb(0, 64, 128);
+	margin: 0;
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+}
+
+
+.recentbox {
+	/* ul 스타일 삭제 및 여백 리셋  */
+	margin: 0;
+	padding: 0;
+	background-color: rgb(255, 255, 255);
+	/* 가운데 정렬 */
+	text-align: center;
+	/* 그림자 설정 */
+	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+	/* 하단 여백 */
+	padding: 0 0 20px 0;
+	/* 하단 둥글기 설정 */
+	border-radius: 0 0 7px 7px;
+}
+
+/* 배너 상품이미지 사이즈 고정 */
+.recentbox>li>a>img {
+	width: 80px;
+	margin-top: 10px;
+}
+
+/* 구분선 길이 */
+.recentbox>li>hr {
+	margin: 0 auto;
+	width: 80%;
+	margin-top: 10px;
 }

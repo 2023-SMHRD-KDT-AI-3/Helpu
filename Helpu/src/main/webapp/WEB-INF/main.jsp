@@ -34,7 +34,7 @@
 		var html = "";
 		$.each(	data,function(index, obj) {
 							html += "<div class='product product"+index+"'>";
-							html += "<div class='textImg'><img src='" + obj.pro_img
+							html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
 									+ "'></div>";
 							html += "<div class='Info'>";
 							html += "<p>알레르기 유발 성분"+obj.pro_cnt+" N개 포함</p>";
@@ -78,7 +78,7 @@
 				<div id="schBox">
 					<!-- 로고 -->
 					<img alt="로고"
-						src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
+						src="imgs/logo.png">
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
@@ -107,32 +107,41 @@
 
 		<div id="container">
 			<div id="leftMenu">
-				<a href="#">사용자 정보 자동 적용</a> <a href="#">사용자 정보 간편 수정</a> <a
-					href="#">알레르기 추가 체크 서비스</a>
-				<form action="#" method="post">
-					<ul class="checkboxMenu">
-						<li><input type="checkbox" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
-						<li><input type="checkbox" name="allergy" value="소고기"><span>소고기</span></li>
-						<li><input type="checkbox" name="allergy" value="돼지고기"><span>돼지고기</span></li>
-						<li><input type="checkbox" name="allergy" value="닭고기"><span>닭고기</span></li>
-						<li><input type="checkbox" name="allergy" value="새우"><span>새우</span></li>
-						<li><input type="checkbox" name="allergy" value="게"><span>게</span></li>
-						<li><input type="checkbox" name="allergy" value="오징어"><span>오징어</span></li>
-						<li><input type="checkbox" name="allergy" value="고등어"><span>고등어</span></li>
-						<li><input type="checkbox" name="allergy" value="조개류"><span>조개류</span></li>
-						<li><input type="checkbox" name="allergy" value="우유"><span>우유</span></li>
-						<li><input type="checkbox" name="allergy" value="땅콩"><span>땅콩</span></li>
-						<li><input type="checkbox" name="allergy" value="호두"><span>호두</span></li>
-						<li><input type="checkbox" name="allergy" value="잣"><span>잣</span></li>
-						<li><input type="checkbox" name="allergy" value="대두"><span>대두</span></li>
-						<li><input type="checkbox" name="allergy" value="복숭아"><span>복숭아</span></li>
-						<li><input type="checkbox" name="allergy" value="토마토"><span>토마토</span></li>
-						<li><input type="checkbox" name="allergy" value="밀"><span>밀</span></li>
-						<li><input type="checkbox" name="allergy" value="메밀"><span>메밀</span></li>
-						<li><input type="checkbox" name="allergy" value="아황산류"><span>아황산류</span></li>
-						<li><input type="submit" name="allergy" value="적용하기"></li>
-					</ul>
-				</form>
+				<button class="leftmenuBtn" style='cursor: pointer;'>
+					<span class="userData">사용자 정보 자동 적용</span>
+				</button>
+				<button class="leftmenuBtn" style='cursor: pointer;'>
+					<span class="editData">사용자 정보 간편 수정</span>
+				</button>
+				<div class = "leftMenuCheckbox">
+					<button class="leftmenuBtn leftmenuBtn3" class="bskBtn" style='cursor: pointer;'>
+							<span class="checkservice">알레르기 추가 체크 서비스</span>
+					</button>
+					<form action="#" method="post">
+						<ul class="checkboxMenu">
+							<li><input type="checkbox" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
+							<li><input type="checkbox" name="allergy" value="소고기"><span>소고기</span></li>
+							<li><input type="checkbox" name="allergy" value="돼지고기"><span>돼지고기</span></li>
+							<li><input type="checkbox" name="allergy" value="닭고기"><span>닭고기</span></li>
+							<li><input type="checkbox" name="allergy" value="새우"><span>새우</span></li>
+							<li><input type="checkbox" name="allergy" value="게"><span>게</span></li>
+							<li><input type="checkbox" name="allergy" value="오징어"><span>오징어</span></li>
+							<li><input type="checkbox" name="allergy" value="고등어"><span>고등어</span></li>
+							<li><input type="checkbox" name="allergy" value="조개류"><span>조개류</span></li>
+							<li><input type="checkbox" name="allergy" value="우유"><span>우유</span></li>
+							<li><input type="checkbox" name="allergy" value="땅콩"><span>땅콩</span></li>
+							<li><input type="checkbox" name="allergy" value="호두"><span>호두</span></li>
+							<li><input type="checkbox" name="allergy" value="잣"><span>잣</span></li>
+							<li><input type="checkbox" name="allergy" value="대두"><span>대두</span></li>
+							<li><input type="checkbox" name="allergy" value="복숭아"><span>복숭아</span></li>
+							<li><input type="checkbox" name="allergy" value="토마토"><span>토마토</span></li>
+							<li><input type="checkbox" name="allergy" value="밀"><span>밀</span></li>
+							<li><input type="checkbox" name="allergy" value="메밀"><span>메밀</span></li>
+							<li><input type="checkbox" name="allergy" value="아황산류"><span>아황산류</span></li>
+							<li><input type="submit" id="checkSubmit" name="allergy" value="적용하기" style='cursor: pointer;'></li>
+						</ul>
+					</form>
+				</div>
 			</div>
 			<!-- 검색 시 출력되는 제품 단락 -->
 			<div class="schContents">
@@ -246,10 +255,37 @@
 					</div>
 				</div> -->
 			</div>
+			
+			<!-- 배너 영역 -->
+		<div id="banner">
+			<a href="#"><p>마이페이지</p></a> <a href="#"><p>즐겨찾기</p></a> <a href="#"><p>장바구니</p></a>
+			<div class="recent">
+				<a href="#"><p>최근 본 상품</p></a>
+				<ul class="recentbox">
+					<li><a href="#"><img alt="임시이미지"
+						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+						<p>제품명</p></a>
+						<hr></li>
+					<li><a href="#"><img alt="임시이미지"
+						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+						<p>제품명</p></a>
+						<hr></li>
+					<li><a href="#"><img alt="임시이미지"
+						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+						<p>제품명</p></a>
+						</li>
+				</ul>
+			</div>
 		</div>
-
-		<div id="footer"></div>
-
+		
+			
+			
+			
+			
+		</div>
+	
+		
+		
 
 	</div>
 </body>
