@@ -38,8 +38,8 @@ public class LoginService implements Command {
 						// 세션 영역을 서블릿에서 사용하기 위해서는 객체 선언부터 필요하다!
 						// 클라이언트 요청한 값과 응답에 대하여 공유하기 위해서는 해당 session을
 						// request값으로 부터 받아와야 한다!
-						// HttpSession session = request.getSession();
-						// session.setAttribute("info", info);
+						HttpSession session = request.getSession();
+						session.setAttribute("info", info);
 						url="FillteringService.do";
 					}else{
 						url="gologin.do";
