@@ -101,25 +101,25 @@
 					href="#">알레르기 추가 체크 서비스</a>
 				<form action="#" method="post">
 					<ul class="checkboxMenu">
-						<li><input type="radio" name="allergy" value="eggs"><span>난류(가금류)</span></li>
-						<li><input type="radio" name="allergy" value="beef"><span>소고기</span></li>
-						<li><input type="radio" name="allergy" value="pork"><span>돼지고기</span></li>
-						<li><input type="radio" name="allergy" value="chicken"><span>닭고기</span></li>
-						<li><input type="radio" name="allergy" value="shrimp"><span>새우</span></li>
-						<li><input type="radio" name="allergy" value="crab"><span>게</span></li>
-						<li><input type="radio" name="allergy" value="squid"><span>오징어</span></li>
-						<li><input type="radio" name="allergy" value="blueFish"><span>고등어</span></li>
-						<li><input type="radio" name="allergy" value="clam"><span>조개류</span></li>
-						<li><input type="radio" name="allergy" value="milk"><span>우유</span></li>
-						<li><input type="radio" name="allergy" value="peanut"><span>땅콩</span></li>
-						<li><input type="radio" name="allergy" value="walnut"><span>호두</span></li>
-						<li><input type="radio" name="allergy" value="pineNut"><span>잣</span></li>
-						<li><input type="radio" name="allergy" value="daedu"><span>대두</span></li>
-						<li><input type="radio" name="allergy" value="peach"><span>복숭아</span></li>
-						<li><input type="radio" name="allergy" value="tomato"><span>토마토</span></li>
-						<li><input type="radio" name="allergy" value="wheat"><span>밀</span></li>
-						<li><input type="radio" name="allergy" value="buckwheat"><span>메밀</span></li>
-						<li><input type="radio" name="allergy" value="acids"><span>아황산류</span></li>
+						<li><input type="checkbox" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
+						<li><input type="checkbox" name="allergy" value="소고기"><span>소고기</span></li>
+						<li><input type="checkbox" name="allergy" value="돼지고기"><span>돼지고기</span></li>
+						<li><input type="checkbox" name="allergy" value="닭고기"><span>닭고기</span></li>
+						<li><input type="checkbox" name="allergy" value="새우"><span>새우</span></li>
+						<li><input type="checkbox" name="allergy" value="게"><span>게</span></li>
+						<li><input type="checkbox" name="allergy" value="오징어"><span>오징어</span></li>
+						<li><input type="checkbox" name="allergy" value="고등어"><span>고등어</span></li>
+						<li><input type="checkbox" name="allergy" value="조개류"><span>조개류</span></li>
+						<li><input type="checkbox" name="allergy" value="우유"><span>우유</span></li>
+						<li><input type="checkbox" name="allergy" value="땅콩"><span>땅콩</span></li>
+						<li><input type="checkbox" name="allergy" value="호두"><span>호두</span></li>
+						<li><input type="checkbox" name="allergy" value="잣"><span>잣</span></li>
+						<li><input type="checkbox" name="allergy" value="대두"><span>대두</span></li>
+						<li><input type="checkbox" name="allergy" value="복숭아"><span>복숭아</span></li>
+						<li><input type="checkbox" name="allergy" value="토마토"><span>토마토</span></li>
+						<li><input type="checkbox" name="allergy" value="밀"><span>밀</span></li>
+						<li><input type="checkbox" name="allergy" value="메밀"><span>메밀</span></li>
+						<li><input type="checkbox" name="allergy" value="아황산류"><span>아황산류</span></li>
 						<li><input type="submit" name="allergy" value="적용하기"></li>
 					</ul>
 				</form>
