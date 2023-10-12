@@ -73,7 +73,7 @@ body {
 	font-size: 14px;
 }
 
-/* 외부에서 끌어온 아이콘 css 전체 속성 */
+/* 외부에서 끌어온 돋보기 아이콘 css 전체 속성 */
 .material-symbols-outlined {
 	font-variation-settings:
 		'FILL' 0,
@@ -82,12 +82,19 @@ body {
 		'opsz' 24
 }
 
-#schBox > div > a > span{
+.iconBox {
+	display: inline-block;
 	position: absolute;
 	top: 47%;
 	bottom: 50%;
 	right: 4.5%;
 }
+
+.schIcon {
+	background: white;
+	border: none;
+}
+
 
 /* 메뉴바 */
 #nav {
@@ -155,36 +162,55 @@ body {
 
 /* 제품 속성 */
 .product {
-    position: absolute;
-    top: 35px;
+	position: absolute;
+	top: 35px;
 	width: 420px;
 	padding: 25px;
 	line-height: 20px;
-    background: aquamarine;
+	background: aquamarine;
 }
 
-.product2{
+.product2 {
 	left: 500px;
 }
 
-.product3{
+.product3 {
 	top: 350px;
 }
 
-.product4{
+.product4 {
 	top: 350px;
-    left: 500px;
+	left: 500px;
 }
+
+/* 즐겨찾기, 장바구니 버튼 좌우정렬 처리 */
+.fvrbtnBox {
+	float: left;
+}
+
+/* 즐겨찾기 담기 버튼 */
+.fvrBtn {
+	background: white;
+	border: none;
+}
+
+/* 장바구니 담기 버튼 */
+.bskBtn {
+	background: white;
+	border: none;
+}
+
+
 
 .textImg {
 	width: 130px;
-    height: 180px;
-    background-color: red;
-    float: left;
-    margin-right: 50px;
+	height: 180px;
+	background-color: red;
+	float: left;
+	margin-right: 50px;
 
 }
 
-#container > div.schContents > div > div.Info > p:nth-child(1){
+#container>div.schContents>div>div.Info>p:nth-child(1) {
 	margin: 5px;
 }

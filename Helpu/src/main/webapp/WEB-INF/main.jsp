@@ -17,8 +17,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-						<a href="#">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a> <span>|</span>
+						<a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p>000님 환영합니다!</p>
@@ -33,8 +33,10 @@
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
 							type="search" id="search" placeholder="Search" />
-						<!-- 검색 아이콘 -->
-						<a href="#"><span class="material-symbols-outlined">search</span></a>
+						<!-- 검색 돋보기 아이콘 -->
+						<div class="iconBox">
+							<button type="submit" class = "schIcon" style='cursor:pointer;'><span class="material-symbols-outlined">search</span></button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -88,9 +90,13 @@
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+						</div>
 						<!-- 구분선 -->
 						<hr />
 						<div class="tag">
@@ -106,9 +112,13 @@
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+						</div>
 						<!-- 구분선 -->
 						<hr />
 						<div class="tag">
@@ -124,9 +134,13 @@
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+						</div>
 						<!-- 구분선 -->
 						<hr />
 						<div class="tag">
@@ -142,9 +156,13 @@
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
-						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+						</div>
 						<!-- 구분선 -->
 						<hr />
 						<div class="tag">
