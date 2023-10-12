@@ -128,69 +128,69 @@ hr {
 		<hr>
 		<table>
 			<tr>
-				<td><input type="checkbox" name="food" value="eggs"></td>
+				<td><input type="checkbox" name="food" value="난류"></td>
 				<td>난류(가금류)</td>
 
-				<td><input type="checkbox" name="food" value="beef"></td>
+				<td><input type="checkbox" name="food" value="소고기"></td>
 				<td>소고기</td>
 
-				<td><input type="checkbox" name="food" value="pork"></td>
+				<td><input type="checkbox" name="food" value="돼지고기"></td>
 				<td>돼지고기</td>
 
-				<td><input type="checkbox" name="food" value="chicken"></td>
+				<td><input type="checkbox" name="food" value="닭고기"></td>
 				<td>닭고기</td>
 
-				<td><input type="checkbox" name="food" value="shrimp"></td>
+				<td><input type="checkbox" name="food" value="새우"></td>
 				<td>새우</td>
 
 
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="crab"></td>
+				<td><input type="checkbox" name="food" value="게"></td>
 				<td>게</td>
 
-				<td><input type="checkbox" name="food" value="squid"></td>
+				<td><input type="checkbox" name="food" value="오징어"></td>
 				<td>오징어</td>
 
-				<td><input type="checkbox" name="food" value="mackerel"></td>
+				<td><input type="checkbox" name="food" value="고등어"></td>
 				<td>고등어</td>
 
-				<td><input type="checkbox" name="food" value="clam"></td>
+				<td><input type="checkbox" name="food" value="조개류"></td>
 				<td>조개류</td>
 
-				<td><input type="checkbox" name="food" value="milk"></td>
+				<td><input type="checkbox" name="food" value="우유"></td>
 				<td>우유</td>
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="peanut"></td>
+				<td><input type="checkbox" name="food" value="땅콩"></td>
 				<td>땅콩</td>
 
-				<td><input type="checkbox" name="food" value="walnut"></td>
+				<td><input type="checkbox" name="food" value="호두"></td>
 				<td>호두</td>
 
-				<td><input type="checkbox" name="food" value="pinenut"></td>
+				<td><input type="checkbox" name="food" value="잣"></td>
 				<td>잣</td>
 
-				<td><input type="checkbox" name="food" value="soybean"></td>
+				<td><input type="checkbox" name="food" value="대두"></td>
 				<td>대두</td>
 
-				<td><input type="checkbox" name="food" value="peach"></td>
+				<td><input type="checkbox" name="food" value="복숭아"></td>
 				<td>복숭아</td>
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="tomato"></td>
+				<td><input type="checkbox" name="food" value="토마토"></td>
 				<td>토마토</td>
 
-				<td><input type="checkbox" name="food" value="wheat"></td>
+				<td><input type="checkbox" name="food" value="밀"></td>
 				<td>밀</td>
 
-				<td><input type="checkbox" name="food" value="buckwheat"></td>
+				<td><input type="checkbox" name="food" value="메밀"></td>
 				<td>메밀</td>
 
-				<td><input type="checkbox" name="food" value="acids"></td>
+				<td><input type="checkbox" name="food" value="이황산류"></td>
 				<td>이황산류</td>
 			</tr>
 
