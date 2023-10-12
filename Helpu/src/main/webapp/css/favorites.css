@@ -121,26 +121,143 @@ body {
 }
 
 /* -----------------container----------------- */
-
 #container {
-	position: relative;
-	width:1280px;
-	margin:0 auto;
-	top:240px;
+	margin: 0;
+	padding: 10px;
+	box-sizing: border-box;
+
 }
 
 
 .fvrContents {
-	position: absolute;
-	width: 1120px;
+	margin: 0;
+	padding: 10px;
+	box-sizing: border-box;
+
 }
 
-div.fvrImg {
+li {
+	list-style-type: none;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 250px;
+}
+
+#container>div {
+
+	padding: 0px;
+	margin-top: 10px;
+	margin-left: 16.5%;
+	width: 68%;
+}
+
+
+hr {
+
+	padding: 0px;
+	margin-top: 10px;
+	margin-left: 16.5%;
+	width: 67%;
+}
+
+.fvrProduct {
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	border: 2px solid #d7d7d7;
+	margin: 15px;
+	margin-top: 0px;
+	margin-left: 15%;
+	width: 68%;
+}
+
+
+
+
+.fvrProduct>div{
+	
+	flex-basis: 70%;
+	
+	text-align: center;
+	
+	
+} 	
+
+
+.fvrProduct>div>.fvrImg {
 	width: 120px;
 	height: 180px;
 	background-color: red;
+	/*margin-left: 20%;*/
+	
 }
 
-#container>div>h2 {
-	margin: 0px;
+
+.fvrProduct>.fvrProductInfo {
+	font-size: 15px;
+	padding: 15px;
+	margin-left: 10%;
+}
+
+.pagination-container {
+	display: flex;
+	justify-content: center;
+}
+
+.fvrProduct>.fvrselectBtn {
+	font-size: 15px;
+	padding: 15px;
+	margin-left: 10%;
+}
+
+.fvrselectBtn {
+	display: flex;
+	flex-basis: 20%;
+	flex-direction: column;
+	align-items: center;
+	height: 100px;
+}
+
+#btn1 {
+	flex-basis: 30%;
+	width: 100px;
+	background-color: white;
+	margin: 3%;
+}
+
+#btn2 {
+	flex-basis: 30%;
+	width: 100px;
+	background-color: white;
+	margin: 3%;
+}
+
+
+.pagination-container>#btn4{
+	border: white;
+	background-color: white;
+}
+
+
+
+.pagination-container>#btn5 {
+	border: white;
+	background-color: white;
+}
+
+.pagination-container>#btn6 {
+	border: white;
+	background-color: white;
+}
+
+.pagination-container>#btn7 {
+	border: white;
+	background-color: white;
+}
+
+.pagination-container>#btn8 {
+	border: white;
+	background-color: white;
 }
