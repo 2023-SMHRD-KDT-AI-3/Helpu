@@ -13,4 +13,5 @@ public class searchDTO {
 	private int price;
 	private String img;
 	private String maker;
+	private String search;
 }

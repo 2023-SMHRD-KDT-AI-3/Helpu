@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class SqlSessionManagerFactory {
+public class SqlSessionManager {
 
 	private static SqlSessionFactory sqlSessionFactory;
 
