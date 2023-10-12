@@ -49,69 +49,69 @@
 		</div>
 		<table class="table">
 			<tr>
-				<td><input type="checkbox" name="food" value="난류"></td>
+				<td><input type="checkbox" name="m_allergy" value="난류"></td>
 				<td>난류(가금류)</td>
 
-				<td><input type="checkbox" name="food" value="소고기"></td>
+				<td><input type="checkbox" name="m_allergy" value="소고기"></td>
 				<td>소고기</td>
 
-				<td><input type="checkbox" name="food" value="돼지고기"></td>
+				<td><input type="checkbox" name="m_allergy" value="돼지고기"></td>
 				<td>돼지고기</td>
 
-				<td><input type="checkbox" name="food" value="닭고기"></td>
+				<td><input type="checkbox" name="m_allergy" value="닭고기"></td>
 				<td>닭고기</td>
 
-				<td><input type="checkbox" name="food" value="새우"></td>
+				<td><input type="checkbox" name="m_allergy" value="새우"></td>
 				<td>새우</td>
 
 
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="게"></td>
+				<td><input type="checkbox" name="m_allergy" value="게"></td>
 				<td>게</td>
 
-				<td><input type="checkbox" name="food" value="오징어"></td>
+				<td><input type="checkbox" name="m_allergy" value="오징어"></td>
 				<td>오징어</td>
 
-				<td><input type="checkbox" name="food" value="고등어"></td>
+				<td><input type="checkbox" name="m_allergy" value="고등어"></td>
 				<td>고등어</td>
 
-				<td><input type="checkbox" name="food" value="조개류"></td>
+				<td><input type="checkbox" name="m_allergy" value="조개류"></td>
 				<td>조개류</td>
 
-				<td><input type="checkbox" name="food" value="우유"></td>
+				<td><input type="checkbox" name="m_allergy" value="우유"></td>
 				<td>우유</td>
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="땅콩"></td>
+				<td><input type="checkbox" name="m_allergy" value="땅콩"></td>
 				<td>땅콩</td>
 
-				<td><input type="checkbox" name="food" value="호두"></td>
+				<td><input type="checkbox" name="m_allergy" value="호두"></td>
 				<td>호두</td>
 
-				<td><input type="checkbox" name="food" value="잣"></td>
+				<td><input type="checkbox" name="m_allergy" value="잣"></td>
 				<td>잣</td>
 
-				<td><input type="checkbox" name="food" value="대두"></td>
+				<td><input type="checkbox" name="m_allergy" value="대두"></td>
 				<td>대두</td>
 
-				<td><input type="checkbox" name="food" value="복숭아"></td>
+				<td><input type="checkbox" name="m_allergy" value="복숭아"></td>
 				<td>복숭아</td>
 			</tr>
 
 			<tr>
-				<td><input type="checkbox" name="food" value="토마토"></td>
+				<td><input type="checkbox" name="m_allergy" value="토마토"></td>
 				<td>토마토</td>
 
-				<td><input type="checkbox" name="food" value="밀"></td>
+				<td><input type="checkbox" name="m_allergy" value="밀"></td>
 				<td>밀</td>
 
-				<td><input type="checkbox" name="food" value="메밀"></td>
+				<td><input type="checkbox" name="m_allergy" value="메밀"></td>
 				<td>메밀</td>
 
-				<td><input type="checkbox" name="food" value="이황산류"></td>
+				<td><input type="checkbox" name="m_allergy" value="이황산류"></td>
 				<td>이황산류</td>
 			</tr>
 

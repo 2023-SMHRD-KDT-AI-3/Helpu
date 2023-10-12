@@ -23,29 +23,28 @@ public class JoinService implements Command {
 			String gender = request.getParameter("gender");
 			String mem_name = request.getParameter("mem_name");
 			String address = request.getParameter("m_address");
-
-			System.out.println(address);
+			
+			System.out.println("!");
+			// 초기화 선언
+			String allergy = "";
 			
 			// 체크박스 확인
-			String allergy = "";
 			for (int i = 0; i < m_allergy.length; i++) {
 				allergy += m_allergy[i] + ",";
 			}
-
+			
+			System.out.println(allergy);
 			// DB 전달
-
 			// 회원가입에 필요한 정보 가져오기.
 			memberDTO m = new memberDTO(id, pw, allergy, birthdate, phone_number, gender, address, mem_name);
 			memberDAO dao = new memberDAO();
-			System.out.println(m);
-			System.out.println(m.getId());
 			int result  = dao.join(m);
-			if (result  == 1) {
-				url = "gostart.do";
-			} else {
-				url = "gojoin.do";
-			}
+		
+			url = "gostart.do";
+		
+		
 		} catch (Exception e) {
+			url = "gojoin.do";
 			e.printStackTrace();
 		}
 

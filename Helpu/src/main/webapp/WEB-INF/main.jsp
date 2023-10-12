@@ -62,7 +62,7 @@
 						<li><input type="radio" name="allergy" value="게"><span>게</span></li>
 						<li><input type="radio" name="allergy" value="오징어"><span>오징어</span></li>
 						<li><input type="radio" name="allergy" value="고등어"><span>고등어</span></li>
-						<li><input type="radio" name="allergy" value="조개류"><span>조개류</span></li>
+						<li><input type="radio" name="allergy" value="조개,굴"><span>조개류</span></li>
 						<li><input type="radio" name="allergy" value="우유"><span>우유</span></li>
 						<li><input type="radio" name="allergy" value="땅콩"><span>땅콩</span></li>
 						<li><input type="radio" name="allergy" value="호두"><span>호두</span></li>
