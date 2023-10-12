@@ -8,6 +8,48 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<script type="text/javascript">
+    function search(){
+       var search=$("#search").val(); 
+       alert(search);
+       $.ajax({
+    	   url : "SearchService.do",
+    	   type : "post",
+    	   data : {"search": search},
+    	   dataType : "json",
+    	   success : searchList,
+    	   error:function(){ alert("error"); }    	   
+       });
+    }
+    function searchList(data){
+    	console.log(data);
+    	var html="";
+    	$.each(data, function(index, obj){
+    		html+="<div>";
+    		html+="<div class='textImg'>"+obj.pro_img+"</div>";
+    		html+="<div class='Info'>";
+    		html+="<p>알레르기 유발 성분 N개 포함"</p>";
+    		html+="<p>"+obj.pro_maker"</p>";
+    		html+="<p>"+obj.pro_name+"</p>";
+    		html+="<p>"+obj.pro_price+"</p>";
+    		html+="<div class='fvrbtnBox'>";
+    		html+="<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
+    		html+="</div>";    			
+    		html+="<div class='bskbtnBox'>";
+    		html+="<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+    		html+="</div>";
+            html+="<hr />";
+    		html+="<div class='tag'>";
+    		html+="<span>#새우</span> <span>#밀</span>";
+    		html+="</div>";
+    		html+="</div>";
+    		html+="</div>";
+    	});
+    	//alert(data);
+    	console.log(html);
+       $(".schContents").html(html);
+    }
+</script>
 </head>
 <body>
 	<div id="wrap">
@@ -17,8 +59,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a> <span>|</span>
-						<a href="gobasket.do">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p>000님 환영합니다!</p>
@@ -35,7 +77,9 @@
 							type="search" id="search" placeholder="Search" />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
-							<button type="submit" class = "schIcon" style='cursor:pointer;'><span class="material-symbols-outlined">search</span></button>
+							<button type="submit" class="schIcon" style='cursor: pointer;'>
+								<span class="material-symbols-outlined">search</span>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -91,11 +135,17 @@
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
 						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" value="test" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+							<button type="submit" class="fvrBtn" value="test"
+								style='cursor: pointer;'>
+								<span class="material-symbols-outlined"> favorite </span>
+							</button>
 						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined">shopping_cart_checkout
+								</span>
+							</button>
 						</div>
 						<!-- 구분선 -->
 						<hr />
@@ -113,11 +163,16 @@
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
 						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined"> favorite </span>
+							</button>
 						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined">shopping_cart_checkout
+								</span>
+							</button>
 						</div>
 						<!-- 구분선 -->
 						<hr />
@@ -135,11 +190,16 @@
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
 						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined"> favorite </span>
+							</button>
 						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined">shopping_cart_checkout
+								</span>
+							</button>
 						</div>
 						<!-- 구분선 -->
 						<hr />
@@ -157,11 +217,16 @@
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
 						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor:pointer;'><span class="material-symbols-outlined"> favorite </span></button>
+							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined"> favorite </span>
+							</button>
 						</div>
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor:pointer;'><span class="material-symbols-outlined">shopping_cart_checkout </span></button>
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+								<span class="material-symbols-outlined">shopping_cart_checkout
+								</span>
+							</button>
 						</div>
 						<!-- 구분선 -->
 						<hr />
@@ -172,7 +237,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div id="footer"></div>
 
 

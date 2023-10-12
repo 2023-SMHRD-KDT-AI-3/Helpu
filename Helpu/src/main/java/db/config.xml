@@ -20,5 +20,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="model/joinMapper.xml" />
+		<mapper resource="model/searchMapper.xml" />
 	</mappers>
 </configuration>
