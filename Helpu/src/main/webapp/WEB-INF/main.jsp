@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +17,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a> <span>|</span>
-						<a href="gobasket.do">장바구니</a><br>
+						<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
+						<a href="#">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p>000님 환영합니다!</p>
@@ -33,7 +34,7 @@
 						<span class="icon"><i class="fa fa-search"></i></span> <input
 							type="search" id="search" placeholder="Search" />
 						<!-- 검색 아이콘 -->
-						<a href="#"><span class="material-symbols-outlined" id="search_icon">search</span></a>
+						<a href="#"><span class="material-symbols-outlined">search</span></a>
 					</div>
 				</div>
 			</div>
@@ -54,35 +55,36 @@
 					href="#">알레르기 추가 체크 서비스</a>
 				<form action="#" method="post">
 					<ul class="checkboxMenu">
-						<li><input type="radio" name="allergy" value="난류"><span>난류(가금류)</span></li>
-						<li><input type="radio" name="allergy" value="소고기"><span>소고기</span></li>
-						<li><input type="radio" name="allergy" value="돼지고기"><span>돼지고기</span></li>
-						<li><input type="radio" name="allergy" value="닭고기"><span>닭고기</span></li>
-						<li><input type="radio" name="allergy" value="새우"><span>새우</span></li>
-						<li><input type="radio" name="allergy" value="게"><span>게</span></li>
-						<li><input type="radio" name="allergy" value="오징어"><span>오징어</span></li>
-						<li><input type="radio" name="allergy" value="고등어"><span>고등어</span></li>
-						<li><input type="radio" name="allergy" value="조개,굴"><span>조개류</span></li>
-						<li><input type="radio" name="allergy" value="우유"><span>우유</span></li>
-						<li><input type="radio" name="allergy" value="땅콩"><span>땅콩</span></li>
-						<li><input type="radio" name="allergy" value="호두"><span>호두</span></li>
-						<li><input type="radio" name="allergy" value="잣"><span>잣</span></li>
-						<li><input type="radio" name="allergy" value="대두"><span>대두</span></li>
-						<li><input type="radio" name="allergy" value="복숭아"><span>복숭아</span></li>
-						<li><input type="radio" name="allergy" value="토마토"><span>토마토</span></li>
-						<li><input type="radio" name="allergy" value="밀"><span>밀</span></li>
-						<li><input type="radio" name="allergy" value="메밀"><span>메밀</span></li>
-						<li><input type="radio" name="allergy" value="아황산류"><span>아황산류</span></li>
+						<li><input type="radio" name="allergy" value="eggs"><span>난류(가금류)</span></li>
+						<li><input type="radio" name="allergy" value="beef"><span>소고기</span></li>
+						<li><input type="radio" name="allergy" value="pork"><span>돼지고기</span></li>
+						<li><input type="radio" name="allergy" value="chicken"><span>닭고기</span></li>
+						<li><input type="radio" name="allergy" value="shrimp"><span>새우</span></li>
+						<li><input type="radio" name="allergy" value="crab"><span>게</span></li>
+						<li><input type="radio" name="allergy" value="squid"><span>오징어</span></li>
+						<li><input type="radio" name="allergy" value="blueFish"><span>고등어</span></li>
+						<li><input type="radio" name="allergy" value="clam"><span>조개류</span></li>
+						<li><input type="radio" name="allergy" value="milk"><span>우유</span></li>
+						<li><input type="radio" name="allergy" value="peanut"><span>땅콩</span></li>
+						<li><input type="radio" name="allergy" value="walnut"><span>호두</span></li>
+						<li><input type="radio" name="allergy" value="pineNut"><span>잣</span></li>
+						<li><input type="radio" name="allergy" value="daedu"><span>대두</span></li>
+						<li><input type="radio" name="allergy" value="peach"><span>복숭아</span></li>
+						<li><input type="radio" name="allergy" value="tomato"><span>토마토</span></li>
+						<li><input type="radio" name="allergy" value="wheat"><span>밀</span></li>
+						<li><input type="radio" name="allergy" value="buckwheat"><span>메밀</span></li>
+						<li><input type="radio" name="allergy" value="acids"><span>아황산류</span></li>
 						<li><input type="submit" name="allergy" value="적용하기"></li>
 					</ul>
 				</form>
 			</div>
+			<!-- 검색 시 출력되는 제품 단락 -->
 			<div class="schContents">
-				<div class="product">
+				<div class="product product1">
 					<div class="textImg"></div>
 					<div class="Info">
 						<p>알레르기 유발 성분 n개 포함</p>
-						<p>${list}</p>
+						<p>농심</p>
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
@@ -95,37 +97,67 @@
 							<span>#새우</span> <span>#밀</span>
 						</div>
 					</div>
-
-
 				</div>
-
+				<div class="product product2">
+					<div class="textImg"></div>
+					<div class="Info">
+						<p>알레르기 유발 성분 n개 포함</p>
+						<p>농심</p>
+						<p>새우깡</p>
+						<p>1,400 원</p>
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<!-- 구분선 -->
+						<hr />
+						<div class="tag">
+							<span>#새우</span> <span>#밀</span>
+						</div>
+					</div>
+				</div>
+				<div class="product product3">
+					<div class="textImg"></div>
+					<div class="Info">
+						<p>알레르기 유발 성분 n개 포함</p>
+						<p>농심</p>
+						<p>새우깡</p>
+						<p>1,400 원</p>
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<!-- 구분선 -->
+						<hr />
+						<div class="tag">
+							<span>#새우</span> <span>#밀</span>
+						</div>
+					</div>
+				</div>
+				<div class="product product4">
+					<div class="textImg"></div>
+					<div class="Info">
+						<p>알레르기 유발 성분 n개 포함</p>
+						<p>농심</p>
+						<p>새우깡</p>
+						<p>1,400 원</p>
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined"> favorite </span></a>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<a href=""><span class="material-symbols-outlined">shopping_cart_checkout </span></a>
+						<!-- 구분선 -->
+						<hr />
+						<div class="tag">
+							<span>#새우</span> <span>#밀</span>
+						</div>
+					</div>
+				</div>
 			</div>
-
-
-
-	
-
 		</div>
+		
 		<div id="footer"></div>
 
 
 	</div>
-	
-	
-	<script type="text/javascript">
-	
-	let list = ${list};
-	let search = document.getElementById("search_icon");
-	search.addEventListener("click",function(){
-
-
-
-
-	})
-	
-	</script>
-	
-	
-	
 </body>
 </html>
