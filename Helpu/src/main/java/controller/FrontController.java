@@ -128,8 +128,10 @@ public class FrontController extends HttpServlet {
 //				response.sendRedirect(url);
 //			} else {
 //				// url이 .do가 아니면 -> forward
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		if (url != null) {
+			RequestDispatcher rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
+		}
 //			}
 //		}
 

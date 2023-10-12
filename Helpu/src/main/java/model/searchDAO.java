@@ -15,10 +15,10 @@ public class searchDAO {
 	// 게시글 전체조회 메소드 생성
 	
 	// ArrayList 미리 생성
-	ArrayList<searchDTO> list = new ArrayList<searchDTO>();
+	ArrayList<productDTO> list = new ArrayList<productDTO>();
 	
 	// ArrayList<searchDTO> 메소드 생성
-	public ArrayList<searchDTO> allList(String search) {
+	public ArrayList<productDTO> allList(String search) {
 	//									 가지고 가는 값
 		
 		// 항상있음 / 이유 : 나도일단 모름.
