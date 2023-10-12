@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import goPage.gofavorites;
 import goPage.gohistory;
-import goPage.gojoin1;
+import goPage.gojoin;
 import goPage.gologin;
 import goPage.gomain;
 import goPage.gomypage;
@@ -62,9 +62,9 @@ public class FrontController extends HttpServlet {
 			url = loginservice.execute(request, response);
 
 			// 회원가입 페이지1 이동
-		} else if (result.equals("gojoin1.do")) {
-			gojoin1 gojoin1 = new gojoin1();
-			url = gojoin1.execute(request, response);
+		} else if (result.equals("gojoin.do")) {
+			gojoin gojoin = new gojoin();
+			url = gojoin.execute(request, response);
 
 			// 회원가입 기능 수행
 		} else if(result.equals("JoinService.do")) {
@@ -105,19 +105,25 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("logout.do")) {
 			logoutService logout = new logoutService();
 			url = logout.execute(request, response);
+
+			//
+		} else if(result.equals("FillteringService.do")) {
+			FillteringService filltering = new FillteringService();
+			url = filltering.execute(request, response);
+			
 		}
 
 		// 각각의 기능에서 받은 url로 이동
-		if (url != null) {
-			if (url.indexOf(".do") != -1) {
-				// url이 .do -> response.sendRedirect
-				response.sendRedirect(url);
-			} else {
-				// url이 .do가 아니면 -> forward
+//		if (url != null) {
+//			if (url.indexOf(".do") != -1) {
+//				// url이 .do -> response.sendRedirect
+//				response.sendRedirect(url);
+//			} else {
+//				// url이 .do가 아니면 -> forward
 				RequestDispatcher rd = request.getRequestDispatcher(url);
 				rd.forward(request, response);
-			}
-		}
+//			}
+//		}
 
 	}
 }

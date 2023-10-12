@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +28,7 @@
 					<img alt="로고"
 						src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
 					<!-- 검색 박스 -->
+<<<<<<< HEAD
 					<form action="#" method="post">
 						<div class="schBar">
 							<!-- 검색창 -->
@@ -38,6 +38,15 @@
 							<a href="#"><span class="material-symbols-outlined">search</span></a>
 						</div>
 					</form>
+=======
+					<div class="schBar">
+						<!-- 검색창 -->
+						<span class="icon"><i class="fa fa-search"></i></span> <input
+							type="search" id="search" placeholder="Search" />
+						<!-- 검색 아이콘 -->
+						<a href="#"><span class="material-symbols-outlined" id="search_icon">search</span></a>
+					</div>
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-AI-3/Helpu.git
 				</div>
 			</div>
 			<!-- 메뉴바 -->
@@ -85,7 +94,7 @@
 					<div class="textImg"></div>
 					<div class="Info">
 						<p>알레르기 유발 성분 n개 포함</p>
-						<p>농심</p>
+						<p>${list}</p>
 						<p>새우깡</p>
 						<p>1,400 원</p>
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
@@ -106,12 +115,29 @@
 
 
 
-
+	
 
 		</div>
 		<div id="footer"></div>
 
 
 	</div>
+	
+	
+	<script type="text/javascript">
+	
+	let list = ${list};
+	let search = document.getElementById("search_icon");
+	search.addEventListener("click",function(){
+
+
+
+
+	})
+	
+	</script>
+	
+	
+	
 </body>
 </html>
