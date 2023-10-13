@@ -108,10 +108,6 @@ public class FrontController extends HttpServlet {
 			url = logout.execute(request, response);
 
 			//
-		} else if (result.equals("FillteringService.do")) {
-			FillteringService filltering = new FillteringService();
-			url = filltering.execute(request, response);
-
 		} else if (result.equals("gobasket.do")) {
 			gobasket gobasket = new gobasket();
 			url = gobasket.execute(request, response);

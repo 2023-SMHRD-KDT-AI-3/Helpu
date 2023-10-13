@@ -25,6 +25,6 @@ public class productDTO {
 	private String pro_ingredients;
 	private int pro_carbohydrate;
 	private int pro_cnt;
-	private ArrayList<String> pro_haveIngredients = new ArrayList<String>();
-	private ArrayList<String> pro_m_haveIngredients = new ArrayList<String>();
+	private String pro_haveIngredients;
+	private String pro_m_haveIngredients;
 }
