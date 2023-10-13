@@ -26,15 +26,22 @@ public class searchService implements Command {
 
 			// 데이터 수집
 			String search = request.getParameter("search");
-			System.out.println(search); 
+			 
 			// 객체 생성
 			searchDAO dao = new searchDAO();
 			
 			// sql문 받아오는 작업
 			ArrayList<productDTO> list= dao.allList(search);
+			
+			// json 불러오기 작업
 			Gson g=new Gson();
+			
+			// list를 String json 에 담아준다.
 			String json=g.toJson(list);
-			//request.setAttribute("list", list);
+			
+			// request.setAttribute("list", list);
+			
+			// response(보내준다) 
 			response.setContentType("text/json;charset=utf-8");
 			PrintWriter out=response.getWriter();
 			out.println(json);
