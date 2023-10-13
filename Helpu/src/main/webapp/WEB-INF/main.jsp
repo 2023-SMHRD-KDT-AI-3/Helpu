@@ -33,28 +33,28 @@
 		console.log(data);
 		var html = "";
 		$.each(	data,function(index, obj) {
-								html += "<a href='productService.do?num="+obj.pro_code+"'>";				
-								html += "<div class='product product"+index+"'>";
-								html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
-										+ "'></div>";
-								html += "<div class='Info'>";
-								html += "<p>알레르기 유발 성분 "+obj.pro_cnt+" 개 포함</p>";
-								html += "<p>" + obj.pro_maker + "</p>";
-								html += "<p>" + obj.pro_name + "</p>";
-								html += "<p>" + obj.pro_price + "원</p>";
-								html += "<div class='fvrbtnBox'>";
-								html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
-								html += "</div>";
-								html += "<div class='bskbtnBox'>";
-								html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
-								html += "</div>";
-								html += "<hr />";
-								html += "<div class='tag'>";
-								html += "<span>#새우</span> <span>#밀</span>";
-								html += "</div>";
-								html += "</div>";
-								html += "</div>";
-								html += "</a>";
+							html += "<a href='goproduct.do'>";				
+							html += "<div class='product product"+index+"'>";
+							html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
+									+ "'></div>";
+							html += "<div class='Info'>";
+							html += "<p>알레르기 유발 성분 "+obj.pro_cnt+" 개 포함</p>";
+							html += "<p>" + obj.pro_maker + "</p>";
+							html += "<p>" + obj.pro_name + "</p>";
+							html += "<p>" + obj.pro_price + "원</p>";
+							html += "<div class='fvrbtnBox'>";
+							html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
+							html += "</div>";
+							html += "<div class='bskbtnBox'>";
+							html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+							html += "</div>";
+							html += "<hr />";
+							html += "<div class='tag'>";
+							html += "<span>#새우</span> <span>#밀</span>";
+							html += "</div>";
+							html += "</div>";
+							html += "</div>";
+							html += "</a>";
 						});
 		//alert(data);
 		console.log(html);
@@ -147,116 +147,290 @@
 			</div>
 			<!-- 검색 시 출력되는 제품 단락 -->
 			<div class="schContents">
-				<!-- <!-- <div class="product product1">
-					<div class="textImg"></div>
-					<div class="Info">
-						<p>알레르기 유발 성분 n개 포함</p>
-						<p>농심</p>
-						<p>새우깡</p>
-						<p>1,400 원</p>
-						클릭 시 즐겨찾기에 추가해주는 버튼
-						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" value="test"
-								style='cursor: pointer;'>
-								<span class="material-symbols-outlined"> favorite </span>
-							</button>
+			<!-- 제품 전체 출력 영역 -->
+				<div class="productbox">
+				<!-- 제품 1번 단락 -->
+					<div class="innerproBox innerproBox1">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
 						</div>
-						클릭 시 장바구니에 추가해주는 버튼
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined">shopping_cart_checkout
-								</span>
-							</button>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
 						</div>
-						구분선
-						<hr />
-						<div class="tag">
-							<span>#새우</span> <span>#밀</span>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 2번 단락 -->
+					<div class="innerproBox innerproBox2">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 3번 단락 -->
+					<div class="innerproBox innerproBox3">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 4번 단락 -->
+					<div class="innerproBox innerproBox4">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 5번 단락 -->
+					<div class="innerproBox innerproBox5">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 6번 단락 -->
+					<div class="innerproBox innerproBox6">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					<!-- 제품 7번 단락 -->
+					<div class="innerproBox innerproBox7">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- 제품 8번 단락 -->
+					<div class="innerproBox innerproBox8">
+						<div class="product">
+							<div class="textImg">
+							
+							</div>
+								<div class="Info">
+									<p>알레르기 유발 성분 n개 포함</p>
+									<p>농심</p>
+									<p>새우깡</p>
+									<p>1,400 원</p>
+								</div>
+						</div>
+							
+						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
+						<div class="fvrbtnBox">
+							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
+							<span class="material-symbols-outlined"> favorite </span></button>	
+						</div>
+						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
+						<div class="bskbtnBox">
+							<button type="submit" class="bskBtn" style='cursor: pointer;'>
+							<span class="material-symbols-outlined">shopping_cart_checkout</span></button>
+						</div>
+									
+						<!-- 구분선 -->
+						<div class = "tag">
+							<hr />
+							<div class="innerTag">
+								<span>#새우</span><span>#밀</span>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="product product2">
-					<div class="textImg"></div>
-					<div class="Info">
-						<p>알레르기 유발 성분 n개 포함</p>
-						<p>농심</p>
-						<p>새우깡</p>
-						<p>1,400 원</p>
-						클릭 시 즐겨찾기에 추가해주는 버튼
-						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined"> favorite </span>
-							</button>
-						</div>
-						클릭 시 장바구니에 추가해주는 버튼
-						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined">shopping_cart_checkout
-								</span>
-							</button>
-						</div>
-						구분선
-						<hr />
-						<div class="tag">
-							<span>#새우</span> <span>#밀</span>
-						</div>
-					</div>
-				</div>
-				<div class="product product3">
-					<div class="textImg"></div>
-					<div class="Info">
-						<p>알레르기 유발 성분 n개 포함</p>
-						<p>농심</p>
-						<p>새우깡</p>
-						<p>1,400 원</p>
-						클릭 시 즐겨찾기에 추가해주는 버튼
-						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined"> favorite </span>
-							</button>
-						</div>
-						클릭 시 장바구니에 추가해주는 버튼
-						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined">shopping_cart_checkout
-								</span>
-							</button>
-						</div>
-						구분선
-						<hr />
-						<div class="tag">
-							<span>#새우</span> <span>#밀</span>
-						</div>
-					</div>
-				</div>
-				<div class="product product4">
-					<div class="textImg"></div>
-					<div class="Info">
-						<p>알레르기 유발 성분 n개 포함</p>
-						<p>농심</p>
-						<p>새우깡</p>
-						<p>1,400 원</p>
-						클릭 시 즐겨찾기에 추가해주는 버튼
-						<div class="fvrbtnBox">
-							<button type="submit" class="fvrBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined"> favorite </span>
-							</button>
-						</div>
-						클릭 시 장바구니에 추가해주는 버튼
-						<div class="bskbtnBox">
-							<button type="submit" class="bskBtn" style='cursor: pointer;'>
-								<span class="material-symbols-outlined">shopping_cart_checkout
-								</span>
-							</button>
-						</div>
-						구분선
-						<hr />
-						<div class="tag">
-							<span>#새우</span> <span>#밀</span>
-						</div>
-					</div>
-				</div> -->
+				<!-- 제품 단락 끝 -->
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			<!-- 배너 영역 -->
 		<div id="banner">
@@ -286,7 +460,18 @@
 			
 		</div>
 	
+	
+	
+	
+	
+	
 		<!-- 팝업 창 -->
+		
+		<div class="background">
+			<div class="window">
+				<div class="popup"></div>
+			</div>
+		</div>
 		
 
 	</div>
