@@ -27,13 +27,4 @@
 		update tb_member set pw=#{pw}, m_allergy=#{m_allergy}, phone_number=#{phone_number}, address=#{address} where id=#{id};
 	</update>
 	
-	<!-- DB의 모든 제품을 가져오는 sql문장 -->
-	<select id="filltering" resultType="model.productDTO">
-		select * from tb_product
-	</select>
-	
-	<!-- DB의 모든 알레르기성분을 가져오는 sql문장 -->
-	<select id="allergy" resultType="model.allergyDTO">
-		select * from tb_allergy
-	</select>
 </mapper>

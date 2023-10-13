@@ -33,14 +33,15 @@
 		console.log(data);
 		var html = "";
 		$.each(	data,function(index, obj) {
+							html += "<a href='goproduct.do'>";				
 							html += "<div class='product product"+index+"'>";
 							html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
 									+ "'></div>";
 							html += "<div class='Info'>";
-							html += "<p>알레르기 유발 성분"+obj.pro_cnt+" N개 포함</p>";
+							html += "<p>알레르기 유발 성분 "+obj.pro_cnt+" 개 포함</p>";
 							html += "<p>" + obj.pro_maker + "</p>";
 							html += "<p>" + obj.pro_name + "</p>";
-							html += "<p>" + obj.pro_price + "</p>";
+							html += "<p>" + obj.pro_price + "원</p>";
 							html += "<div class='fvrbtnBox'>";
 							html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
 							html += "</div>";
@@ -53,6 +54,7 @@
 							html += "</div>";
 							html += "</div>";
 							html += "</div>";
+							html += "</a>";
 						});
 		//alert(data);
 		console.log(html);
@@ -72,7 +74,7 @@
 						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
-					<p>000님 환영합니다!</p>
+					<p>${info.mem_name}님 환영합니다!</p>
 				</div>
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
@@ -258,7 +260,7 @@
 			
 			<!-- 배너 영역 -->
 		<div id="banner">
-			<a href="#"><p>마이페이지</p></a> <a href="#"><p>즐겨찾기</p></a> <a href="#"><p>장바구니</p></a>
+			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do"><p>장바구니</p></a>
 			<div class="recent">
 				<a href="#"><p>최근 본 상품</p></a>
 				<ul class="recentbox">

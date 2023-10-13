@@ -11,7 +11,7 @@
     <body>
         <form action="LoginService.do" method="post">
             <div class = "loginBox">
-                <img src="./img/logo.png" alt="로고">
+                <img src="./imgs/logo.png" alt="로고">
                 	<div class = "dataBox">
 		                <p>아이디</p>
 		                <input type="text" name="id" onfocus="this.value='';" value="아이디를 입력해주세요.">

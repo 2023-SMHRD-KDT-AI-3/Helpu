@@ -9,7 +9,7 @@ public class goproduct implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "WEB-INF/goods.jsp";
+		return "WEB-INF/goproduct.jsp";
 	}
 
 }
