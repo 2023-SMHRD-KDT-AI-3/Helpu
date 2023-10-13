@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 
 public class productDTO {
 
+	private int pro_code;
 	private String pro_name;
 	private String pro_maker;
 	private String pro_img;

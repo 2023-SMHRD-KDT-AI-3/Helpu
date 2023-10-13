@@ -115,6 +115,10 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("SearchService.do")) {
 			searchService gosearch = new searchService();
 			url = gosearch.execute(request, response);
+			// 상품데이터 가져오기
+		} else if (result.equals("productService.do")) {
+			productService productservice = new productService();
+			url = productservice.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동

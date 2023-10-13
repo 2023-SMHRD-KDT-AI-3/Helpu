@@ -27,12 +27,26 @@ public class productDAO {
 				
 				// 닫기 // 나도모름		
 
-				return list;
+		return list;	
+	}
+	
+	public productDTO product(String pro_code) {
 		
+		productDTO result = new productDTO();
 		
+		// 항상있음 / 이유 : 나도일단 모름.
+		SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
+		// 항상있음 / 이유 : 나도일단 모름.
+		SqlSession sqlSession = sqlSessionFactory.openSession(true); 
 		
+		// 가져온 제품 코드로 제품 관련 정보 가져오기
+		result = (productDTO) sqlSession.selectOne("product",pro_code);
 		
+		// 닫기 // 나도모름		
+		sqlSession.close();
+		
+	return result;
 	}
 
 		

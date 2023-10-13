@@ -11,6 +11,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script>
+	/*
 	new Swiper('.swiper-container', {
 
 		slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
@@ -32,6 +33,7 @@
 			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
 		},
 	});
+	*/
 </script>
 
 
@@ -54,7 +56,7 @@
 				<div id="schBox">
 					<!-- 로고 -->
 					<img alt="로고"
-						src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
+						src="imgs/logo.png">
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
@@ -85,16 +87,16 @@
 			<div id="productInfo">
 				<div class="proImg">
 					<img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+						src= ${product.pro_img} >
 				</div>
 				<div class="proMoreInfo">
 					<div class="moreInfo">
-						<p class="includedAll">알레르기 유발 성분 2개 포함</p>
-						<p class="company">제조회사</p>
+						<p class="includedAll">알레르기 유발 성분 개 포함</p>
+						<p class="company">${product.pro_maker}</p>
 						<p>
-							<span class="proSubject">새우깡</span><span class="weight">190g</span>
+							<span class="proSubject">${product.pro_name}</span><span class="weight">${product.pro_gramper}</span>
 						</p>
-						<p class="proPrice">1,400 원</p>
+						<p class="proPrice">${product.pro_price} 원</p>
 					</div>
 					<div class="productBtn">
 						<a href="#"><span class="proBtn">장바구니</span></a> <a href="#"><span
