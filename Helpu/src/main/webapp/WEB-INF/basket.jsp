@@ -3,130 +3,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 10px;
-	box-sizing: border-box;
-}
-
-hr {
-	padding: 0px;
-}
-
-.basket {
-	display: flex;
-	justify-content: center;
-}
-
-li {
-	list-style-type: none;
-}
-
-.container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 10px;
-	border: 2px solid #d7d7d7;
-	margin: 15px;
-}
-
-.container>p {
-	flex-basis: 70%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-decoration-line: none;
-	color: black;
-}
-
-.payment-container {
-	display: flex;
-	align-items: center;
-	border-radius: 10px;
-	border: 2px solid #d7d7d7;
-	margin: 15px;
-	justify-content: center;
-}
-
-.payment-container>div {
-	flex-basis: 70%;
-	align-items: center;
-	text-decoration-line: none;
-	color: black;
-	justify-content: center;
-	text-align: center;
-}
-
-.purchase_count {
-	font-size: 15px;
-}
-
-.product_img {
-	width: 100px;
-	height: 100px;
-	font-size: 15px;
-	padding: 15px;
-}
-
-.product_name {
-	font-size: 15px;
-	padding: 15px;
-}
-
-.payment {
-	font-size: 15px;
-	padding: 15px;
-}
-
-.pagination-container {
-	display: flex;
-	justify-content: center;
-}
-
-.buyNow {
-	font-size: 15px;
-	padding: 15px;
-}
-
-#btn1 {
-	width: 90px;
-	background-color: white;
-	margin: 5px;
-}
-
-#btn2 {
-	width: 90px;
-	background-color: white;
-	margin: 5px;
-}
-
-#btn3 {
-	background-color: white;
-	width: 200px;
-	font-size: 20px;
-	color: red;
-	border-color: red;
-}
-
-#btn4 {
-	background-color: red;
-	width: 200px;
-	font-size: 20px;
-	color: white;
-	border: none;
-}
-</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/basket.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
+
+
+	<div id="wrap">
+		<!-- 헤더 부분 -->
+		<div id="header">
+			<div id="innerHeader">
+				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
+				<div id="topBtn">
+					<div id="innerTopbtn">
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+					</div>
+					<!-- 사용자 방문 환영 글 -->
+					<p>000님 환영합니다!</p>
+				</div>
+				<!-- 로고 및 검색창 -->
+				<div id="schBox">
+					<!-- 로고 -->
+					<img alt="로고"
+						src="imgs/logo.png">
+					<!-- 검색 박스 -->
+					<div class="schBar">
+						<!-- 검색창 -->
+						<span class="icon"><i class="fa fa-search"></i></span> <input
+							type="search" id="search" placeholder="Search" />
+						<!-- 검색 돋보기 아이콘 -->
+						<div class="iconBox">
+							<button type="button" onclick="search()" class="schIcon"
+								style='cursor: pointer;'>
+								<span class="material-symbols-outlined">search</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 메뉴바 -->
+			<div id="nav">
+				<ul id="gnb">
+					<li><a href="#">냉장제품</a></li>
+					<li><a href="#">냉동제품</a></li>
+					<li><a href="#">즉석조리제품</a></li>
+					<li><a href="#">기타</a></li>
+				</ul>
+			</div>
+		</div>
+
+	<div class = "bskWrap">
 	<form action="#" method="post">
 		<div class="basket">
 			<h2>장바구니</h2>
 
 		</div>
+		<!-- 전체 선택 및 해제 기능 -->
 		<h4>
 			<input type='checkbox' name='select' value='selectall'
 				onclick='selectAll(this)' /> <b>전체선택/해제</b>
@@ -139,21 +76,27 @@ li {
 					checkbox.checked = selectAll.checked;
 				})
 			}</script>
-			| 선택삭제
+			
 		</h4>
 		<hr>
 
 		<!-- 장바구니 리스트 -->
-		<ul>
-			<li>
 				<div class="container">
-					<p>
+					<p class = "proInfo proCheckbox">
 						<input type="checkbox" name="select" value="select">
 					</p>
-					<img class="product_img" src="" alt="제품이미지">
-					<p class="product_name">제품이름</p>
-					<p class="purchase_count">숫자</p>
-					<p class="payment">금액</p>
+						<img class="productImg" src="imgs/순수본0.jpg" alt="제품이미지">
+					<!-- 제품명 클릭 시 상품 페이지로 이동 처리 : 빼도 됨 -->
+					<p class="proInfo productName">
+						<a href= "#" id = "proName">순수본 제품01</a>
+					</p>
+					<div class = "proInfo cntbox">
+						<button class = "minus">-</button>
+						<span>1</span>
+						<button class = "plus">+</button>
+					</div>
+					<p class="proInfo payment">1,200 원</p>
+					<!--  
 					<div class="buyNow">
 						<p>
 							<button id="btn1">바로 구매</button>
@@ -162,33 +105,32 @@ li {
 							<button id="btn2">즐겨찾기</button>
 							<script src=""></script>
 						</p>
+					-->
 					</div>
-				</div> <!-- 결제 예정 금액 -->
+				 <!-- 결제 예정 금액 -->
 				<div class="payment-container">
 
 					<div class="pa">
 						<span>상품 금액</span>
 						<div>
-							<p class="won1">원</p>
+							<p class="won1">1200원</p>
 						</div>
 					</div>
 					+
 					<div class="delivery">
 						<span>배송비</span>
 						<div>
-							<p class="won2">원</p>
+							<p class="won2">3000원</p>
 						</div>
 					</div>
 					=
 					<div class="total">
 						<span>결제 예정 금액</span>
 						<div>
-							<p class="won3">원</p>
+							<p class="won3">1200원</p>
 						</div>
 					</div>
 				</div>
-			</li>
-		</ul>
 
 
 
@@ -198,11 +140,15 @@ li {
 		<!-- 선택 상품 결제, 전체 상품 결제 -->
 		<div class="pagination-container">
 			<span>
-				<button id="btn3">선택 상품 결제</button> <script src=""></script>
+				<button id="btn3" style='cursor: pointer;'>선택 상품 결제</button> <script src=""></script>
 			</span> <span>
-				<button id="btn4">전체 상품 결제</button> <script src=""></script>
+				<button id="btn4" style='cursor: pointer;'>전체 상품 결제</button> <script src=""></script>
 			</span>
 		</div>
 	</form>
+	</div>
+	
+	</div>
+	
 </body>
 </html>
