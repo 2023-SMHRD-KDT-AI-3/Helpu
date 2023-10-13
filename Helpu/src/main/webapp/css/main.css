@@ -221,13 +221,31 @@ li {
 }
 
 .product3 {
-	top: 350px;
+	margin-top: 300px;
 }
 
 .product4 {
-	top: 350px;
+	margin-top: 300px;
 	left: 500px;
 }
+
+.product5 {
+	top: 635px;
+}
+.product6 {
+	top: 635px;
+	left: 500px;
+}
+
+.product7 {
+	margin-top: 900px;
+}
+
+.product8 {
+	margin-top: 900px;
+	left: 500px;
+}
+
 
 
 
