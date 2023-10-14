@@ -34,7 +34,7 @@
 		console.log(data);
 		var html = "";
 		$.each(	data,function(index, obj) {
-							html += "<a href='goproduct.do'>";				
+							html += "<a href='productService.do?num="+obj.pro_code+"'>";			
 							html += "<div class='product product"+index+"'>";
 							html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
 									+ "'></div>";
@@ -144,7 +144,7 @@
 							<li><input type="checkbox" name="allergy" value="밀"><span>밀</span></li>
 							<li><input type="checkbox" name="allergy" value="메밀"><span>메밀</span></li>
 							<li><input type="checkbox" name="allergy" value="아황산류"><span>아황산류</span></li>
-							<li><input type="submit" id="checkSubmit" name="allergy" value="적용하기" style='cursor: pointer;'></li>
+							<li><button id="checkSubmit" style='cursor: pointer;' onclick="checkbox()">적용하기</button></li>
 						</ul>
 					</form>
 				</div>
@@ -517,6 +517,21 @@
 					$('#modal').hide();
 				});
 			});
+			
+			// 체크박스 회원 알레르기 선택해놓기
+			var checkbox = document.getElementsByName("allergy");
+			let info = "${info.m_allergy}";
+
+			let allergy = info.split(",");
+			let plus_allergy = "";
+			 
+			 for(let i = 0; i<checkbox.length; i++){
+				for(let j = 0; j<allergy.length; j++){
+					if(checkbox[i].getAttribute("value")==allergy[j]){
+						checkbox[i].setAttribute("checked",true);
+					}
+				}
+			 }	 
 		</script>
 	
 </body>
