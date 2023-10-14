@@ -442,3 +442,16 @@ li {
     border: 1px solid red;
     padding: 10px 5px 10px 5px;
 }
+
+/* ----------------------------- 페이징 번호 구역 -----------------------------  */
+#pagination-container {
+	position: relative;
+	width:100%;
+	background-color: pink;
+	display: flex;
+	justify-content: center;
+}
+
+.selected {
+	font-size: 25px;
+}

@@ -12,59 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!-- ajax사용 -->
-<script type="text/javascript">
 
-	function search() {
-		var search = $("#search").val();
-		alert(search);
-		$.ajax({
-			url : "SearchService.do",
-			type : "post",
-			data : {
-				"search" : search
-			},
-			dataType : "json",
-			success : searchList,
-			error : function() {
-				alert("error");
-			}
-		});
-	}
-	function searchList(data) {
-		console.log(data);
-		var html = "";
-		$.each(	data,function(index, obj) {
-							html += "<a href='productService.do?num="+obj.pro_code+"'>";			
-							html += "<div class='product product"+index+"'>";
-							html += "<div class='textImg'><img class= 'innertextImg' src='" + obj.pro_img
-									+ "'></div>";
-							html += "<div class='Info'>";
-							html += "<p>알레르기 유발 성분 "+obj.pro_cnt+" 개 포함</p>";
-							html += "<p>" + obj.pro_maker + "</p>";
-							html += "<p>" + obj.pro_name + "</p>";
-							html += "<p>" + obj.pro_price + "원</p>";
-							html += "<div class='fvrbtnBox'>";
-							html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
-							html += "</div>";
-							html += "<div class='bskbtnBox'>";
-							html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
-							html += "</div>";
-							html += "<hr />";
-							html += "<div class='tag'>";
-							html += "<span>#새우</span> <span>#밀</span>";
-							html += "</div>";
-							html += "</div>";
-							html += "</div>";
-							html += "</a>";
-						});
-		//alert(data);
-		console.log(html);
-		$(".schContents").html(html);
-		
-		
-		
-	}
-</script>
 </head>
 <body>
 	<div id="wrap">
@@ -419,22 +367,12 @@
 							</div>
 						</div>
 					</div>
+				
 				</div>
+				
+				
 				<!-- 제품 단락 끝 -->
 			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 			<!-- 배너 영역 -->
 		<div id="banner">
@@ -496,19 +434,159 @@
 			      <button type="submit" id="nosaveBtn" style='cursor: pointer;'>저장하지 않고 돌아가기</button>
 			      <button type="submit" id="saveBtn" style='cursor: pointer;'>변경 후 저장하기</button>
 		      </div>
-		      
-		      
-		      
-		      
-		      </form>
+		     </form>
 		      
 		      
 		      
 		  </div>
 		</div>
-		<script>
+		
+		
+		<!-- 페이징 번호구역 -->
+		<div id="pagination-container">
+			<div class="prev-button">이전</div>
+			<div class="number-button-wrapper">
+				<span class="number-button">1</span>
+			</div>
+			<div class="next-button">이후</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+	// 검색기능 
+	function search() {
+		var search = $("#search").val();
+		alert(search);
+		$.ajax({
+			url : "SearchService.do",
+			type : "post",
+			data : {
+				"search" : search
+			},
+			dataType : "json",
+			success : pagination,
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+	
+	// 페이징 기능 
+	let currentPage=1; // 초기 페이지 번호
+	let nextButton = document.querySelector('.next-button'); // 이후 페이지 버튼	
+	let getTotalPageCount; // 필요한 페이지 번호 개수
+	let numberButtonWrapper = document.querySelector('.number-button-wrapper'); // 페이지네이션 버튼 wrapper
+
+	// 페이지 나열
+	function pagination(data){
+		
+
+		// 필요한 페이지 번호 수에 맞게 페이지 버튼 구성하기
+		const COUNT_PER_PAGE = 8; // 페이지 당 보여줄 게시물 수
+		let length = data.length;
+		
+		
+		var html = "";
+
+		console.log(currentPage);
+		
+		for(let i = COUNT_PER_PAGE * (currentPage - 1) + 1; i <= COUNT_PER_PAGE * (currentPage - 1) + COUNT_PER_PAGE && i <= length; i++){
+			html += "<div class='innerproBox innerproBox"+(i%COUNT_PER_PAGE)+"'>";
+			html += "<a href='productService.do?num="+data[i-1].pro_code+"'>";
+			html += "<div class='product'>"
+			html += "<div class='textImg'><img class= 'innertextImg' src='"+ "'></div>";
+			html += "<div class='Info'>";
+			html += "<p>알레르기 유발 성분 "+data[i-1].pro_cnt+" 개 포함</p>";
+			html += "<p>" + data[i-1].pro_maker + "</p>";
+			html += "<p>" + data[i-1].pro_name + "</p>";
+			html += "<p>" + data[i-1].pro_price + "원</p></div></div>";
+			html += "</a>";
+			html += "<div class='fvrbtnBox'>";
+			html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
+			html += "</div>";
+			html += "<div class='bskbtnBox'>";
+			html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+			html += "</div>";
+			html += "<div class = 'tag'><hr />";			
+			html += "<div class='innerTag'>";
+			html += "<span>#새우</span> <span>#밀</span>";
+			html += "</div>";
+			html += "</div>";
+			html += "</div>";
+			};
+			console.log("여기까지 옴?");
+			//alert(data);
+			$(".productbox").html(html);
+
+			// 필요한 페이지 번호 개수 구하기
+			getTotalPageCount = Math.ceil(length/COUNT_PER_PAGE);
+						
+			numberButtonWrapper.innerHTML = '';
+			
+			for (let i = 1; i <= getTotalPageCount; i++) {
+				numberButtonWrapper.innerHTML += '<span class="number-button"> '+i+' </span>';
+			}
+			
+			// 첫 페이지에 ('selected')클래스넣기
+			numberButtonWrapper.firstChild.classList.add('selected');
+
+			pageNumberButtons = document.querySelectorAll(".number-button");
+			
+			pageNumberButtons.forEach(function(numberButton){
+				  numberButton.addEventListener('click', function(){
+				    currentPage = numberButton.innerHTML;
+					search();
+				  })
+				});
+			
+			moveSelectedPageHighlight();
+			
+			
+		}
+			
+		// 페이지 이동에 따른 css 클래스 적용	
+		const moveSelectedPageHighlight = function(){
+		  pageNumberButtons.forEach(function(numberButton){
+		    // 'selected'클래스 지우기
+		    if (numberButton.classList.contains('selected')) {
+		      numberButton.classList.remove('selected');
+		    }
+		  });
+		  pageNumberButtons[currentPage - 1].classList.add('selected');
+		};
+
+		
+		// 페이지 번호 버튼 클릭 리스너
+		
+		
+		/**
+		 * 이후 버튼 클릭 리스너
+		 */
+		nextButton.addEventListener('click', function(){
+		  if (currentPage < getTotalPageCount) {
+		    currentPage += 1;
+		    search();
+		    moveSelectedPageHighlight();
+		  }
+		});
+		
+		
+		// 이전 버튼 클릭 리스너
+		const prevButton = document.querySelector('.prev-button'); // 이전 페이지 버튼
+		prevButton.addEventListener('click', function(){
+		  if (currentPage > 1) {
+		    currentPage -= 1;
+			search();
+		    moveSelectedPageHighlight();
+		  }
+		})
 			// 팝업창 코드
-			//팝업창 구현하기
+			// 팝업창 구현하기
 			$(document).ready(function() {
 				$('#editData').click(function() {
 					$('#modal').fadeIn();
