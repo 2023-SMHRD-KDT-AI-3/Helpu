@@ -496,7 +496,7 @@
 		console.log(currentPage);
 		
 		for(let i = COUNT_PER_PAGE * (currentPage - 1) + 1; i <= COUNT_PER_PAGE * (currentPage - 1) + COUNT_PER_PAGE && i <= length; i++){
-			html += "<div class='innerproBox innerproBox"+(i%COUNT_PER_PAGE)+"'>";
+			html += "<div class='innerproBox innerproBox"+((i%COUNT_PER_PAGE)+1)+"'>";
 			html += "<a href='productService.do?num="+data[i-1].pro_code+"'>";
 			html += "<div class='product'>"
 			html += "<div class='textImg'><img class= 'innertextImg' src='"+ "'></div>";
