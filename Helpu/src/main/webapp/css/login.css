@@ -14,11 +14,11 @@
 
 
 .loginBox {
+	padding: 30px 0 80px 0;
 	position: relative;
 	top: 170px;
 	margin: 0 auto;
 	width: 500px;
-	height: 500px;
 	border-radius: 15px;
 	text-align: center;
 	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
@@ -27,7 +27,7 @@
 .loginBox>img {
 	width: 160px;
 	margin-top: 30px;
-	margin-bottom:12px;
+	margin-bottom:30px;
 }
 
 .dataBox {
@@ -47,9 +47,9 @@
 }
 
 .dataBox > input{
-	color: #d6d6d6;
+	color: rgb(0, 0, 0);
 	border: 1.5px solid #4c4c4c;
-    padding: 5px;
+    padding: 8px;
     box-sizing: border-box;
     height: 50px;
     width: 300px;
@@ -72,5 +72,6 @@
     border-radius: 10px;
     font-weight: 700;
     margin-top: 40px;
+    cursor: pointer;
 }
 

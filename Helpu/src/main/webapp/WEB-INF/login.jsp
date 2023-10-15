@@ -14,9 +14,9 @@
                 <img src="./imgs/logo.png" alt="로고">
                 	<div class = "dataBox">
 		                <p>아이디</p>
-		                <input type="text" name="id" onfocus="this.value='';" value="아이디를 입력해주세요.">
+		                <input type="text" name="id" placeholder="아이디를 입력해주세요.">
 		                <p>비밀번호</p>
-		                <input type="password" name="pw" onfocus="this.value='';" value="123456789"><br>
+		                <input type="password" name="pw" placeholder="비밀번호를 입력해주세요."><br>
 		               	<input type="submit" value="로그인">
                		</div>
             </div>
