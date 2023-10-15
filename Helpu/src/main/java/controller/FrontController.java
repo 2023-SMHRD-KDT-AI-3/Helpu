@@ -131,6 +131,8 @@ public class FrontController extends HttpServlet {
 		if (url != null) {
 			RequestDispatcher rd = request.getRequestDispatcher(url);
 			rd.forward(request, response);
+		}else {
+			System.out.println("페이지 이동 없음");
 		}
 //			}
 //		}
