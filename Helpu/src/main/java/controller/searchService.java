@@ -27,25 +27,35 @@ public class searchService implements Command {
 
          // 데이터 수집
          String search = request.getParameter("search");
-         System.out.println(search); 
-         
+        
          // 객체 생성
          searchDAO dao = new searchDAO();
          productDAO p_dao = new productDAO();
          
-         // sql문 받아오는 작업
+         // DB에서 검색한 식품 리스트 가져오기
          ArrayList<productDTO> list= dao.allList(search);
-         // 회원 보유 알레르기 성분 가져오기
-         ArrayList<allergyDTO> allergy = p_dao.allergyList(); 
+         // DB에서 알레르기 성분 가져오기
+         ArrayList<allergyDTO> allergy = p_dao.allergyList();
          
          HttpSession session = request.getSession();
          memberDTO member = (memberDTO)session.getAttribute("info");
+         // 로그인한 회원의 알레르기 유발 성분 리스트
          String[] m_allergy = member.getM_allergy().split(",");
-         System.out.println(m_allergy[0]);
+         
+         try {
+        	 String check_allergy = request.getParameter("allergy");
+        	 System.out.println(check_allergy);
+        	 m_allergy=check_allergy.split(",");
+        	 System.out.println("체크박스 사용함");
+         }catch (Exception e) {
+        	 System.out.println("체크박스 사용안함");
+		}
+         
          
          String haveIngredients="";
          String m_haveIngredients="";
          
+         System.out.println(m_allergy.length);
          // 제품 원재료와 알레르기유발성분 비교
          for(int i=0; i<list.size(); i++) {
             // 제품 원재료 split으로 쪼개기
@@ -85,10 +95,11 @@ public class searchService implements Command {
          
          Gson g=new Gson();
          String json=g.toJson(list); // [{    },{     }]
-         //request.setAttribute("list", list);
          response.setContentType("text/json;charset=utf-8");
          PrintWriter out=response.getWriter();
          out.println(json);
+         
+         System.out.println("기능완료");
          
       } catch (Exception e) {
          e.printStackTrace();

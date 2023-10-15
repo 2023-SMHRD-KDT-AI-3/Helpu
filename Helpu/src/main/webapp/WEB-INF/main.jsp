@@ -73,26 +73,26 @@
 					</button>
 					<form action="#" method="post">
 						<ul class="checkboxMenu">
-							<li><input type="checkbox" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
-							<li><input type="checkbox" name="allergy" value="소고기"><span>소고기</span></li>
-							<li><input type="checkbox" name="allergy" value="돼지고기"><span>돼지고기</span></li>
-							<li><input type="checkbox" name="allergy" value="닭고기"><span>닭고기</span></li>
-							<li><input type="checkbox" name="allergy" value="새우"><span>새우</span></li>
-							<li><input type="checkbox" name="allergy" value="게"><span>게</span></li>
-							<li><input type="checkbox" name="allergy" value="오징어"><span>오징어</span></li>
-							<li><input type="checkbox" name="allergy" value="고등어"><span>고등어</span></li>
-							<li><input type="checkbox" name="allergy" value="조개류"><span>조개류</span></li>
-							<li><input type="checkbox" name="allergy" value="우유"><span>우유</span></li>
-							<li><input type="checkbox" name="allergy" value="땅콩"><span>땅콩</span></li>
-							<li><input type="checkbox" name="allergy" value="호두"><span>호두</span></li>
-							<li><input type="checkbox" name="allergy" value="잣"><span>잣</span></li>
-							<li><input type="checkbox" name="allergy" value="대두"><span>대두</span></li>
-							<li><input type="checkbox" name="allergy" value="복숭아"><span>복숭아</span></li>
-							<li><input type="checkbox" name="allergy" value="토마토"><span>토마토</span></li>
-							<li><input type="checkbox" name="allergy" value="밀"><span>밀</span></li>
-							<li><input type="checkbox" name="allergy" value="메밀"><span>메밀</span></li>
-							<li><input type="checkbox" name="allergy" value="아황산류"><span>아황산류</span></li>
-							<li><button id="checkSubmit" style='cursor: pointer;' onclick="checkbox()">적용하기</button></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="소고기"><span>소고기</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="돼지고기"><span>돼지고기</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="닭고기"><span>닭고기</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="새우"><span>새우</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="게"><span>게</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="오징어"><span>오징어</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="고등어"><span>고등어</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="조개류"><span>조개류</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="우유"><span>우유</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="땅콩"><span>땅콩</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="호두"><span>호두</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="잣"><span>잣</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="대두"><span>대두</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="복숭아"><span>복숭아</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="토마토"><span>토마토</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="밀"><span>밀</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="메밀"><span>메밀</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="아황산류"><span>아황산류</span></li>
+							<li><button id="checkSubmit" style='cursor: pointer;' onclick="reSearch()">적용하기</button></li>
 						</ul>
 					</form>
 				</div>
@@ -475,6 +475,32 @@
 			}
 		});
 	}
+
+	// 재검색기능 
+	function reSearch() {
+ 			let search = $("#search").val();
+			let check_allergies="";
+ 			var check_allergy = document.getElementsByName("allergy");
+			check_allergy.forEach((element) => {
+				if(element.checked){
+					check_allergies+=element.value+",";
+				}
+			});
+ 			$.ajax({
+ 				url : "SearchService.do",
+ 				type : "post",
+ 				data : {
+ 					"search" : search,
+					"allergy" : check_allergies
+ 				},
+ 				dataType : "json",
+ 				success : pagination,
+ 				error : function() {
+ 					alert("error");
+ 				}
+ 			});
+			
+ 		}
 	
 	// 페이징 기능 
 	let currentPage=1; // 초기 페이지 번호
@@ -545,8 +571,6 @@
 				});
 			
 			moveSelectedPageHighlight();
-			
-			
 		}
 			
 		// 페이지 이동에 따른 css 클래스 적용	
@@ -561,12 +585,7 @@
 		};
 
 		
-		// 페이지 번호 버튼 클릭 리스너
-		
-		
-		/**
-		 * 이후 버튼 클릭 리스너
-		 */
+		// 이후 버튼 클릭 리스너
 		nextButton.addEventListener('click', function(){
 		  if (currentPage < getTotalPageCount) {
 		    currentPage += 1;
@@ -585,31 +604,35 @@
 		    moveSelectedPageHighlight();
 		  }
 		})
-			// 팝업창 코드
-			// 팝업창 구현하기
-			$(document).ready(function() {
-				$('#editData').click(function() {
-					$('#modal').fadeIn();
+		
+		// 팝업창 코드
+		// 팝업창 구현하기
+		$(document).ready(function() {
+			$('#editData').click(function() {
+				$('#modal').fadeIn();
 				});
-				$('#nosaveBtn').click(function() {
-					$('#modal').hide();
-				});
+			$('#nosaveBtn').click(function() {
+				$('#modal').hide();
 			});
+		});
 			
-			// 체크박스 회원 알레르기 선택해놓기
-			var checkbox = document.getElementsByName("allergy");
-			let info = "${info.m_allergy}";
+		// 체크박스 회원 알레르기 선택해놓기
+		var checkbox = document.getElementsByName("allergy");
+		let info = "${info.m_allergy}";
 
-			let allergy = info.split(",");
-			let plus_allergy = "";
-			 
-			 for(let i = 0; i<checkbox.length; i++){
-				for(let j = 0; j<allergy.length; j++){
-					if(checkbox[i].getAttribute("value")==allergy[j]){
-						checkbox[i].setAttribute("checked",true);
-					}
+		let allergy = info.split(",");
+		let plus_allergy = "";
+ 		for(let i = 0; i<checkbox.length; i++){
+			for(let j = 0; j<allergy.length; j++){
+				if(checkbox[i].getAttribute("value")==allergy[j]){
+					checkbox[i].setAttribute("checked",true);
 				}
-			 }	 
+			}
+	 	}
+ 		
+ 	
+	 		
+	 		
 		</script>
 	
 </body>
