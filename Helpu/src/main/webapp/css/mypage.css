@@ -1,0 +1,380 @@
+/* 외부에서 폰트 불러오기 : noto sans */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* -----------------Header----------------- */
+
+/* 전체 폰트 적용 및 기본 여백 삭제*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 전체 중앙 정렬 */
+#wrap {
+	margin: 0 auto;
+}
+
+
+/* 전체 header 크기 정의 */
+#header {
+	position: relative;
+	width: 100%;
+	background-color: gray;
+}
+
+/* 안쪽 header 크기 정의 및 중앙 정렬 */
+#innerHeader {
+	position: relative;
+	width: 1280px;
+	margin: 0 auto;
+}
+
+/* 로그아웃, 마이페이지, 장바구니 버튼 및 사용자 환영 안내글*/
+#topBtn {
+	position: absolute;
+	width: 100%;
+	background-color: red;
+	text-align: right;
+}
+
+/* 로고 및 검색창 */
+#schBox {
+	position: absolute;
+	width: 100%;
+	height: 90px;
+	top: 80px;
+	background: blue;
+}
+
+/* 로고 */
+#schBox>img {
+	transform: translate(15%, 30%);
+	margin-right: 50px;
+	line-height: 90px;
+}
+
+/* 검색창 박스 전체 속성 변경 */
+.schBar {
+	display: inline;
+}
+
+
+/* 검색바 설정*/
+#search {
+	width: 78%;
+	border: 1px solid #bbb;
+	border-radius: 100px;
+	padding: 10px 12px;
+	font-size: 14px;
+}
+
+/* 외부에서 끌어온 아이콘 css 전체 속성 */
+.material-symbols-outlined {
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 24
+}
+
+#schBox>div>a>span {
+	position: absolute;
+	top: 47%;
+	bottom: 50%;
+	right: 4.5%;
+}
+
+/* 메뉴바 */
+#nav {
+	position: absolute;
+	width: 100%;
+	background-color: yellow;
+	top: 170px;
+	display: flex;
+	justify-content: center;
+}
+
+#gnb {
+	list-style-type: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+/* 전체 메뉴 정렬 및 비율 조정*/
+#gnb>li {
+	float: left;
+	margin: 10px 7% 10px 7%;
+}
+
+/* 메뉴 안쪽 a태그 속성 정리 */
+#gnb>li>a {
+	color: black;
+	text-decoration: none;
+}
+
+/* -----------------container----------------- */
+
+
+/*목록 표시 유형 (bullet, number, 등)을 제거*/
+li {
+	list-style-type: none;
+}
+
+/*마이페이지 제목*/
+.myPage>h2 {
+	text-align: center;
+	margin-top: 250px;
+}
+
+/*배너*/
+#banner {
+	position: fixed;
+	top: 25%;
+	right: 90%;
+
+	z-index: 10;
+	
+
+}
+
+/* 배너 마이페이지, 회원 정보 수정, 구매내역,즐겨찾기 버튼 속성 */
+#banner>a>p {
+	width: 130px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 7px;
+	margin-bottom: 15px;
+	background: white;
+	/*box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);*/
+	border: 2px solid #d7d7d7;
+	
+}
+
+
+
+
+/*회원 정보 수정*/
+h4 {
+	/*text-align: center;*/
+	padding: 0px;
+	margin-left: 16.5%;
+	width: 67%;
+}
+
+/*회원 정보 수정 밑에 선*/
+.hr1>hr {
+	padding: 0px;
+	margin-top: 10px;
+	margin-left: 16.5%;
+	width: 67%;
+}
+
+/*알레르기 정보 수정 밑에 선*/
+.hr2>hr {
+	padding: 0px;
+	margin-top: 10px;
+	margin-left: 16.5%;
+	width: 67%;
+}
+
+/*이곳에서 재설정하시면 추후 서비스를 이용하실 때 재적용됩니다. 알레르기는 식품의약품안전처의 기준을 따르고
+있습니다.*/
+.myPage3>h6{
+	margin-left: 16.5%;
+}
+
+
+
+/*회원 정보 수정 내용 박스*/
+.modify {
+	display: flex;
+	/*align-items: center;*/
+	justify-content: center;
+	border-radius: 10px;
+	border: 2px white;
+
+	margin-left: 16.5%;
+	
+	margin-top: 1%;
+	width: 67%;
+}
+
+/*modify1,modify2 간격 조절*/
+.modify>#modify1 {
+	margin-right: 5%;
+}
+
+/*modify1,modify2 간격 조절*/
+.modify>#modify2 {
+	margin-left: 5%;
+}
+
+
+/*modify1 각각의 값 박스*/
+
+/*이름*/
+.modify>#modify1>#mem_name {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+/*성별*/
+.modify>#modify1>#gender {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+/*생년월일*/
+.modify>#modify1>#birthdate {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+/*회원아이디*/
+.modify>#modify1>#id {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+
+/*비밀번호*/
+.modify>#modify1>#pw1 {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	
+}
+
+
+
+/*비밀번호 확인*/
+.modify>#modify2>#pw2 {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+
+/*비밀번호 확인 p태그*/
+.modify>#modify2>p {
+	margin-top: 113%;
+}
+
+
+/*주소*/
+.modify>#modify1>#m_address {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+
+/*전화번호*/
+.modify>#modify1>#phone_number {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	width: 500px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+
+/*체크박스 리스트 박스*/
+.checkboxList {
+	/*display: flex;*/
+	/*align-items: center;*/
+	justify-content: center;
+	border-radius: 10px;
+	border: 2px solid #d7d7d7;
+
+	margin-left: 30%;
+	margin-bottom: 30px;
+	margin-top: 1%;
+	width: 38%;
+	
+	font-size: 20px;
+	
+	text-align: left;
+	padding-left: 20px;
+	line-height: 50px;
+	word-spacing: 30px;
+	
+}
+
+
+/*맨 밑 버튼 정렬*/
+.btn {
+	display: flex;
+	justify-content: center;
+}
+
+/*저장하지 않고 돌아가기 버튼*/
+.btn>#backBtn{
+	background-color: white;
+	width: 220px;
+	font-size: 18px;
+	color: red;
+	border-color: red;
+	margin: 5%;
+	margin-right: 2%;
+	height: 50px;
+	
+}
+
+/*회원정보 수정 후 저장 버튼*/
+.btn>#saveBtn{
+	background-color: red;
+	width: 220px;
+	font-size: 20px;
+	color: white;
+	border-color: red;
+	margin: 5%;
+	margin-left: 2%;
+}
+
+/*MyPage 제목 정렬*/
+.myPage {
+	display: flex;
+	justify-content: center;
+}
+
+/*이곳에서 사용자의 정보를 수정할 수 있습니다. 정렬*/
+.myPage2 {
+	display: flex;
+	justify-content: center;
+}

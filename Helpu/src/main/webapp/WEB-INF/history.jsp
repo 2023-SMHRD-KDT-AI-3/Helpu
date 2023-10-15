@@ -3,120 +3,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 10px;
-	box-sizing: border-box;
-}
 
-li {
-	list-style-type: none;
-}
 
-.post-container {
-	display: flex;
-	align-items: center;
-	border-radius: 10px;
-	border: 2px solid #d7d7d7;
-	margin: 15px;
-}
-
-.purchase_date {
-	text-align: center;
-	flex-basis: 20%;
-	font-size: 15px;
-	padding: 15px;
-}
-
-.product_img {
-	flex-basis: 20%;
-	width: 50px;
-}
-
-.product_name {
-	flex-basis: 20%;
-	font-size: 15px;
-	padding: 15px;
-}
-
-.payment {
-	text-align: center;
-	flex-basis: 20%;
-	font-size: 15px;
-	padding: 15px;
-}
-
-.pagination-container {
-	flex-basis: 20%;
-	display: flex;
-	justify-content: center;
-}
-
-.rePurchase {
-	font-size: 15px;
-	padding: 15px;
-}
-
-.reviewContainer {
-	display: flex;
-	flex-basis: 20%;
-	flex-direction: column;
-	align-items: center;
-	height: 150px;
-}
-
-.reviewBtn {
-	flex-basis: 50%;
-	width: 100px;
-	justify-content: center;
-	margin: 3%;
-}
-
-.repurchaseBtn {
-	flex-basis: 50%;
-	width: 100px;
-	justify-content: center;
-	margin: 3%;
-}
-
-.selected {
-	font-size: 25px;
-}
-</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="css/history.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
 </head>
 <body>
-	<p>
-		<a>로그아웃</a> <a>마이페이지</a> <a>장바구니</a>
-	</p>
 
-	<p>ooo님 환영합니다!</p>
-	<h2>구매내역</h2>
-	<ul>
-		<li>
-			<div class="post-container">
-				<button class="close">x</button>
-				<img class="product_img" src="#">
-				<p class="product_name">제품이름</p>
-				<p class="post-title purchase_date">구매일자</p>
-				<p class="payment">결제방법</p>
-				<div class=reviewContainer>
-					<button class="repurchaseBtn">재구매</button>
-					<br>
-					<button class="reviewBtn">리뷰작성</button>
+	<!-- 헤더 부분 -->
+	<div id="header">
+		<div id="innerHeader">
+			<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
+			<div id="topBtn">
+				<div id="innerTopbtn">
+					<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
+					<a href="#">장바구니</a><br>
+				</div>
+				<!-- 사용자 방문 환영 글 -->
+				<p>000님 환영합니다!</p>
+			</div>
+
+			<!-- 로고 및 검색창 -->
+			<div id="schBox">
+				<!-- 로고 -->
+				<img alt="로고"
+					src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
+				<!-- 검색 박스 -->
+				<div class="schBar">
+					<!-- 검색창 -->
+					<span class="icon"><i class="fa fa-search"></i></span> <input
+						type="search" id="search" placeholder="Search" />
+					<!-- 검색 아이콘 -->
+					<a href="#"><span class="material-symbols-outlined">search</span></a>
 				</div>
 			</div>
-		</li>
-	</ul>
-	<div class="pagination-container">
-		<div class="prev-button">이전</div>
-		<div class="number-button-wrapper">
-			<span class="number-button">1</span>
 		</div>
-		<div class="next-button">이후</div>
+
+		<!-- 메뉴바 -->
+		<div id="nav">
+			<ul id="gnb">
+				<li><a href="#">냉장제품</a></li>
+				<li><a href="#">냉동제품</a></li>
+				<li><a href="#">즉석조리제품</a></li>
+				<li><a href="#">기타</a></li>
+			</ul>
+		</div>
 	</div>
-	<script src="pagination.js"></script>
+
+
+
+	<div class="history">
+
+		<h2>구매내역</h2>
+
+	</div>
+
+		<ul>
+			<li>
+				<div class="post-container">
+					
+
+					<!-- 임시 이미지 영역 -->
+					<div>
+						<img class="product_img">
+					</div>
+
+					<div class="product_name">
+						<a href="#">[농심] 새우깡 190 g </a>
+						<p>1,400원</p>
+					</div>
+
+
+					<div class="post-title purchase_date">구매일자</div>
+
+					<div class="payment">결제방법</div>
+
+					<!-- 재구매,리뷰작성 버튼 -->
+					<div class=reviewContainer>
+						<button class="repurchaseBtn">재구매</button>
+						<br>
+						<button class="reviewBtn">리뷰작성</button>
+					</div>
+					
+					<!-- 구매내역 삭제 -->
+					<button class="close">x</button>
+					
+				</div>
+			</li>
+		</ul>
+		
+	
+	
+	<!-- 페이지 버튼 -->
+	<div class="pagination-container2">
+		<button id="btn3"> < </button>
+		<a href="#"></a> 
+		
+		<button id="btn4">1</button>
+		<a href="#"></a>
+		
+		<button id="btn5">2</button>
+		<a href="#"></a>
+		
+		<button id="btn6">3</button>
+		<a href="#"></a>
+		
+		<button id="btn7">4</button>
+		<a href="#"></a>
+		
+		<button id="btn8">5</button>
+		<a href="#"></a>
+		
+		<button id="btn9"> > </button>
+		<a href="#"></a>
+	</div>
+	
+	
+	
+	
 </body>
 </html>
