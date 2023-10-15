@@ -99,8 +99,8 @@
 						<p class="proPrice">${product.pro_price} 원</p>
 					</div>
 					<div class="productBtn">
-						<a href="#"><span class="proBtn">장바구니</span></a> <a href="#"><span
-							class="proBtn proPurchase">구매하기</span></a>
+						<a href="#"><span class="proBtn">장바구니</span></a>
+						<a href="#"><span class="proBtn proPurchase">구매하기</span></a>
 					</div>
 				</div>
 				<div class="bestReview">
@@ -266,7 +266,7 @@
 
 		<!-- 배너 영역 -->
 		<div id="banner">
-			<a href="#"><p>마이페이지</p></a> <a href="#"><p>즐겨찾기</p></a> <a href="#"><p>장바구니</p></a>
+			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do"><p>장바구니</p></a>
 			<div class="recent">
 				<a href="#"><p>최근 본 상품</p></a>
 				<ul class="recentbox">
@@ -284,10 +284,28 @@
 						</li>
 				</ul>
 			</div>
+			<!-- 상단으로 다시 올라가는 버튼 -->
+			<div id = "bannerTopbtn">
+				<button type="button"style='cursor: pointer;'>
+					<span class="material-symbols-outlined">arrow_upward</span>		
+				</button>	
+			</div>
 		</div>
 
 		
+		<script>
 		
+		// 상단 이동 버튼
+ 		$(window).scroll(function(){
+ 			if ($(this).scrollTop() > 300){
+ 				$('#bannerTopbtn').show();
+ 			}
+ 		});
+ 		$('#bannerTopbtn').click(function(){
+ 			$('html, body').animate({scrollTop:0},400);
+ 			return false;
+ 		});
+		</script>
 
 	</div>
 </body>

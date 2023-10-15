@@ -61,7 +61,7 @@
 
 		<div id="container">
 			<div id="leftMenu">
-				<button class="leftmenuBtn" style='cursor: pointer;'>
+				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;'>
 					<span class="userData">사용자 정보 자동 적용</span>
 				</button>
 				<button class="leftmenuBtn" id="editData" style='cursor: pointer;'>
@@ -366,13 +366,21 @@
 								<span>#새우</span><span>#밀</span>
 							</div>
 						</div>
+						
 					</div>
-				
-				</div>
-				
-				
-				<!-- 제품 단락 끝 -->
+				<!-- 제품 단락 끝 : 페이징 실행 시 초기화 -->
 			</div>
+			
+			
+			<!-- 페이징 번호구역 -->
+				<div id="pagination-container">
+					<div class="prev-button">이전</div>
+					<div class="number-button-wrapper">
+						<span class="number-button">1</span>
+					</div>
+					<div class="next-button">이후</div>
+				</div>				
+			
 			
 			<!-- 배너 영역 -->
 		<div id="banner">
@@ -394,8 +402,20 @@
 						</li>
 				</ul>
 			</div>
+			<!-- 상단으로 다시 올라가는 버튼 -->
+			<div id = "bannerTopbtn">
+				<button type="button"style='cursor: pointer;'>
+					<span class="material-symbols-outlined">arrow_upward</span>		
+				</button>	
+			</div>
 		</div>
+		
+		
 			
+		
+							
+		
+			</div>
 		</div>
 		
 		<!-- 팝업창 -->
@@ -442,17 +462,19 @@
 		</div>
 		
 		
-		<!-- 페이징 번호구역 -->
-		<div id="pagination-container">
-			<div class="prev-button">이전</div>
-			<div class="number-button-wrapper">
-				<span class="number-button">1</span>
-			</div>
-			<div class="next-button">이후</div>
+		
+		
+		
+				
+		
+		
 		</div>
+		<!-- wrap 닫는 태그 -->
 		
 		
-		
+			
+				
+				
 		
 		
 		
@@ -629,6 +651,17 @@
 				}
 			}
 	 	}
+ 		
+ 		// 상단 이동 버튼
+ 		$(window).scroll(function(){
+ 			if ($(this).scrollTop() > 300){
+ 				$('#bannerTopbtn').show();
+ 			}
+ 		});
+ 		$('#bannerTopbtn').click(function(){
+ 			$('html, body').animate({scrollTop:0},400);
+ 			return false;
+ 		});
  		
  	
 	 		

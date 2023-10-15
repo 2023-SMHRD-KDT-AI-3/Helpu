@@ -181,7 +181,7 @@ li {
 	position: relative;
     display: inline-block;
     top : 10%;
-    left: 25%;
+    left: 12.5%;
 }
 
 /* 알레르기 유발 성분 포함 제목 */
@@ -195,6 +195,33 @@ li {
 	color:red;
 	margin-bottom: 30px;
 }
+
+/* 제조사 속성 */
+.company {
+	margin-bottom: 10px;
+    font-size: 20px;
+    color: gray;
+}
+
+/* 제품명 속성 */
+.proSubject{
+	margin-right: 15px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+/* 중량 속성 */
+.weight{
+	font-size: 30px;
+}
+
+/* 가격 속성 */
+.price{
+	font-weight: 500;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
 
 /* 상품 설명단 하단 여백 */
 .moreInfo{
@@ -210,10 +237,27 @@ li {
 	margin-right:15px;
 }
 
+
+/* 장바구니 버튼 */
+
 .proBtn{
 	display: block;
 	text-align: center;
+	font-weight: 800;
+    color: #ff3b42;
+    background: white;
+    border: 1px solid #FF3B42;
+    padding: 10px 20px 10px 20px;
+    font-size: 18px;
 }
+
+/* 구매하기 버튼 */
+.proPurchase{
+    color: white;
+    background: #ff3b42;
+    border: 1px solid #FF3B42;
+}
+
 
 
 /* ------------------베스트 리뷰 탭------------------ */
@@ -261,6 +305,8 @@ li {
     padding: 10px 0px 10px 0px;
     border-radius: 7px;
     margin-bottom: 30px;
+     
+    font-weight: 600;
 }
 
 .innerConmenu{
@@ -280,11 +326,12 @@ li {
     width: 200px;
 }
 
-
-.innerConmenu>li>a{
+/* 서브 네비게이션 바 폰트 속성 */
+.innerConmenu>li>span>a{
 	display: inline-block;
     width: 220px;
     text-align: center;
+    color:white;
 }
 
 
@@ -301,13 +348,17 @@ li {
 	margin: 0;
     float: left;
     margin-right: 35px;
+    
+    font-weight:800;
 }
 
+/* 알레르기 해시태그 */
 .innerAllergy>span{
 	display: inline-block;
     width: 70px;
-    background-color: red;
+    background-color: #ff3b42;
     margin-right:5px;
+    color:white;
 }
 
 .allergyInfo > div > span{
@@ -331,6 +382,7 @@ li {
 
 .nutrient>p{
 	padding: 25px 30px 25px 40px;
+	font-weight:800;
 }
 
 
@@ -345,6 +397,7 @@ li {
 .details > p:nth-child(1){
 	margin: 0;
     padding: 30px 30px 25px 40px;
+    font-weight:800;
 }
 
 .details > p:nth-child(2){
@@ -395,12 +448,15 @@ li {
     border-radius: 7px;
     margin-bottom: 10px;
     padding: 10px 30px 10px 40px;
+    
+    font-weight:800;
+	color:white;
 }
 
 /* 저장된 리뷰란 */
 .reviewContent{
 	margin-bottom: 7px;
-    padding: 7px 0px 7px 25px;
+    padding: 10px 0px 7px 25px;
     border-radius: 5px;
     background: #FEFFD8;
 }
@@ -410,12 +466,10 @@ li {
 	text-align: center;
 }
 
-.review > div > div > p > span{
-	margin-right: 20px;
-}
-
-.review > form > div > span{
-	margin-right: 20px;
+/* 등록된 리뷰 사용자 명 */
+.review > div > div > p > span:nth-child(1){
+	margin: 20px;
+	font-weight:800;
 }
 
 .review > form > div > input[type=text]:nth-child(2){
@@ -424,14 +478,30 @@ li {
 }
 
 
+/* 등록할 리뷰 사용자 명 속성 */
+.inputReview>span{
+	margin-right: 15px;
+	font-weight:800;
+}
+
+
 /* 리뷰 작성 영역 */
 .inputReview{
-	background: aquamarine;
+	background: rgb(251, 232, 142);
     padding: 10px 0px 10px 0px;
     margin:20px 0 500px 0;
     border-radius: 5px;
 }
 
+/* 리뷰 등록 버튼 */
+.inputReview > input[type=submit]:nth-child(3){
+	font-weight: 600;
+    padding: 2px 10px 2px 10px;
+    border-radius: 5px;
+    background: #ff3b42;
+    color: white;
+    border: none;
+}
 
 /* 슬라이드 테스트 페이지 */
 
@@ -459,7 +529,7 @@ li {
 #banner {
 	position: fixed;
 	top: 25%;
-	right: 11%;
+	right: 7.5%;
 	z-index: 10;
 
 }
@@ -471,8 +541,11 @@ li {
 	text-align: center;
 	padding: 7px;
 	margin-bottom: 15px;
-	background: red;
-	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+	background:  #A2DD98;;
+	
+	color: white;
+	font-weight: 600;
+    font-size: 14px;
 }
 
 /* 최근 본 상품 버튼 */
@@ -481,9 +554,17 @@ li {
 	border-radius: 5px 5px 0px 0px;
 	text-align: center;
 	padding: 7px 7px 7px 7px;
-	background: rgb(0, 64, 128);
+	background: #FFD159;
 	margin: 0;
-	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
+	color: white;
+	font-weight: 600;
+    font-size: 14px;
+	
+}
+
+.recent{
+	/* 그림자 설정 */
+	box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
 }
 
 
@@ -494,8 +575,6 @@ li {
 	background-color: rgb(255, 255, 255);
 	/* 가운데 정렬 */
 	text-align: center;
-	/* 그림자 설정 */
-	box-shadow: 0 0px 18px -8px rgba(0, 0, 0, 1);
 	/* 하단 여백 */
 	padding: 0 0 20px 0;
 	/* 하단 둥글기 설정 */
@@ -513,4 +592,23 @@ li {
 	margin: 0 auto;
 	width: 80%;
 	margin-top: 10px;
+}
+
+
+/* 상단으로 이동 */
+#bannerTopbtn{
+	text-align: center;
+	
+}
+#bannerTopbtn>button{
+	margin-top: 25px;
+    background: none;
+    color: white;
+    border: none;
+}
+#bannerTopbtn>button>span{
+	background: #FFD159;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
 }
