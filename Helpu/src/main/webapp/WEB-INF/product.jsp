@@ -94,7 +94,7 @@
 						<p class="includedAll">알레르기 유발 성분 개 포함</p>
 						<p class="company">${product.pro_maker}</p>
 						<p>
-							<span class="proSubject">${product.pro_name}</span><span class="weight">${product.pro_gramper}</span>
+							<span class="proSubject">${product.pro_name}</span><span class="weight">${product.pro_gramper} g</span>
 						</p>
 						<p class="proPrice">${product.pro_price} 원</p>
 					</div>

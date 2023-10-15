@@ -172,7 +172,7 @@ li {
     height: 400px;
     background: black;
     float: left;
-    left: 140px;
+    left: 12.3%;
 }
 
 /* 상세 제품 설명 내용 */
@@ -181,7 +181,7 @@ li {
 	position: relative;
     display: inline-block;
     top : 10%;
-    left: 12.5%;
+    left: 16%;
 }
 
 /* 알레르기 유발 성분 포함 제목 */
@@ -216,7 +216,7 @@ li {
 }
 
 /* 가격 속성 */
-.price{
+.proPrice{
 	font-weight: 500;
     margin-top: 15px;
     font-size: 30px;
