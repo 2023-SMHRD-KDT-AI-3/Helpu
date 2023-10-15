@@ -33,6 +33,31 @@
 			<div class="mySlides fade slideimage3"></div>
 			<div class="mySlides fade slideimage4"></div>
 	</span>
-	<script src="start.js"></script>
+	
+	<!-- 이미지 슬라이드 js 영역 -->
+	<script>
+	 
+	 /* 슬라이드 효과 js */
+	 
+	 var slideIndex = 0;
+	    showSlides();
+
+	    function showSlides() {
+	        var i;
+	        var slides = document.getElementsByClassName("mySlides");
+	       
+	        for (i = 0; i < slides.length; i++) {
+	            slides[i].style.display = "none";
+	        }
+	        slideIndex++;
+	        if (slideIndex > slides.length) {
+	            slideIndex = 1
+	        }
+	        slides[slideIndex - 1].style.display = "block";
+	    
+	        setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
+	    }
+	    
+	</script>
 </body>
 </html>
