@@ -560,12 +560,15 @@
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
-				let ingredients = null;
 				ingredients = data[i-1].pro_m_haveIngredients.split(",");
-				for(let j = 0; j<ingredients.length;j++){
-					if(ingredients[j] != ""){
-					html += "<span> #"+ingredients[j]+"</span>";
+				if(ingredients.length != 1){
+					for(let j = 0; j<ingredients.length;j++){
+						if(ingredients[j] != ""){
+						html += "<span> #"+ingredients[j]+"</span>";
+						}
 					}
+				}else{
+					html += "<span> 알레르기 유발 성분이 없습니다. </span>";
 				}
 			html += "</div>";
 			html += "</div>";
