@@ -1,5 +1,3 @@
-<%@page import="model.memberDTO"%>
-<%@page import="model.productDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -49,16 +47,15 @@
 				<div id="topBtn">
 					<div id="innerTopbtn">
 						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do?id=${info.id}">장바구니</a><br>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
-					<p>${info.id}님 환영합니다!</p>
+					<p>000님 환영합니다!</p>
 				</div>
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
 					<!-- 로고 -->
-					<img alt="로고"
-						src="imgs/logo.png">
+					<img alt="로고" src="imgs/logo.png">
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
@@ -88,20 +85,21 @@
 		<div id="container">
 			<div id="productInfo">
 				<div class="proImg">
-					<img alt="임시이미지"
-						src= ${product.pro_img} >
+					<img alt="임시이미지" src=${product.pro_img} >
 				</div>
 				<div class="proMoreInfo">
 					<div class="moreInfo">
+						<p class="includedAll">알레르기 유발 성분 개 포함</p>
 						<p class="company">${product.pro_maker}</p>
 						<p>
-							<span class="proSubject">${product.pro_name}</span><span class="weight">${product.pro_gramper} g</span>
+							<span class="proSubject">${product.pro_name}</span><span
+								class="weight">${product.pro_gramper} g</span>
 						</p>
-						<p class="proPrice">${product.pro_price} 원</p>
+						<p class="proPrice">${product.pro_price}원</p>
 					</div>
 					<div class="productBtn">
-						<a href="#"><span class="proBtn">장바구니</span></a>
-						<a href="#"><span class="proBtn proPurchase">구매하기</span></a>
+						<a href="#"><span class="proBtn">장바구니</span></a> <a href="#"><span
+							class="proBtn proPurchase">구매하기</span></a>
 					</div>
 				</div>
 				<div class="bestReview">
@@ -126,25 +124,8 @@
 			<div class="infoBox">
 				<div class="allergyInfo">
 					<p>제품에 포함된 알레르기 유발 성분</p>
-					<div id="innerAllergy">
-					<%
-						productDTO product = (productDTO)request.getAttribute("product");
-						memberDTO member = (memberDTO)session.getAttribute("info");
-						
-						String pro_ingredients = product.getPro_ingredients();
-						String m_ingredients = member.getM_allergy();
-						
-						String[] pro_ingredient_list = pro_ingredients.split(",");
-						String[] m_ingredient_list = m_ingredients.split(",");
-						
-						for(int i=0;i<pro_ingredient_list.length;i++){
-							for(int j=0; j<m_ingredient_list.length;j++){
-								if(pro_ingredient_list[i].contains(m_ingredient_list[j])){
-									out.print("<span> #"+pro_ingredient_list[i]+"</span>");
-								}
-							}
-						}
-					%>
+					<div class="innerAllergy">
+						<span>#새우</span> <span>#밀</span>
 					</div>
 
 				</div>
@@ -154,11 +135,46 @@
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
-					<p>${product.pro_ingredients}</p>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random
+						text. It has roots in a piece of classical Latin literature from
+						45 BC, making it over 2000 years old. Richard McClintock, a Latin
+						professor at Hampden-Sydney College in Virginia, looked up one of
+						the more obscure Latin words, consectetur, from a Lorem Ipsum
+						passage, and going through the cites of the word in classical
+						literature, discovered the undoubtable source. Lorem Ipsum comes
+						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
+						BC. This book is a treatise on the theory of ethics, very popular
+						during the Renaissance. The first line of Lorem Ipsum, "Lorem
+						ipsum dolor sit amet..", comes from a line in section 1.10.32.
+						Contrary to popular belief, Lorem Ipsum is not simply random text.
+						It has roots in a piece of classical Latin literature from 45 BC,
+						making it over 2000 years old. Richard McClintock, a Latin
+						professor at Hampden-Sydney College in Virginia, looked up one of
+						the more obscure Latin words, consectetur, from a Lorem Ipsum
+						passage, and going through the cites of the word in classical
+						literature, discovered the undoubtable source. Lorem Ipsum comes
+						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
+						BC. This book is a treatise on the theory of ethics, very popular
+						during the Renaissance. The first line of Lorem Ipsum, "Lorem
+						ipsum dolor sit amet..", comes from a line in section 1.10.32.
+						Contrary to popular belief, Lorem Ipsum is not simply random text.
+						It has roots in a piece of classical Latin literature from 45 BC,
+						making it over 2000 years old. Richard McClintock, a Latin
+						professor at Hampden-Sydney College in Virginia, looked up one of
+						the more obscure Latin words, consectetur, from a Lorem Ipsum
+						passage, and going through the cites of the word in classical
+						literature, discovered the undoubtable source. Lorem Ipsum comes
+						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
+						BC. This book is a treatise on the theory of ethics, very popular
+						during the Renaissance. The first line of Lorem Ipsum, "Lorem
+						ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
 				</div>
 				<div class="chucheon">
-					<div class = "chuTitle">
+					<div class="chuTitle">
 						<h2>추천 상품</h2>
 						<p>다른 고객들이 함께 구매한 상품입니다.</p>
 					</div>
@@ -203,35 +219,35 @@
 							</div>
 						</div> -->
 
-						<!-- 네비게이션 -->
-						<!-- <div class="swiper-button-next"></div> -->
-						<!-- 다음 버튼 (오른쪽에 있는 버튼) 
+					<!-- 네비게이션 -->
+					<!-- <div class="swiper-button-next"></div> -->
+					<!-- 다음 버튼 (오른쪽에 있는 버튼) 
 						<div class="swiper-button-prev"></div> -->
-						<!-- 이전 버튼 -->
+					<!-- 이전 버튼 -->
 
-						<!-- 페이징 -->
-						<!--  <div class="swiper-pagination"></div>
+					<!-- 페이징 -->
+					<!--  <div class="swiper-pagination"></div>
 					</div>
 					<div style="text-align: center; margin-top: 5px;">랜덤사진 갤러리</div>
 				</div>-->
-				
-			</div>
-			
-			<!-- 리뷰 영역 -->
+
+				</div>
+
+				<!-- 리뷰 영역 -->
 				<div class="review">
 					<p>Review</p>
 					<div class="reviewBox">
 						<div class="proReview">
-							<p class = "reviewContent">
+							<p class="reviewContent">
 								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
 							</p>
-							<p class = "reviewContent">
+							<p class="reviewContent">
 								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
 							</p>
-							<p class = "reviewContent">
+							<p class="reviewContent">
 								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
 							</p>
-							<p class = "reviewContent">
+							<p class="reviewContent">
 								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
 							</p>
 						</div>
@@ -243,40 +259,40 @@
 						</div>
 					</form>
 				</div>
-			
-			
-		</div>
 
-		<!-- 배너 영역 -->
-		<div id="banner">
-			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do"><p>장바구니</p></a>
-			<div class="recent">
-				<a href="#"><p>최근 본 상품</p></a>
-				<ul class="recentbox">
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						<hr></li>
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						<hr></li>
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						</li>
-				</ul>
-			</div>
-			<!-- 상단으로 다시 올라가는 버튼 -->
-			<div id = "bannerTopbtn">
-				<button type="button"style='cursor: pointer;'>
-					<span class="material-symbols-outlined">arrow_upward</span>		
-				</button>	
-			</div>
-		</div>
 
-		
-		<script>
+			</div>
+
+			<!-- 배너 영역 -->
+			<div id="banner">
+				<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a>
+				<a href="gobasket.do"><p>장바구니</p></a>
+				<div class="recent">
+					<a href="#"><p>최근 본 상품</p></a>
+					<ul class="recentbox">
+						<li><a href="#"><img alt="임시이미지"
+								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+								<p>제품명</p></a>
+							<hr></li>
+						<li><a href="#"><img alt="임시이미지"
+								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+								<p>제품명</p></a>
+							<hr></li>
+						<li><a href="#"><img alt="임시이미지"
+								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
+								<p>제품명</p></a></li>
+					</ul>
+				</div>
+				<!-- 상단으로 다시 올라가는 버튼 -->
+				<div id="bannerTopbtn">
+					<button type="button" style='cursor: pointer;'>
+						<span class="material-symbols-outlined">arrow_upward</span>
+					</button>
+				</div>
+			</div>
+
+
+			<script>
 		
 		// 상단 이동 버튼
  		$(window).scroll(function(){
@@ -288,12 +304,60 @@
  			$('html, body').animate({scrollTop:0},400);
  			return false;
  		});
- 		
-		
-		
- 		
 		</script>
 
-	</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+		<script>
+				
+		const calories = document.getElementById('Chart_calories').getContext('2d');
+		const Chart_calories = new Chart(calories, {
+			data: {
+				datasets: [{
+					type: 'doughnut',
+					label: ${product.pro_gramper}+'g당 칼로리',
+					data: [${product.pro_calories},2600-${product.pro_calories}],
+					borderWidth: 1
+				}],
+				labels:['칼로리']
+			}
+		});											
+			</script>
+		<script>
+		
+				const augars = document.getElementById('Chart_augars').getContext('2d');
+				const Chart_augars = new Chart(augars, {
+					data: {
+						datasets: [{
+							type: 'doughnut',
+							label: ${product.pro_gramper}+'g당 당류',
+							data: [${product.pro_sugars},25-${product.pro_sugars}],
+							borderWidth: 1,
+						    datalabels: {
+						          color: '#FFCE56'
+						    }
+						}],
+						labels:['당류']
+					}
+				});							
+			</script>
+		<script>
+				
+				const sodium = document.getElementById('Chart_sodium').getContext('2d');
+				const Chart_sodium = new Chart(sodium, {
+					data: {
+						datasets: [{
+							type: 'doughnut',
+							label: ${product.pro_gramper}+'g당  나트륨',
+							data: [${product.pro_sodium},2000-${product.pro_sodium}],
+							borderWidth: 1
+						}],
+						labels:['나트륨']
+					}
+				});							
+			</script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
 </html>
