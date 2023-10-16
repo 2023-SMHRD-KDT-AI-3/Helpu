@@ -71,8 +71,11 @@
 			<hr>
 
 			<!-- 장바구니 리스트 -->
-			<form action="#" method="post">
-				<c:forEach var="clist" items="${clist}">
+			<form action="#" method="post">			 
+				<c:forEach var="clist" items="${clist}" varStatus="status">				   
+				    <input type="hidden" id="productCode${status.index+1}" value="${clist.pro_code}"/>
+			        <input type="hidden" id="quantity${status.index+1}" value="${clist.su}"/>
+			        <input type="hidden" id="price${status.index+1}" value="${clist.pro_price * clist.su}"/>
 					<div class="container">
 						<p class="proInfo proCheckbox">
 							<input class="select_asd" type="checkbox" name="select"
@@ -95,124 +98,14 @@
 						</p>
 						<p class="proDelete">
 							<button type="button"
-								onclick="deleteCartItem('${clist.id}', ${clist.pro_code})">삭제</button>
+								onclick="deleteCartItem('${clist.id}', '${clist.pro_code}')">삭제</button>
 						</p>
 
 
 					</div>
 				</c:forEach>
 
-				<script>				
-				 $(document).ready(function() {
-					 console.log("바로 시작");
-				        $('input[name="select"]').change(function () {
-				            calculateTotalPrice();
-				            updateFinalPrice();
-				        });
-				    });
-    var userId = "${info.id}";
-	//var productCode = "${p_dao.pro_code}"
-	//var price = "${p_dao.price}"
-    function updateQuantity(productCode, amount, price) {
-        // 현재 수량 가져오기
-        var currentQuantity = parseInt($('#quantity_' + productCode).text());
 
-        // 변경된 수량 계산
-        var newQuantity = currentQuantity + amount;
-
-        // 최소 수량이 1로 제한되도록 설정
-        if (newQuantity < 1) {
-            newQuantity = 1;
-        }
-
-        // HTML 업데이트
-        $('#quantity_' + productCode).text(newQuantity);
-
-        // 가격 업데이트
-        var newPrice = price * newQuantity;
-        $('#price_' + productCode).text(newPrice + '원');
-
-        // 서버에 업데이트 요청 보내기
-        $.ajax({
-            type: "POST",
-            url: "updateProductQuantity.do",
-            data: {
-                productCode: productCode,
-                su: newQuantity,
-                id: userId
-            },
-            success: function (response) {
-                // 성공적으로 업데이트되었을 때 수행할 작업
-                console.log("성공!");
-            },
-            error: function (xhr, status, error) {
-                // 실패했을 때 수행할 작업
-                console.log("실패..");
-            }
-        });
-    }
-
-    
-    
-    function calculateTotalPrice() {
-        var total = 0;
-        $("input[name='select']:checked").each(function () {
-
-            var productCode = $(this).closest('.container').find('.proInfo.cntbox button.plus').attr('onclick').split("'")[1];
-            var quantity = parseInt($('#quantity_' + productCode).text());
-            var price = parseInt($('#price_' + productCode).text());
-            total += price;
-        });
-
-        $('#totalProductPrice').text(total + '원');
-    }
-    
-
-   
-    
-    function updateFinalPrice() {
-        var totalProductPrice = parseInt($('#totalProductPrice').text());
-        var finalPrice = totalProductPrice + 3000;
-        $('#updateFinalPrice').text(finalPrice + '원');
-    }
-    
-    function deleteCartItem(id, productCode) {
-        $.ajax({
-            type: "POST",
-            url: "deleteCartItem.do",
-            data: {
-                id: id,
-                productCode: productCode
-            },
-            success: function (response) {
-                 
-                    console.log("상품이 성공적으로 삭제되었습니다.");           
-                    $('#product_' + productCode).remove(); 
-                    
-            error: console.log("상품 삭제에 실패했습니다."); 
-            }                 
-        });
-    }
-	 
-		
-	    function requestPay() {
-			
-		var IMP = window.IMP;
-		IMP.init("imp07245851"); 
-	      IMP.request_pay({ // param
-	          pg: "html5_inicis",
-	          pay_method: "card",
-	          merchant_uid: "ORD20180131-0000011",
-	          name: "asd",
-	          amount: 100,
-	          buyer_name: "er",
-	          buyer_tel: "010-4242-4242",
-	          buyer_addr: "서울특별시 강남구 신사동",
-	          buyer_postcode: "01181"
-	      });
-	    }
-	  
-				</script>
 
 				<!-- 결제 예정 금액 -->
 
@@ -261,6 +154,130 @@
 
 	</div>
 
+	<script>				
+	 $(document).ready(function() {
+			 console.log("바로 시작");
+		   $('input[name="select"]').change(function () {
+				            calculateTotalPrice();
+				            updateFinalPrice();
+				        });
+				    });
+  	  var userId = "${info.id}";
+  	
+    function updateQuantity(productCode, amount, price) {
+        // 현재 수량 가져오기
+        var currentQuantity = parseInt($('#quantity_' + productCode).text());
+
+        // 변경된 수량 계산
+        var newQuantity = currentQuantity + amount;
+
+        // 최소 수량이 1로 제한되도록 설정
+        if (newQuantity < 1) {
+            newQuantity = 1;
+        }
+
+        // HTML 업데이트
+        $('#quantity_' + productCode).text(newQuantity);
+
+        // 가격 업데이트
+        var newPrice = price * newQuantity;
+        $('#price_' + productCode).text(newPrice + '원');
+
+        // 서버에 업데이트 요청 보내기
+        $.ajax({
+            type: "POST",
+            url: "updateProductQuantity.do",
+            data: {
+                productCode: productCode,
+                su: newQuantity,
+                id: userId
+            },
+            success: function (response) {
+                // 성공적으로 업데이트되었을 때 수행할 작업
+                console.log("성공!");
+            },
+            error: function (xhr, status, error) {
+                // 실패했을 때 수행할 작업
+                console.log("실패..");
+            }
+        });
+    }
+
+    
+    
+    function calculateTotalPrice() {
+    	
+        var total = 0;
+        $("input[name='select']:checked").each(function () {        	 
+            index = $('input:checkbox[name=select]').index(this);          
+            if(index!=0) {
+             var productCode = $("#productCode"+index);
+             var quantity = parseInt($("#productCode"+index).val());
+             var price = parseInt($("#price"+index).val());            
+             total += price;
+            }
+        });
+
+        $('#totalProductPrice').text(total + '원');       
+        
+    }
+    
+    function selectAll() {
+        var checkboxes = document.getElementsByName('select'); // 5
+        var selectAllCheckbox = checkboxes[0]; // 전체선택
+        var totalprice=0;
+        for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
+            checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
+            
+            
+        }
+       
+    }   
+    
+    function updateFinalPrice() {
+        var totalProductPrice = parseInt($('#totalProductPrice').text());
+        var finalPrice = totalProductPrice + 3000;
+        $('#updateFinalPrice').text(finalPrice + '원');
+    }
+    
+    function deleteCartItem(id, productCode) {
+        $.ajax({
+            type: "POST",
+            url: "deleteCartItem.do",
+            data: {
+                id: id,
+                productCode: productCode
+            },
+            success: function (response) {
+                console.log("상품이 성공적으로 삭제되었습니다.");
+                $('#product_' + productCode).remove(); 
+                location.reload();
+            },    
+            error: function() {
+                console.log("상품 삭제에 실패했습니다.");
+            }
+        });
+    }
+ 
+   
+		
+	    function requestPay() {
+	    	alert("결제");
+		var IMP = window.IMP;
+		IMP.init("imp07245851"); 
+	      IMP.request_pay({ 
+	          pg: "html5_inicis",
+	          pay_method: "card",
+	          merchant_uid: "ORD20180131-0000011",
+	          name: "asd",
+	          amount: 100,
+	          buyer_name: "er",
+	          buyer_tel: "010-4242-4242",
+	          buyer_addr: "서울특별시 강남구 신사동",
+	      });
+	    }
+	  
+				</script>
 
 
 </body>
