@@ -1,3 +1,5 @@
+<%@page import="model.memberDTO"%>
+<%@page import="model.productDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,10 +49,10 @@
 				<div id="topBtn">
 					<div id="innerTopbtn">
 						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+						<span>|</span> <a href="gobasket.do?id=${info.id}">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
-					<p>000님 환영합니다!</p>
+					<p>${info.id}님 환영합니다!</p>
 				</div>
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
@@ -91,7 +93,6 @@
 				</div>
 				<div class="proMoreInfo">
 					<div class="moreInfo">
-						<p class="includedAll">알레르기 유발 성분 개 포함</p>
 						<p class="company">${product.pro_maker}</p>
 						<p>
 							<span class="proSubject">${product.pro_name}</span><span class="weight">${product.pro_gramper} g</span>
@@ -125,8 +126,25 @@
 			<div class="infoBox">
 				<div class="allergyInfo">
 					<p>제품에 포함된 알레르기 유발 성분</p>
-					<div class="innerAllergy">
-						<span>#새우</span> <span>#밀</span>
+					<div id="innerAllergy">
+					<%
+						productDTO product = (productDTO)request.getAttribute("product");
+						memberDTO member = (memberDTO)session.getAttribute("info");
+						
+						String pro_ingredients = product.getPro_ingredients();
+						String m_ingredients = member.getM_allergy();
+						
+						String[] pro_ingredient_list = pro_ingredients.split(",");
+						String[] m_ingredient_list = m_ingredients.split(",");
+						
+						for(int i=0;i<pro_ingredient_list.length;i++){
+							for(int j=0; j<m_ingredient_list.length;j++){
+								if(pro_ingredient_list[i].contains(m_ingredient_list[j])){
+									out.print("<span> #"+pro_ingredient_list[i]+"</span>");
+								}
+							}
+						}
+					%>
 					</div>
 
 				</div>
@@ -136,42 +154,7 @@
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
-					<p>Contrary to popular belief, Lorem Ipsum is not simply random
-						text. It has roots in a piece of classical Latin literature from
-						45 BC, making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.
-						Contrary to popular belief, Lorem Ipsum is not simply random text.
-						It has roots in a piece of classical Latin literature from 45 BC,
-						making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.
-						Contrary to popular belief, Lorem Ipsum is not simply random text.
-						It has roots in a piece of classical Latin literature from 45 BC,
-						making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					<p>${product.pro_ingredients}</p>
 
 				</div>
 				<div class="chucheon">
@@ -305,6 +288,10 @@
  			$('html, body').animate({scrollTop:0},400);
  			return false;
  		});
+ 		
+		
+		
+ 		
 		</script>
 
 	</div>
