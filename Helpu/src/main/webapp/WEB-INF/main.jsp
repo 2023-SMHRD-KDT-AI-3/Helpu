@@ -61,7 +61,7 @@
 
 		<div id="container">
 			<div id="leftMenu">
-				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;'>
+				<button type= 'button' class="leftmenuBtn" id="autoApply" style='cursor: pointer;' onclick="btn_reset();">
 					<span class="userData">사용자 정보 자동 적용</span>
 				</button>
 				<button class="leftmenuBtn" id="editData" style='cursor: pointer;'>
@@ -450,7 +450,7 @@
 				</div>
 		      <div class="popupBtn">
 			      <input type="submit" id="saveBtn" style='cursor: pointer;' value="변경 후 저장하기">
-			      <button type="button" id="nosaveBtn" style='cursor: pointer;' onclick="location.href='gomain.do">저장하지 않고 돌아가기</button>
+			      <button type="button" id="nosaveBtn" style='cursor: pointer;' onclick="location.href='gomain.do'">저장하지 않고 돌아가기</button>
 		      </div>
 		     </form>
 		      
@@ -655,7 +655,7 @@
 			}
 	 	}
  		
- 	// 체크박스 회원 알레르기 선택해놓기
+ 	// 배너 회원 알레르기 선택해놓기
 		var banner_checkbox = document.getElementsByName("food");
 		
 		let banner_allergy = "";
@@ -678,6 +678,19 @@
  			return false;
  		});
  		
+ 		function btn_reset(){
+			console.log(checkbox);
+			console.log(allergy);
+			
+			for(let i = 0; i<checkbox.length; i++){
+				checkbox[i].checked = false;
+				for(let j = 0; j<allergy.length; j++){
+					if(checkbox[i].getAttribute("value")===allergy[j]){
+						checkbox[i].checked=true;
+					}
+				}
+			}
+		}
  	
 	 		
 	 		
