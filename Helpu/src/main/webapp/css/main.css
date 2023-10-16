@@ -463,6 +463,7 @@ li {
 	width: 500px;
 	padding:50px;
 	background-color: white;
+	border-radius: 10px;
 }
 
 /* 팝업창 제목 */
@@ -476,6 +477,8 @@ li {
 /* 제목 및 설명단 여백 설정 */
 .editAllergy{
 	margin-bottom: 10px;
+	width: 480px;
+    margin: 0 auto;
 }
 
 
@@ -503,10 +506,9 @@ li {
     width: 230px;
     background: white;
     font-size: 18px;
-    color: red;
+    color: #ff3b42;
     border: 1px solid;
     padding: 10px 5px 10px 5px;
-    margin-right:20px;
 }
 
 /* 저장하기 버튼 */
@@ -514,12 +516,55 @@ li {
 	box-sizing: border-box;
     font-weight: 700;
     width: 230px;
-    background: red;
+    background: #ff3b42;
     font-size: 18px;
     color: white;
-    border: 1px solid red;
+    border: 1px solid #ff3b42;
     padding: 10px 5px 10px 5px;
+    
+    margin-right: 14px;
 }
+
+/* 체크박스 css */
+
+.checkboxList {
+	width: 450px;
+	margin: 0 auto;
+	text-align: center;
+	
+	margin-bottom: 80px;
+    font-weight: 600;
+    font-size: 19px;
+    
+  
+}
+
+.innerCheckbox{
+	text-align: left;
+	width: 450px;
+	margin: 0 auto;
+	
+	margin-top: 20px;
+}
+
+.checkboxItem{
+	float:left;
+	margin-right: 10px;
+}
+
+/* 알러지 체크영역 제목 */
+.allergy{
+	margin: 20px 0 20px 0;
+}
+
+.checkbtn{
+	margin-right:12px;
+	margin-left:12px;
+}
+
+
+
+
 
 /* ----------------------------- 페이징 번호 구역 -----------------------------  */
 #pagination-container {
