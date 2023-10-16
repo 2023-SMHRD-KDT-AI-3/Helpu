@@ -76,12 +76,14 @@ public class searchService implements Command {
           
          for(int i=0; i<list.size(); i++) {
             int cnt=0;
+            // 제품내 알레르기 유발성분 리스트 
             String[] list_haveIngredients = list.get(i).getPro_haveIngredients().split(","); 
+            
             for(int j =0; j<list_haveIngredients.length; j++) {
                for(int k=0; k<m_allergy.length; k++) {
                   if(list_haveIngredients[j].contains(m_allergy[k])) {
                      // 회원이 가지고 있는 알레르기 유발성분 저장
-                     m_haveIngredients += m_allergy[k]+",";
+                     m_haveIngredients += list_haveIngredients[j]+",";
                      // 회원이 가지고 있는 알레르기 성분 갯수
                      cnt++;
                   }

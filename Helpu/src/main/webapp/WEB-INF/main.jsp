@@ -555,7 +555,7 @@
 			html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
 			html += "</div>";
 			html += "<div class='bskbtnBox'>";
-			html+="<button type='button' class='bskBtn' style='cursor:pointer;' onclick='addToBasket("+obj.pro_code+")'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+			html+="<button type='button' class='bskBtn' style='cursor:pointer;' onclick='addToBasket("+data[i-1].pro_code+")'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
