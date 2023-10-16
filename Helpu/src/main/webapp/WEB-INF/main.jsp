@@ -64,7 +64,7 @@
 				<button class="leftmenuBtn" id="editData" style='cursor: pointer;'>
 					<span class="editData">사용자 알레르기 정보<br></span><span>간편 수정</span>
 				</button>
-				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;'>
+				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;' onclick="btn_reset();">
 					<span class="userData">정보 초기화 버튼</span>
 				</button>
 				
@@ -383,9 +383,9 @@
 			
 			<!-- 배너 영역 -->
 		<div id="banner">
-			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do"><p>장바구니</p></a>
+			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
 			<div class="recent">
-				<a href="#"><p>최근 본 상품</p></a>
+				<a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
 				<ul class="recentbox">
 					<li><a href="#"><img alt="임시이미지"
 						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
@@ -683,6 +683,7 @@
  			return false;
  		});
  		
+ 		// 배너 선택 초기화
  		function btn_reset(){
 			console.log(checkbox);
 			console.log(allergy);
@@ -696,6 +697,7 @@
 				}
 			}
 		}
+ 		
  		function addToBasket(pro_code) {
  			 var id='${info.id}';
  			 
