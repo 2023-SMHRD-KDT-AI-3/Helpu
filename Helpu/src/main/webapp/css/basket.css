@@ -152,9 +152,16 @@ li {
 .bskWrap{
 	position: relative;
 	margin: 0 auto;
-    width: 1280px;
+    width: 60%;
     top: 250px;
 }
+
+
+hr{
+	margin-bottom: 30px;
+    margin-top: 10px;
+}
+
 
 /* 장바구니 제목 */
 .basket {
@@ -176,9 +183,8 @@ li {
 	border-radius: 10px;
 	border: 2px solid #d7d7d7;
 	margin: 15px;
-	
-	padding-left:100px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
 /* 상품이미지 정렬  */
@@ -201,6 +207,11 @@ li {
 	padding-left : 70px;
 }
 
+/* 제품 명 */
+.proName{
+	margin-right: 80px;
+}
+
 
 /* 수량 영역 정렬 */
 .cntbox{
@@ -214,20 +225,23 @@ li {
 }
 
 /* 제품 영역별 비율 조정 */
-.proInfo{
-	flex-basis: 30%;
-	justify-content: center;
+
+
+.cntbox{
+	margin: 100px;
 }
+
 
 /* 제품 체크박스 영역 */
 .proCheckbox{
 	flex-basis: 10%;
+	padding-right: 50px;
 }
 
 
 /* 제품 가격 여백 범위 재설정 */
 .payment{
-	flex-basis: 20%;
+	flex-basis: 5%;
 }
 
 
@@ -240,6 +254,8 @@ li {
 	border: 2px solid #d7d7d7;
 	margin: 15px;
 	justify-content: center;
+	margin-top: 30px;
+	padding: 20px;
 }
 
 /* 결제 박스 영역 정렬 */
@@ -263,11 +279,33 @@ li {
 }
 
 
+.proDelete{
+	margin-left: 50px;
+}
+
+
+
+/* 삭제버튼 속성 */
+.proDelete>button{
+	padding: 2px 20px 2px 20px;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+}
+
+
+
+
 /* 결제 버튼 속성 */
 
 .pagination-container {
 	display: flex;
 	justify-content: center;
+	margin-top: 30px;
+	
 }
 
 .buyNow {
@@ -287,18 +325,35 @@ li {
 	margin: 5px;
 }
 
+/* 선택상품 결제 및 전체상품 결제 버튼  */
 #btn3 {
-	background-color: white;
 	width: 200px;
+	margin-right:20px;
+	padding: 8px;
+	background-color: white;
+
+	color: #ff3b42;
+    border: 1px solid #ff3b42;
+
 	font-size: 20px;
-	color: red;
-	border-color: red;
+	font-weight: 800;
+    cursor: pointer;
+    margin-bottom: 100px;
 }
 
 #btn4 {
-	background-color: red;
 	width: 200px;
 	font-size: 20px;
+	
+	background-color: #ff3b42;
+	
 	color: white;
-	border: none;
+    border: 1px solid #ff3b42;
+
+	font-size: 20px;
+	font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 100px;
+	
+	
 }
