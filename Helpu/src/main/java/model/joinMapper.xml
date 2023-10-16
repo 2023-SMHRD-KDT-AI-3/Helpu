@@ -24,7 +24,11 @@
 
 	<!-- 회원 정보 수정 할 수 있는 sql문장 -->
 	<update id="change" parameterType="model.memberDTO">
-		update tb_member set pw=#{pw}, m_allergy=#{m_allergy}, phone_number=#{phone_number}, address=#{address} where id=#{id};
+		update tb_member set pw=#{pw}, m_allergy=#{m_allergy}, phone_number=#{phone_number}, address=#{address} where id=#{id}
+	</update>
+	
+	<update id="banner" parameterType="model.memberDTO">
+		update tb_member set m_allergy=#{m_allergy} where id=#{id}
 	</update>
 	
 </mapper>

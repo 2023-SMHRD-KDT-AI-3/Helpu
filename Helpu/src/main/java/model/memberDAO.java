@@ -47,4 +47,13 @@ public class memberDAO {
 
 		return cnt;
 	}
+	
+	// 배너에서 회원 정보 수정
+	public int banner(memberDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.update("banner", dto);
+		sqlSession.close();
+
+		return cnt;
+	}
 }

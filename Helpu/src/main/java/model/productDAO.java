@@ -11,7 +11,8 @@ public class productDAO {
 	
 	// ArrayList 미리 생성
 		ArrayList<allergyDTO> list = new ArrayList();
-		
+
+	// 알레르기 유발 성분 리스트 가져오기
 	public ArrayList<allergyDTO> allergyList() {
 		
 		// 항상있음 / 이유 : 나도일단 모름.
@@ -30,6 +31,7 @@ public class productDAO {
 		return list;	
 	}
 	
+	// 가져온 제품 코드로 제품 관련 정보 가져오기
 	public productDTO product(String pro_code) {
 		
 		productDTO result = new productDTO();
@@ -48,6 +50,7 @@ public class productDAO {
 		
 	return result;
 	}
+	
 
 		
 }

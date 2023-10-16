@@ -76,7 +76,7 @@
 							<li><input type="checkbox" class="allergy" name="allergy" value="소고기"><span>소고기</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="돼지고기"><span>돼지고기</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="닭고기"><span>닭고기</span></li>
-							<li><input type="checkbox" class="allergy" name="allergy" value="새우,새우살"><span>새우</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="새우"><span>새우</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="게"><span>게</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="오징어"><span>오징어</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="고등어"><span>고등어</span></li>
@@ -426,7 +426,7 @@
 		      	<p class="subtext">알레르기는 식품의약품안전처의 기준을 따르고 있습니다.</p>
 		      </div>
 		      
-		      <form action ="" method = "post">
+		      <form action ="bannerChange.do" method = "post">
 		      		<div class="checkboxList">
 					<input type="checkbox" id="cb1" name="food" value="난류가금류"><label for="cb1"></label>난류(가금류)
 					<input type="checkbox" id="cb2" name="food" value="소고기"><label for="cb2"></label>소고기
@@ -449,8 +449,8 @@
 					<input type="checkbox" id="cb19" name="food" value="아황산류"><label for="cb19"></label>아황산류
 				</div>
 		      <div class="popupBtn">
-			      <button type="submit" id="nosaveBtn" style='cursor: pointer;'>저장하지 않고 돌아가기</button>
-			      <button type="submit" id="saveBtn" style='cursor: pointer;'>변경 후 저장하기</button>
+			      <input type="submit" id="saveBtn" style='cursor: pointer;' value="변경 후 저장하기">
+			      <button type="button" id="nosaveBtn" style='cursor: pointer;' onclick="location.href='gomain.do">저장하지 않고 돌아가기</button>
 		      </div>
 		     </form>
 		      
@@ -642,14 +642,27 @@
 			
 		// 체크박스 회원 알레르기 선택해놓기
 		var checkbox = document.getElementsByName("allergy");
+		
 		let info = "${info.m_allergy}";
-
 		let allergy = info.split(",");
+		
 		let plus_allergy = "";
  		for(let i = 0; i<checkbox.length; i++){
 			for(let j = 0; j<allergy.length; j++){
 				if(checkbox[i].getAttribute("value")==allergy[j]){
 					checkbox[i].setAttribute("checked",true);
+				}
+			}
+	 	}
+ 		
+ 	// 체크박스 회원 알레르기 선택해놓기
+		var banner_checkbox = document.getElementsByName("food");
+		
+		let banner_allergy = "";
+ 		for(let i = 0; i<banner_checkbox.length; i++){
+			for(let j = 0; j<allergy.length; j++){
+				if(banner_checkbox[i].getAttribute("value")==allergy[j]){
+					banner_checkbox[i].setAttribute("checked",true);
 				}
 			}
 	 	}
