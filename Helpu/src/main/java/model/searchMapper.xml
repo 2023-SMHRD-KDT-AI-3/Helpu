@@ -7,7 +7,7 @@
 <!-- resultType(보내는값)은 searchDTO으로 보내준다. -->
 	<select id="allList" parameterType="String"
 	resultType="model.productDTO">
-	select * from tb_product where pro_name LIKE CONCAT('%',#{search},'%')
+	select * from tb_product where pro_name LIKE CONCAT('%',#{search},'%') or pro_maker LIKE CONCAT('%',#{search},'%')
 	</select>
 
 	<!-- DB의 모든 알레르기성분을 가져오는 sql문장 -->

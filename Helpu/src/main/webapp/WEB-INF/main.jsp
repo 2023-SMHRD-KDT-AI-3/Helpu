@@ -531,7 +531,7 @@
 
 	// 페이지 나열
 	function pagination(data){
-		console.log("페이징 기능 이용");		
+		console.log("페이징 기능 이용");	
 
 		// 필요한 페이지 번호 수에 맞게 페이지 버튼 구성하기
 		const COUNT_PER_PAGE = 8; // 페이지 당 보여줄 게시물 수
