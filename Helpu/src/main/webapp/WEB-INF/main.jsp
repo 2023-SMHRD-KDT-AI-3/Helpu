@@ -559,7 +559,8 @@
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
-				let ingredients = data[i-1].pro_m_haveIngredients.split(",");
+				let ingredients = null;
+				ingredients = data[i-1].pro_m_haveIngredients.split(",");
 				for(let j = 0; j<ingredients.length;j++){
 					if(ingredients[j] != ""){
 					html += "<span> #"+ingredients[j]+"</span>";
