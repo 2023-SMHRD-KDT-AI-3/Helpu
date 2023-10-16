@@ -207,6 +207,11 @@ li {
 	padding-left : 70px;
 }
 
+/* 제품 명 */
+.proName{
+	margin-right: 80px;
+}
+
 
 /* 수량 영역 정렬 */
 .cntbox{
@@ -220,9 +225,7 @@ li {
 }
 
 /* 제품 영역별 비율 조정 */
-.proInfo{
-	flex-basis: 10%;
-}
+
 
 .cntbox{
 	margin: 100px;
@@ -232,6 +235,7 @@ li {
 /* 제품 체크박스 영역 */
 .proCheckbox{
 	flex-basis: 10%;
+	padding-right: 50px;
 }
 
 
@@ -275,7 +279,7 @@ li {
 
 
 .proDelete{
-	margin-left: 100px;
+	margin-left: 50px;
 }
 
 
