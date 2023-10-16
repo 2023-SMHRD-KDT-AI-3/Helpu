@@ -119,6 +119,18 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("productService.do")) {
 			productService productservice = new productService();
 			url = productservice.execute(request, response);
+		} else if(result.equals("bannerChange.do")) {
+			bannerChange banner = new bannerChange();
+			url = banner.execute(request, response);
+		} else if (result.equals("basketService.do")) {
+			basketService basketservice = new basketService();
+			url = basketservice.execute(request, response);
+		} else if (result.equals("updateProductQuantity.do")) {
+		    UpdateProductQuantityService updateService = new UpdateProductQuantityService();
+		    url = updateService.execute(request, response);
+		} else if (result.equals("deleteCartItem.do")) {
+		    deleteCartItemService deleteService = new deleteCartItemService();
+		    url = deleteService.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동

@@ -72,7 +72,6 @@
 					<button class="leftmenuBtn leftmenuBtn3" class="bskBtn" style='cursor: pointer;'>
 							<span class="checkservice">알레르기 추가 체크 서비스</span>
 					</button>
-					<form action="#" method="post">
 						<ul class="checkboxMenu">
 							<li><input type="checkbox" class="allergy" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="소고기"><span>소고기</span></li>
@@ -93,9 +92,8 @@
 							<li><input type="checkbox" class="allergy" name="allergy" value="밀"><span>밀</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="메밀"><span>메밀</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="아황산류"><span>아황산류</span></li>
-							<li><button id="checkSubmit" style='cursor: pointer;' onclick="reSearch()">적용하기</button></li>
+							<li><button id="checkSubmit" style='cursor: pointer;' onclick="reSearch();">적용하기</button></li>
 						</ul>
-					</form>
 				</div>
 			</div>
 			<!-- 검색 시 출력되는 제품 단락 -->
@@ -429,7 +427,7 @@
 		      	<p class="subtext">알레르기는 식품의약품안전처의 기준을 따르고 있습니다.</p>
 		      </div>
 		      
-		      <form action ="" method = "post">
+		      <form action ="bannerChange.do" method = "post">
 		      		<div class="checkboxList">
 					<input type="checkbox" id="cb1" name="food" value="난류가금류"><label for="cb1"></label>난류(가금류)
 					<input type="checkbox" id="cb2" name="food" value="소고기"><label for="cb2"></label>소고기
@@ -452,8 +450,8 @@
 					<input type="checkbox" id="cb19" name="food" value="아황산류"><label for="cb19"></label>아황산류
 				</div>
 		      <div class="popupBtn">
-			      <button type="submit" id="nosaveBtn" style='cursor: pointer;'>저장하지 않고 돌아가기</button>
-			      <button type="submit" id="saveBtn" style='cursor: pointer;'>변경 후 저장하기</button>
+			      <input type="submit" id="saveBtn" style='cursor: pointer;' value="변경 후 저장하기">
+			      <button type="button" id="nosaveBtn" style='cursor: pointer;' onclick="location.href='gomain.do'">저장하지 않고 돌아가기</button>
 		      </div>
 		     </form>
 		      
@@ -533,7 +531,7 @@
 
 	// 페이지 나열
 	function pagination(data){
-		
+		console.log("페이징 기능 이용");		
 
 		// 필요한 페이지 번호 수에 맞게 페이지 버튼 구성하기
 		const COUNT_PER_PAGE = 8; // 페이지 당 보여줄 게시물 수
@@ -543,12 +541,11 @@
 		var html = "";
 		console.log(length);
 		console.log(currentPage);
-		
 		for(let i = COUNT_PER_PAGE * (currentPage - 1) + 1; i <= COUNT_PER_PAGE * (currentPage - 1) + COUNT_PER_PAGE && i <= length; i++){
 			html += "<div class='innerproBox innerproBox"+(i-(COUNT_PER_PAGE*(currentPage - 1)))+"'>";
 			html += "<a href='productService.do?num="+data[i-1].pro_code+"'>";
 			html += "<div class='product'>"
-			html += "<div class='textImg'><img class= 'innertextImg' src='"+ "'></div>";
+			html += "<img class='textImg' src='"+data[i-1].pro_img+"'>";
 			html += "<div class='Info'>";
 			html += "<p>알레르기 유발 성분 "+data[i-1].pro_cnt+" 개 포함</p>";
 			html += "<p>" + data[i-1].pro_maker + "</p>";
@@ -559,11 +556,16 @@
 			html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
 			html += "</div>";
 			html += "<div class='bskbtnBox'>";
-			html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+			html+="<button type='button' class='bskBtn' style='cursor:pointer;' onclick='addToBasket("+obj.pro_code+")'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
-			html += "<span>#새우</span> <span>#밀</span>";
+				let ingredients = data[i-1].pro_m_haveIngredients.split(",");
+				for(let j = 0; j<ingredients.length;j++){
+					if(ingredients[j] != ""){
+					html += "<span> #"+ingredients[j]+"</span>";
+					}
+				}
 			html += "</div>";
 			html += "</div>";
 			html += "</div>";
@@ -641,14 +643,27 @@
 			
 		// 체크박스 회원 알레르기 선택해놓기
 		var checkbox = document.getElementsByName("allergy");
+		
 		let info = "${info.m_allergy}";
-
 		let allergy = info.split(",");
+		
 		let plus_allergy = "";
  		for(let i = 0; i<checkbox.length; i++){
 			for(let j = 0; j<allergy.length; j++){
 				if(checkbox[i].getAttribute("value")==allergy[j]){
 					checkbox[i].setAttribute("checked",true);
+				}
+			}
+	 	}
+ 		
+ 	// 배너 회원 알레르기 선택해놓기
+		var banner_checkbox = document.getElementsByName("food");
+		
+		let banner_allergy = "";
+ 		for(let i = 0; i<banner_checkbox.length; i++){
+			for(let j = 0; j<allergy.length; j++){
+				if(banner_checkbox[i].getAttribute("value")==allergy[j]){
+					banner_checkbox[i].setAttribute("checked",true);
 				}
 			}
 	 	}
@@ -664,7 +679,41 @@
  			return false;
  		});
  		
- 	
+ 		function btn_reset(){
+			console.log(checkbox);
+			console.log(allergy);
+			
+			for(let i = 0; i<checkbox.length; i++){
+				checkbox[i].checked = false;
+				for(let j = 0; j<allergy.length; j++){
+					if(checkbox[i].getAttribute("value")===allergy[j]){
+						checkbox[i].checked=true;
+					}
+				}
+			}
+		}
+ 		function addToBasket(pro_code) {
+ 			 var id='${info.id}';
+ 			 
+ 		     $.ajax({
+ 		        url: "basketService.do",
+ 		        type: "post",
+ 		        data: {
+ 		            "id": id,
+ 		            "pro_code": pro_code	         
+ 		        },
+ 		        success: function (response) {
+ 		            if (response) {
+ 		                alert("장바구니에 상품이 추가되었습니다.");
+ 		            } else {
+ 		                alert("장바구니 추가 실패");
+ 		            }
+ 		        },
+ 		        error: function () {
+ 		            alert("error");
+ 		        }
+ 		    }); 
+ 		}
 	 		
 	 		
 		</script>

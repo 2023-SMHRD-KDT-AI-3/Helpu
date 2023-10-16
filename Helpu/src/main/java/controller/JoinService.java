@@ -17,7 +17,7 @@ public class JoinService implements Command {
 			// 데이터 수집
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
-			String[] m_allergy = request.getParameterValues("m_allergy");
+			String[] m_allergy = request.getParameterValues("food");
 			String birthdate = request.getParameter("birthdate");
 			String phone_number = request.getParameter("phone_number");
 			String gender = request.getParameter("gender");
