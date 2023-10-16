@@ -61,12 +61,13 @@
 
 		<div id="container">
 			<div id="leftMenu">
-				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;'>
-					<span class="userData">사용자 정보 자동 적용</span>
-				</button>
 				<button class="leftmenuBtn" id="editData" style='cursor: pointer;'>
-					<span class="editData">사용자 정보 간편 수정</span>
+					<span class="editData">사용자 알레르기 정보<br></span><span>간편 수정</span>
 				</button>
+				<button class="leftmenuBtn" id="autoApply" style='cursor: pointer;'>
+					<span class="userData">정보 초기화 버튼</span>
+				</button>
+				
 				<div class = "leftMenuCheckbox">
 					<button class="leftmenuBtn leftmenuBtn3" class="bskBtn" style='cursor: pointer;'>
 							<span class="checkservice">알레르기 추가 체크 서비스</span>
