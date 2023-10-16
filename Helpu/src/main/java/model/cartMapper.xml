@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="model.cartMapper">
+
+
+	<!-- 장바구니 추가 하는 SQL문 -->
+	<insert id="cartInsert" parameterType="model.cartDTO">
+		insert into
+		tb_cart(su,p_date,id,pro_code)
+		values(1,now(),#{id},#{pro_code})
+	</insert>
+
+	<!-- 장바구니 화면 출력하는 SQL문 -->
+	<select id="getCartList" parameterType="string"
+		resultType="model.CartProductVO">
+		select *
+		from tb_product p
+		inner join tb_cart c on
+		p.pro_code=c.pro_code
+		where
+		c.id=#{id}
+	</select>
+	<!-- 상품 수량 업데이트 SQL문 -->
+	<update id="updateProductQuantity" parameterType="model.cartDTO">
+		update tb_cart
+		set su = #{su}
+		where id = #{id} and pro_code =
+		#{pro_code}
+	</update>
+	<!-- 상품 삭제하는 SQl문 -->
+	<delete id="deleteCartItem" parameterType="model.cartDTO">
+		delete from tb_cart
+		where id = #{id} and pro_code = #{pro_code}
+	</delete>
+</mapper>

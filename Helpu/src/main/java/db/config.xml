@@ -21,5 +21,6 @@
 	<mappers>
 		<mapper resource="model/joinMapper.xml" />
 		<mapper resource="model/searchMapper.xml" />
+		<mapper resource="model/cartMapper.xml" />
 	</mappers>
 </configuration>
