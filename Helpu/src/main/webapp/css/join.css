@@ -14,7 +14,7 @@
 
 /* 전체 페이지 사이즈 설정 */
 .wrap{
-	height: 1280px;
+	height: 1600px;
     width: 1280px;
     margin: 0 auto;
 }
@@ -34,17 +34,19 @@
 }
 
 .join>img {
-	margin-top: 20px;
+	margin-top: 50px;
 }
 
 h3{
-	margin-bottom : 30px;
+	margin-top:30px;
+	margin-bottom : 35px;
 }	
 
 .joinBox {
 	font-weight: 700;
 	margin: 0 auto;
 	width: 500px;
+	padding-bottom: 25px;
 }
 
 .userData {
@@ -52,14 +54,16 @@ h3{
 	width: 300px;
 }
 
+/* 각 정보값 별 제목 */
 .userData>p {
 	text-align: left;
+	margin-top: 30px;
 }
 
 .userData>input {
-	color: #d6d6d6;
+	color: rgb(0, 0, 0);
 	border: 1.5px solid #4c4c4c;
-	padding: 5px;
+	padding: 10px;
 	box-sizing: border-box;
 	height: 50px;
 	width: 300px;
@@ -68,26 +72,64 @@ h3{
 }
 
 
+/* 비밀번호 옆 별 속성 */
+.passwordStar{
+	color:#ff3b42;
+}
+
+
 .gender {
 	width: 30px;
 }
+
+/* 성별 체크박스 정렬 */
+.genderBox{
+	margin-top:20px;
+	text-align: left;
+}
+
+
+
+/* 알레르기 체크박스 영역 제목 */
+.allergySubject {
+	margin:50px 0 30px 0;
+	color: #ff3b42;
+	font-weight: 900;
+}
+
 
 /* 체크박스 css */
 
 
 .checkboxList {
-	width: 300px;
+	width: 450px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.innerCheckbox{
+	text-align: left;
+	width: 400px;
 	margin: 0 auto;
 }
+
 
 /* 알러지 체크영역 제목 */
 .allergy{
 	margin: 20px 0 20px 0;
 }
 
+.checkbtn{
+	margin-right:12px;
+	margin-left:12px;
+}
+
+
+
 /* 회원가입 버튼 */
 
 .btn{
+	margin: 10px 0 0 0 ;
 	padding: 30px 0 50px 0;
 }
 
