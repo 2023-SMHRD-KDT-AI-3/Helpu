@@ -555,7 +555,7 @@
 			html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
 			html += "</div>";
 			html += "<div class='bskbtnBox'>";
-			html += "<button type='submit' class='bskBtn' style='cursor:pointer;'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
+			html+="<button type='button' class='bskBtn' style='cursor:pointer;' onclick='addToBasket("+obj.pro_code+")'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
@@ -691,7 +691,28 @@
 				}
 			}
 		}
- 	
+ 		function addToBasket(pro_code) {
+ 			 var id='${info.id}';
+ 			 
+ 		     $.ajax({
+ 		        url: "basketService.do",
+ 		        type: "post",
+ 		        data: {
+ 		            "id": id,
+ 		            "pro_code": pro_code	         
+ 		        },
+ 		        success: function (response) {
+ 		            if (response) {
+ 		                alert("장바구니에 상품이 추가되었습니다.");
+ 		            } else {
+ 		                alert("장바구니 추가 실패");
+ 		            }
+ 		        },
+ 		        error: function () {
+ 		            alert("error");
+ 		        }
+ 		    }); 
+ 		}
 	 		
 	 		
 		</script>
