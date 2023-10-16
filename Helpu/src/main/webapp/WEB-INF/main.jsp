@@ -71,13 +71,12 @@
 					<button class="leftmenuBtn leftmenuBtn3" class="bskBtn" style='cursor: pointer;'>
 							<span class="checkservice">알레르기 추가 체크 서비스</span>
 					</button>
-					<form action="#" method="post">
 						<ul class="checkboxMenu">
 							<li><input type="checkbox" class="allergy" name="allergy" value="난류가금류"><span>난류(가금류)</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="소고기"><span>소고기</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="돼지고기"><span>돼지고기</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="닭고기"><span>닭고기</span></li>
-							<li><input type="checkbox" class="allergy" name="allergy" value="새우"><span>새우</span></li>
+							<li><input type="checkbox" class="allergy" name="allergy" value="새우,새우살"><span>새우</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="게"><span>게</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="오징어"><span>오징어</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="고등어"><span>고등어</span></li>
@@ -92,9 +91,8 @@
 							<li><input type="checkbox" class="allergy" name="allergy" value="밀"><span>밀</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="메밀"><span>메밀</span></li>
 							<li><input type="checkbox" class="allergy" name="allergy" value="아황산류"><span>아황산류</span></li>
-							<li><button id="checkSubmit" style='cursor: pointer;' onclick="reSearch()">적용하기</button></li>
+							<li><button id="checkSubmit" style='cursor: pointer;' onclick="reSearch();">적용하기</button></li>
 						</ul>
-					</form>
 				</div>
 			</div>
 			<!-- 검색 시 출력되는 제품 단락 -->
@@ -532,7 +530,7 @@
 
 	// 페이지 나열
 	function pagination(data){
-		
+		console.log("페이징 기능 이용");		
 
 		// 필요한 페이지 번호 수에 맞게 페이지 버튼 구성하기
 		const COUNT_PER_PAGE = 8; // 페이지 당 보여줄 게시물 수
@@ -542,7 +540,6 @@
 		var html = "";
 		console.log(length);
 		console.log(currentPage);
-		
 		for(let i = COUNT_PER_PAGE * (currentPage - 1) + 1; i <= COUNT_PER_PAGE * (currentPage - 1) + COUNT_PER_PAGE && i <= length; i++){
 			html += "<div class='innerproBox innerproBox"+(i-(COUNT_PER_PAGE*(currentPage - 1)))+"'>";
 			html += "<a href='productService.do?num="+data[i-1].pro_code+"'>";
