@@ -544,7 +544,7 @@
 			html += "<div class='innerproBox innerproBox"+(i-(COUNT_PER_PAGE*(currentPage - 1)))+"'>";
 			html += "<a href='productService.do?num="+data[i-1].pro_code+"'>";
 			html += "<div class='product'>"
-			html += "<div class='textImg'><img class= 'innertextImg' src='"+ "'></div>";
+			html += "<img class='textImg' src='"+data[i-1].pro_img+"'>";
 			html += "<div class='Info'>";
 			html += "<p>알레르기 유발 성분 "+data[i-1].pro_cnt+" 개 포함</p>";
 			html += "<p>" + data[i-1].pro_maker + "</p>";
@@ -559,7 +559,12 @@
 			html += "</div>";
 			html += "<div class = 'tag'><hr />";			
 			html += "<div class='innerTag'>";
-			html += "<span>#새우</span> <span>#밀</span>";
+				let ingredients = data[i-1].pro_m_haveIngredients.split(",");
+				for(let j = 0; j<ingredients.length;j++){
+					if(ingredients[j] != ""){
+					html += "<span> #"+ingredients[j]+"</span>";
+					}
+				}
 			html += "</div>";
 			html += "</div>";
 			html += "</div>";
