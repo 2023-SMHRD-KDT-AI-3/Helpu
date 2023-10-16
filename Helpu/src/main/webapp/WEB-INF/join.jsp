@@ -10,7 +10,7 @@
 <body>
 <div class= "wrap">
 	<div class="join">
-		<img src="./img/logo.png" alt="로고">
+		<img src="imgs/logo.png" alt="로고">
 		<h3>서비스 이용을 위해 정보를 입력해주세요.</h3>
 		<div class="joinBox">
 			<form action="JoinService.do" method="post">
