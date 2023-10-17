@@ -357,3 +357,53 @@ li {
 	
 	
 }
+
+
+/* 결제 완료 후 비동기 페이지 css 속성 */
+.paymentSubjectbox{
+	text-align: center;
+}
+
+
+.paymentSubject{
+	padding-top: 30px;
+    text-align: center;
+    font-size: 38px;
+    color: rgb(97, 97, 97);
+    
+}
+
+/* 성공완료 아이콘 */
+.successIconbox{
+	text-align: center;
+}
+
+
+.successIconbox >.successIcon{
+	margin-top: 50px;
+    text-align: center;
+    color: #A2DD98;
+    font-size:150px;
+    margin-bottom: 50px;
+}
+
+/* 구매내역으로 이동하는 버튼 */
+.movehistoryBtn{
+	text-align: center;
+}
+
+
+.movehistoryBtn >a{
+	font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    background-color:  #ff3b42;
+    color: white;
+    border: 1px solid  #ff3b42;
+    display: inline-block;
+    width: 200px;
+    font-size: 18px;
+}
+
+
+
