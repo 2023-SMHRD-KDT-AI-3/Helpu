@@ -385,6 +385,19 @@ li {
 	font-weight:800;
 }
 
+/* 영양정보 차트 영역 */
+
+.chart{
+	justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.chartbox{
+	width: 400px;
+}
+
+
 
 /* 세부 원재료명 및 함량 탭 */
 
@@ -416,24 +429,83 @@ li {
 
 .chuTitle > p{
 	text-align: center;
-	margin-top:5px;
+	margin-top:20px;
 }
 
-#container > div.infoBox > div.chucheon{
-	background: orange;
+.chucheon{
 	height:350px;
 }
 
-#container > div.infoBox > div.chucheon > div > div{
+.chucheon > div > div{
 	display: flex;
     justify-content: center;
 }
 
 
-#container > div.infoBox > div.chucheon > div > div > div> a > div{
+.chucheon > div > div > div> a > div{
 	width:150px;
 	height:200px;
 	background-color: white;
+}
+
+/* 추천 상품 설명란 */
+.chuSubtitle{
+	margin-bottom:40px;
+}
+
+/* 슬라이드 영역 */
+.slider{
+	position:relative;
+	margin:0 auto;
+}
+
+.slides{
+	width: 200px;
+	height: 200px;
+	border-radius: 7px;
+	margin: 0 10px 0 10px;
+	background-color: white;
+	box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
+}
+
+/* 버튼 */
+
+#prev{
+	position: absolute;
+	top: 80px;
+    left: 10%;
+   	background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#next{
+	position: absolute;
+    top: 80px;
+	right: 10%;
+	background: none;
+    border: none;
+    
+    cursor: pointer;
+}
+
+
+#next > span{
+	padding: 3px;
+    font-size: 35px;
+    color: white;
+    background: #FFD159;
+    border-radius: 50px;
+    box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
+}
+
+#prev > span{
+	padding: 3px;
+    font-size: 35px;
+    color: white;
+    background: #FFD159;
+    border-radius: 50px;
+    box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
 }
 
 /* 상품 전체 리뷰 탭 */
@@ -480,7 +552,7 @@ li {
 
 /* 등록할 리뷰 사용자 명 속성 */
 .inputReview>span{
-	margin-right: 15px;
+	margin-right: 10px;
 	font-weight:800;
 }
 
@@ -491,6 +563,11 @@ li {
     padding: 10px 0px 10px 0px;
     margin:20px 0 500px 0;
     border-radius: 5px;
+}
+
+/* 리뷰작성 텍스트 창 */
+#reviewInput{
+	border: none;
 }
 
 /* 리뷰 등록 버튼 */
