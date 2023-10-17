@@ -91,12 +91,14 @@
 						<div class="proInfo cntbox">
 							<button type="button" class="minus"
 								onclick="updateQuantity('${clist.pro_code}', -1, ${clist.pro_price})">-</button>
+								
 							<span id="quantity_${clist.pro_code}" class="su">${clist.su}</span>
+							
 							<button type="button" class="plus"
 								onclick="updateQuantity('${clist.pro_code}', 1, ${clist.pro_price})">+</button>
 						</div>
-						<p class="proInfo payment">
-							<span id="price_${clist.pro_code}">${clist.pro_price * clist.su}원</span>
+						<p class="proInfo payment_${clist.pro_code}">
+							<span class="price_${clist.pro_code}">${clist.pro_price * clist.su}</span><span>원</span>
 						</p>
 						<p class="proDelete">
 							<button type="button"
@@ -150,26 +152,37 @@
 	</div>
 
 	<script>
+	 	
+	// 바로 실행이 되는 코드
+	$(document).ready(function() {
+			console.log("바로 시작");
+			var checkboxes = document.getElementsByName('select'); // 5
+		    var selectAllCheckbox = checkboxes[0]; // 전체선택
+		    selectAllCheckbox.checked=true;
+		   	var totalprice=0;
+	     	for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
+	           checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
+	       }
+	     	calculateTotalPrice();
+            updateFinalPrice();
+	     	
+	});
 	
-	 $(document).ready(function() {
-			 console.log("바로 시작");
-			 selectAll();
-			 console.log("바로 시작");
-			$('input[name="select"]').change(function () {
-				            calculateTotalPrice();
-				            updateFinalPrice();
-				        });
-				    });
-	
+	// 체크박스 변동이 있을 때마다 함수 실행
+	$('input[name="select"]').change(function () {
+            calculateTotalPrice();
+            updateFinalPrice();
+    });
 	
 	
 	
   	var userId = "${info.id}";
-	console.log(userId);
   	
+	// 수량 수정하기
     function updateQuantity(productCode, amount, price) {
         // 현재 수량 가져오기
         var currentQuantity = parseInt($('#quantity_' + productCode).text());
+        console.log(currentQuantity);
 
         // 변경된 수량 계산
         var newQuantity = currentQuantity + amount;
@@ -184,7 +197,7 @@
 
         // 가격 업데이트
         var newPrice = price * newQuantity;
-        $('#price_' + productCode).text(newPrice + '원');
+        $(".price_"+ productCode).text(newPrice);
 
         // 서버에 업데이트 요청 보내기
         $.ajax({
@@ -198,50 +211,44 @@
             success: function (response) {
                 // 성공적으로 업데이트되었을 때 수행할 작업
                 console.log("성공!");
-                calculateTotalPrice();
+        		calculateTotalPrice();
+        		updateFinalPrice();
             },
             error: function (xhr, status, error) {
                 // 실패했을 때 수행할 작업
                 console.log("실패..");
             }
         });
+        
     }
 
     
-    
+    // 전체금액 수정
     function calculateTotalPrice() {
     	
         var total = 0;
         $("input[name='select']:checked").each(function () {        	 
             index = $('input:checkbox[name=select]').index(this);          
             if(index!=0) {
-             var productCode = $("#productCode"+index);
-             var quantity = parseInt($("#productCode"+index).val());
-             var price = parseInt($("#price"+index).val());            
-             total += price;
+             var productCode = $("#productCode"+index)[0].value;
+             console.log("제품코드"+productCode);
+             var quantity = parseInt($("#quantity"+index).val());
+             var price = ($(".price_"+productCode).text());
+             console.log(price);
+             total += (price*quantity);
             }
         });
-
-        $('#totalProductPrice').text(total);       
+		$('#totalProductPrice').text(total);
+        console.log("전체금액 갱신 완료");
         
     }
-    
-    function selectAll() {
-        var checkboxes = document.getElementsByName('select'); // 5
-        var selectAllCheckbox = checkboxes[0]; // 전체선택
-        var totalprice=0;
-        for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
-            checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
-            
-            
-        }
-       
-    }   
-    
+     
+    // 최종금액 갱신
     function updateFinalPrice() {
         var totalProductPrice = parseInt($('#totalProductPrice').text());
         var finalPrice = totalProductPrice + 3000;
         $('#updateFinalPrice').text(finalPrice);
+       	console.log("갱신 완료");
     }
     
     function deleteCartItem(id, productCode) {
@@ -262,21 +269,16 @@
             }
         });
     }
-    /*
-	$.ajax({
-			url : "historyService.do",
-			type : "post",
-			data : {
-				"search" : search,
-				"allergy" : check_allergies
-			},
-			dataType : "json",
-			success : pagination,
-			error : function() {
-				alert("error");
-			}
-		});
-      */
+    
+    function selectAll() {
+        var checkboxes = document.getElementsByName('select'); // 5
+        var selectAllCheckbox = checkboxes[0]; // 전체선택
+        var totalprice=0;
+        for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
+            checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
+        }
+       
+    }   
 		
       function requestPay() {
       	pro_name = document.getElementsByClassName("proName");
