@@ -18,6 +18,9 @@
 		insert into tb_order_detail values (null,#{order_code},#{pro_code},#{od_cnt})
 	</insert>
 
+	<select id="selectOrderList" parameterType="String" resultType="model.member_orderDTO">
+		select * from tb_order as t1 inner join tb_order_detail as t2 on t1.order_code=t2.order_code inner join tb_product as t3 on t2.pro_code=t3.pro_code where id=#{id};
+	</select>
 
 
 
