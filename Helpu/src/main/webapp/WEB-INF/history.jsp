@@ -17,45 +17,47 @@
 <body>
 
 	<!-- 헤더 부분 -->
-	<div id="header">
-		<div id="innerHeader">
-			<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
-			<div id="topBtn">
-				<div id="innerTopbtn">
-					<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-					<a href="#">장바구니</a><br>
+		<div id="header">
+			<div id="innerHeader">
+				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
+				<div id="topBtn">
+					<div id="innerTopbtn">
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+					</div>
+					<!-- 사용자 방문 환영 글 -->
+					<p class="username">${info.mem_name}님 환영합니다!</p>
 				</div>
-				<!-- 사용자 방문 환영 글 -->
-				<p>000님 환영합니다!</p>
+				<!-- 로고 및 검색창 -->
+				<div id="schBox">
+					<!-- 로고 -->
+					<img alt="로고"
+						src="imgs/logo.png">
+					<!-- 검색 박스 -->
+					<div class="schBar">
+						<!-- 검색창 -->
+						<span class="icon"><i class="fa fa-search"></i></span> <input
+							type="search" id="search" placeholder="Search" />
+						<!-- 검색 돋보기 아이콘 -->
+						<div class="iconBox">
+							<button type="button" onclick="search()" class="schIcon"
+								style='cursor: pointer;'>
+								<span class="material-symbols-outlined">search</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<!-- 로고 및 검색창 -->
-			<div id="schBox">
-				<!-- 로고 -->
-				<img alt="로고"
-					src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
-				<!-- 검색 박스 -->
-				<div class="schBar">
-					<!-- 검색창 -->
-					<span class="icon"><i class="fa fa-search"></i></span> <input
-						type="search" id="search" placeholder="Search" />
-					<!-- 검색 아이콘 -->
-					<a href="#"><span class="material-symbols-outlined">search</span></a>
-				</div>
+			<!-- 메뉴바 -->
+			<div id="nav">
+				<ul id="gnb">
+					<li><a href="#">냉장제품</a></li>
+					<li><a href="#">냉동제품</a></li>
+					<li><a href="#">즉석조리제품</a></li>
+					<li><a href="#">기타</a></li>
+				</ul>
 			</div>
 		</div>
-
-		<!-- 메뉴바 -->
-		<div id="nav">
-			<ul id="gnb">
-				<li><a href="#">냉장제품</a></li>
-				<li><a href="#">냉동제품</a></li>
-				<li><a href="#">즉석조리제품</a></li>
-				<li><a href="#">기타</a></li>
-			</ul>
-		</div>
-	</div>
-
 
 
 	<div class="history">
@@ -92,7 +94,7 @@
 					</div>
 					
 					<!-- 구매내역 삭제 -->
-					<button class="close">x</button>
+					<button class="close"><span class="material-symbols-outlined">close</span></button>
 					
 				</div>
 			</li>
@@ -102,7 +104,7 @@
 	
 	<!-- 페이지 버튼 -->
 	<div class="pagination-container2">
-		<button id="btn3"> < </button>
+		<button id="btn3"> <span class="material-symbols-outlined">chevron_left</span> </button>
 		<a href="#"></a> 
 		
 		<button id="btn4">1</button>
@@ -120,7 +122,7 @@
 		<button id="btn8">5</button>
 		<a href="#"></a>
 		
-		<button id="btn9"> > </button>
+		<button id="btn3"> <span class="material-symbols-outlined">chevron_right</span> </button>
 		<a href="#"></a>
 	</div>
 	
