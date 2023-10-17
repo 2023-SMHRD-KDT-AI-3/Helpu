@@ -633,7 +633,7 @@ li {
 #banner {
 	position: fixed;
 	top: 25%;
-	right: 7.5%;
+	right: 13%;
 	z-index: 10;
 
 }
@@ -644,7 +644,7 @@ li {
 	border-radius: 5px;
 	text-align: center;
 	padding: 7px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background:  #A2DD98;;
 	
 	color: white;
@@ -653,15 +653,15 @@ li {
 }
 
 /* 최근 본 상품 버튼 */
-#banner>div>a>p {
-	width: 130px;
-	border-radius: 5px 5px 0px 0px;
-	text-align: center;
-	padding: 7px 7px 7px 7px;
-	background: #FFD159;
-	margin: 0;
-	color: white;
-	font-weight: 600;
+.recent > p {
+	border-radius: 5px 5px 0 0;
+    width: 130px;
+    text-align: center;
+    padding: 7px;
+    margin-bottom: 15px;
+    background: #FFD159;
+    color: white;
+    font-weight: 600;
     font-size: 14px;
 	
 }
@@ -686,10 +686,17 @@ li {
 }
 
 /* 배너 상품이미지 사이즈 고정 */
-.recentbox>li>a>img {
+.bannerImg {
 	width: 80px;
 	margin-top: 10px;
 }
+
+/* 배너 상품 이름 너비 고정 */
+.bannerProname{
+	width:120px;
+	margin: 0 auto;
+}
+
 
 /* 구분선 길이 */
 .recentbox>li>hr {
@@ -705,8 +712,8 @@ li {
 	
 }
 #bannerTopbtn>button{
-	margin-top: 25px;
-    background: none;
+	margin-top: 15px;
+    background: white;
     color: white;
     border: none;
 }
