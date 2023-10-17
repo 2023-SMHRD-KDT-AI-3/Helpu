@@ -1,3 +1,5 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="model.productDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
@@ -127,7 +129,17 @@
 				<div class="allergyInfo">
 					<p>제품에 포함된 알레르기 유발 성분</p>
 					<div class="innerAllergy">
-						<span>#새우</span> <span>#밀</span>
+					<%
+					productDTO product = (productDTO) request.getAttribute("product");
+					
+					String[] allergy = product.getPro_haveIngredients().split(",");
+					
+					for(int i =0; i<allergy.length; i++){
+						if(allergy[i]!=""){
+							out.print("<span>#"+allergy[i]+"</span>");
+						}
+					}
+					%>
 					</div>
 
 				</div>
@@ -147,7 +159,7 @@
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
-					<p></p>
+					<p>${product.pro_ingredients}</p>
 
 				</div>
 				<!--  
@@ -242,8 +254,8 @@
 					</div>
 					<form action="#" method="post">
 						<div class="inputReview">
-							<span>사용자명</span><input type="text" name="reviewData"> <input
-								type="submit" value="등록하기">
+							<span>${info.id}</span><input id = 'input_review' type="text" name="reviewData">
+							 <input type="button" value="등록하기" onclick='writeReview()'>
 						</div>
 					</form>
 				</div>
@@ -281,6 +293,30 @@
 
 
 			<script>
+			
+			
+			function writeReview() {
+	 			 var id='${info.id}';
+	 			 var pro_code = '${product.pro_code}';
+	 			 var content = document.getElementById("input_review").value;
+	 			 console.log(content);
+	 		     $.ajax({
+	 		        url: "reviewService.do",
+	 		        type: "post",
+	 		        data: {
+	 		            "id": id,
+	 		            "pro_code": pro_code,
+						"content": content,
+	 		        },
+	 		        success: function (response) {
+	 		                alert("성공");
+	 		               location.reload();
+	 		        },
+	 		        error: function () {
+	 		            alert("error");
+	 		        }
+	 		    }); 
+	 		}
 			
 	
 		
@@ -382,7 +418,7 @@
 		});
 				
 			</script>
-			<script src="http://code.jquery.com/jquery-latest.min.js"></script>ㄴㄴㄴ			ㄹ
+			<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 			<!-- 메인 -->
 </body>
 </html>

@@ -140,8 +140,11 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("idCheckService.do")) {
 			idCheckService idcheckservice = new idCheckService();
 			url = idcheckservice.execute(request, response);
+		}else if (result.equals("reviewService.do")) {
+			reviewService review = new reviewService();
+			url = review.execute(request, response);
 		}
-
+		
 		// 각각의 기능에서 받은 url로 이동
 //		if (url != null) {
 //			if (url.indexOf(".do") != -1) {

@@ -10,7 +10,7 @@
 	<!-- 게시판에 게시글을 등록할 수 있는 sql 문장 -->
 	<insert id="write" parameterType="model.reviewDTO">
 		insert into tb_review
-		values(#{rv_code},#{id},#{pro_code},#{rv_content},now(),#{ratings}())
+		values(null,#{id},#{pro_code},#{rv_content},now(),null)
 	</insert>
 	
 </mapper>

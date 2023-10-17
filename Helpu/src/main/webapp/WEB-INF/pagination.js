@@ -54,50 +54,66 @@ const setPageOf = function(pageNumber){
   for (
     let i = COUNT_PER_PAGE * (pageNumber - 1) + 1; i <= COUNT_PER_PAGE * (pageNumber - 1) + 3 && i <= data.length; i++) {
     const li = document.createElement('li');
-
+	
+	const container = document.createElement('div');
+	container.className='post-container';
+    
     // 컨테이너
-    const postContainer = document.createElement('div');
-    postContainer.className = 'post-container';
+    const imgContainer = document.createElement('div');
 
     // 이미지
     const productImg = document.createElement('img');
     productImg.className = 'product_img';
 
-    // 제품명
-    const productName = document.createElement('p');
-    productName.className = 'product_name';
+	// 제품 이름 div
+	const product_name_div = document.createElement('div');
+    product_name_div.className = 'product_name';
+    
+    // 제품이름
+    const pro_name = document.createElement('a');
+    
+    // 제품가격
+    const pro_price = document.createElement('p');
 
-    // 구매일자
-    const purchaseDate = document.createElement('p');
-    purchaseDate.className = 'purchase_date';
+    // 구매일자 div
+    const date_div = document.createElement('div');
+    date_div.className = 'post-title purchase_date';
 
-    // 결제방법
-    const payment = document.createElement('p');
-    payment.className = 'payment';
+    // 구매 갯수 div
+    const cnt_div = document.createElement('div');
+    cnt_div.className = 'payment';
+
+	// 리뷰작성 버튼
+	const review_div = document.createElement('div');
+	review_div.className='reviewContainer';
     
-    // 리뷰 컨테이너
-    const reviewContainer = document.createElement('div');
-    reviewContainer.className = 'reviewContainer';
+    // 리뷰 버튼
+    const review_btn = document.createElement('button');
+    review_btn.className='reviewBtn';
     
-    // 재구매 버튼
-    const repurchaseBtn=document.createElement('button');
-    repurchaseBtn.className='repurchaseBtn';
-    repurchaseBtn.innerText='재구매';
-    
-    // 리뷰버튼
-    const reviewBtn=document.createElement('button');
-    reviewBtn.className='reviewBtn';
-    reviewBtn.innerText='리뷰작성';
+    // 구매내역 삭제버튼
+   	const close_button = document.createElement('button');
+   	close_button.className='close';
+   	
+   	// 구매버튼 내 span태그
+   	const close_span = document.createElement('span');
+   	close_span.className='material-symbols-outlined'
     
     // 값 집어넣기
-    productImg.setAttribute('src',data[i - 1].img); 
-    productName.textContent = data[i - 1].productName;
-    purchaseDate.textContent = data[i - 1].purchaseDate;
-    payment.textContent = data[i - 1].payment;
+    productImg.setAttribute('src',data[i - 1].pro_img); 
+    pro_name.textContent = data[i - 1].pro_name;
+    pro_price.textContent = data[i - 1].pro_price;
+    date_div.textContent = data[i - 1].order_at;
+    cnt_div.textContent=data[i-1].od_cnt;
+    review_btn.textContent="리뷰작성"
+    review_btn.setAttribute('onclick',"location.href='productServie.do?num="+data[i-1].pro_code+"'");
     
-	reviewContainer.append(repurchaseBtn,reviewBtn);
-    postContainer.append(productImg, productName, purchaseDate, payment, reviewContainer);
-    li.append(postContainer);
+    imgContainer.append(productImg);
+    product_name_div.append(pro_name,pro_price);
+    review_div.append(review_btn);
+    close_button.append(close_span);
+    container.append(imgContainer,product_name_div,date_div,cnt_div,review_div,close_button);
+    li.append(container);
     ul.append(li);
   }
 };

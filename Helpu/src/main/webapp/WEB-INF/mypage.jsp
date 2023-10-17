@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,6 +30,7 @@
 					<!-- 사용자 방문 환영 글 -->
 					<p class="username">${info.mem_name}님 환영합니다!</p>
 				</div>
+
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
 					<!-- 로고 -->
@@ -45,7 +47,6 @@
 								<span class="material-symbols-outlined">search</span>
 							</button>
 						</div>
-					</div>
 				</div>
 			</div>
 			<!-- 메뉴바 -->
@@ -124,37 +125,40 @@
 				<div class="modify">
 					<div id="modify1">
 						<p>이름</p>
-						<p id="mem_name"><%=request.getParameter("mem_name")%></p>
+						<p id="mem_name">${info.mem_name}</p>
 
 
 						<p>성별</p>
 						<div class="genderBox">
 							<%
-							String gender = request.getParameter("gender");
-							String maleChecked = "";
-							String femaleChecked = "";
-
+							HttpSession sessoin = request.getSession();
+							memberDTO member = (memberDTO)session.getAttribute("info");
+							String gender = member.getGender();
+							
+							boolean maleChecked = false;
+							boolean femaleChecked = false;
+  
 							if (gender != null) {
 								if (gender.equals("m")) {
-									maleChecked = "checked";
+									maleChecked = true;
 								} else if (gender.equals("f")) {
-									femaleChecked = "checked";
+									femaleChecked = true;
 								}
 							}
 							%>
 
-							<input type="radio" class="gender" name="gender" value="m" <%=maleChecked%> disabled>남성
-							<input type="radio" class="gender" name="gender" value="f" <%=femaleChecked%> disabled>여성
+							<input type="radio" class="gender" name="gender" value="m" checked=<%=maleChecked%> disabled>남성
+							<input type="radio" class="gender" name="gender" value="f" checked=<%=femaleChecked%> disabled>여성
 								
 								
 						</div>
 
 
 						<p>생년월일</p>
-						<p id="birthdate"><%=request.getParameter("birthdate")%></p>
+						<p id="birthdate">${info.birthdate}</p>
 
 						<p>회원아이디</p>
-						<p id="id"><%=request.getParameter("id")%></p>
+						<p id="id">${info.id}</p>
 
 
 						<p>비밀번호<span class="required">*</span></p>

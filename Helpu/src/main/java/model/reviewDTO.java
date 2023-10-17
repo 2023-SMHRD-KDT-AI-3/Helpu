@@ -13,6 +13,7 @@ public class reviewDTO {
 	private String id;
 	private int pro_code;
 	private String rv_content;
+	private String rv_img;
 	private String created_at;
-	private double ratings;
+	private String ratings;
 }
