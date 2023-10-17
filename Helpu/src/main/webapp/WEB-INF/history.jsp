@@ -16,14 +16,14 @@
 </head>
 <body>
 
-	<!-- 헤더 부분 -->
+		<!-- 헤더 부분 -->
 		<div id="header">
 			<div id="innerHeader">
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do?id=${info.id}">마이페이지</a>
+						<span>|</span> <a href="gobasket.do?id=${info.id}">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p class="username">${info.mem_name}님 환영합니다!</p>
@@ -36,7 +36,7 @@
 					<div class="schBar">
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
+							type="search" id="search" placeholder="검색할 상품을 입력해주세요." />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
 							<button type="button" onclick="search()" class="schIcon"
@@ -50,10 +50,10 @@
 			<!-- 메뉴바 -->
 			<div id="nav">
 				<ul id="gnb">
-					<li><a href="#">냉장제품</a></li>
-					<li><a href="#">냉동제품</a></li>
-					<li><a href="#">즉석조리제품</a></li>
-					<li><a href="#">기타</a></li>
+					<li><a href="gomain.do">상품 검색 페이지</a></li>
+					<li><a href="gomypage.do?id=${info.id}">마이페이지</a></li>
+					<li><a href="gobasket.do?id=${info.id}">장바구니</a></li>
+					<li><a href="gohistory.do">구매내역</a></li>
 				</ul>
 			</div>
 		</div>

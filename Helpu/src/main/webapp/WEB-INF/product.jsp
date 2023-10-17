@@ -48,8 +48,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do?id=${info.id}">마이페이지</a>
+						<span>|</span> <a href="gobasket.do?id=${info.id}">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p class="username">${info.mem_name}님 환영합니다!</p>
@@ -62,7 +62,7 @@
 					<div class="schBar">
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
+							type="search" id="search" placeholder="검색할 상품을 입력해주세요." />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
 							<button type="button" onclick="search()" class="schIcon"
@@ -76,13 +76,14 @@
 			<!-- 메뉴바 -->
 			<div id="nav">
 				<ul id="gnb">
-					<li><a href="#">냉장제품</a></li>
-					<li><a href="#">냉동제품</a></li>
-					<li><a href="#">즉석조리제품</a></li>
-					<li><a href="#">기타</a></li>
+					<li><a href="gomain.do">상품 검색 페이지</a></li>
+					<li><a href="gomypage.do?id=${info.id}">마이페이지</a></li>
+					<li><a href="gobasket.do?id=${info.id}">장바구니</a></li>
+					<li><a href="gohistory.do">구매내역</a></li>
 				</ul>
 			</div>
 		</div>
+
 
 		<div id="container">
 			<div id="productInfo">
@@ -250,32 +251,32 @@
 
 			</div>
 
-			<!-- 배너 영역 -->
-			<div id="banner">
-				<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a>
-				<a href="gobasket.do"><p>장바구니</p></a>
-				<div class="recent">
-					<a href="#"><p>최근 본 상품</p></a>
-					<ul class="recentbox">
-						<li><a href="#"><img alt="임시이미지"
-								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-								<p>제품명</p></a>
-							<hr></li>
-						<li><a href="#"><img alt="임시이미지"
-								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-								<p>제품명</p></a>
-							<hr></li>
-						<li><a href="#"><img alt="임시이미지"
-								src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-								<p>제품명</p></a></li>
-					</ul>
+				<!-- 배너 영역 -->
+				<div id="banner">
+					<a href="gomypage.do"><p>마이페이지</p></a> 
+					<!-- <a href="gofavoites.do"><p>즐겨찾기</p></a> -->
+					<a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
+					<div class="recent">
+									<p>최근 담은 상품</p>
+									<ul class="recentbox">
+										<!-- 최근 담은 상품들을 나타내는 부분 -->
+										<c:forEach var="recentProduct" items="${recentProducts}">
+										<!-- 	<li><a href="#"> <img alt="상품 이미지"
+													src="${recentProduct.pro_img}">
+													<p>${recentProduct.pro_name}</p>
+											</a>
+												<hr></li>  -->
+										</c:forEach>
+									</ul>
+								</div>
+					<!-- 상단으로 다시 올라가는 버튼 -->
+					<div id = "bannerTopbtn">
+						<button type="button"style='cursor: pointer;'>
+							<span class="material-symbols-outlined">arrow_upward</span>		
+						</button>	
+					</div>
 				</div>
-				<!-- 상단으로 다시 올라가는 버튼 -->
-				<div id="bannerTopbtn">
-					<button type="button" style='cursor: pointer;'>
-						<span class="material-symbols-outlined">arrow_upward</span>
-					</button>
-				</div>
+		
 			</div>
 
 
@@ -349,7 +350,37 @@
 						}],
 						labels:['나트륨']
 					}
-				});							
+				});
+				
+				// 장바구니 배너 
+			 	
+			 	 $(document).ready(function() {
+		   $.ajax({
+		       url: "recentProductService.do",
+		       type: "post",
+		       data: {
+		           "id": "${info.id}"
+		       },
+		       dataType: "json",
+		       success: function(recentProducts) { 
+		       	// console.log(recentProducts[0].pro_img);
+		           var recentProductsContainer = $(".recentbox");          
+		           for (var i = 0; i < 3 && i < recentProducts.length; i++) {       
+		           	var product = recentProducts[i].pro_img;
+		           	var productName = recentProducts[i].pro_name;
+		           	// console.log(product)
+		           	var productHTML = 
+		           		'<li><img class="bannerImg" alt="상품 이미지" src="'+product+'"><p class="bannerProname">'+productName+'</p><hr></li>';
+						//console.log(productHTML)
+		               recentProductsContainer.append(productHTML);
+		           }
+		       },
+		       error: function() {
+		           // 에러 시 처리할 내용
+		       }
+		   });
+		});
+				
 			</script>
 			<script src="http://code.jquery.com/jquery-latest.min.js"></script>ㄴㄴㄴ			ㄹ
 			<!-- 메인 -->
