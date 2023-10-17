@@ -50,10 +50,10 @@
 			<!-- 메뉴바 -->
 			<div id="nav">
 				<ul id="gnb">
-					<li><a href="#">상품 검색 페이지</a></li>
+					<li><a href="gomain.do">상품 검색 페이지</a></li>
 					<li><a href="gomypage.do?id=${info.id}">마이페이지</a></li>
 					<li><a href="gobasket.do?id=${info.id}">장바구니</a></li>
-					<li><a href="#">구매내역</a></li>
+					<li><a href="gohistory.do">구매내역</a></li>
 				</ul>
 			</div>
 		</div>
