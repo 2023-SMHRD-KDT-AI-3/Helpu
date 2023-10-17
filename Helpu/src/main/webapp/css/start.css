@@ -81,7 +81,16 @@ a {
     box-sizing: border-box;
     position: relative;
     margin-right: 20px;
+    font-weight: 600;
 }
+
+.loginBtn:hover{
+	border: 1px solid black;
+	transition: 0.4s;
+	color: black;
+	background: white;
+}
+
 
 .loginContent{
 	margin-right: 10px;
@@ -93,7 +102,17 @@ a {
 	height: 45px;
     width: 140px;
 	box-sizing: border-box;
+	font-weight: 600;
 }
+
+.joinBtn:hover{
+	border: 1px solid black;
+	transition: 0.4s;
+	color: black;
+	background: white;
+}
+
+
 
 .joinContent{
 	margin-right: 10px;

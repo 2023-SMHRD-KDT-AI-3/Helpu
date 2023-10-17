@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html>
 
@@ -43,41 +44,45 @@
 	<div id="wrap">
 		<!-- 헤더 부분 -->
 		<div id="header">
-		<div id="innerHeader">
-			<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
-			<div id="topBtn">
-				<div id="innerTopbtn">
-					<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-					<a href="#">장바구니</a><br>
+			<div id="innerHeader">
+				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
+				<div id="topBtn">
+					<div id="innerTopbtn">
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
+						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+					</div>
+					<!-- 사용자 방문 환영 글 -->
+					<p class="username">${info.mem_name}님 환영합니다!</p>
 				</div>
-				<!-- 사용자 방문 환영 글 -->
-				<p>000님 환영합니다!</p>
+				<!-- 로고 및 검색창 -->
+				<div id="schBox">
+					<!-- 로고 -->
+					<a href="gomain.do"><img alt="로고" src="imgs/logo.png"></a>
+					<!-- 검색 박스 -->
+					<div class="schBar">
+						<!-- 검색창 -->
+						<span class="icon"><i class="fa fa-search"></i></span> <input
+							type="search" id="search" placeholder="Search" />
+						<!-- 검색 돋보기 아이콘 -->
+						<div class="iconBox">
+							<button type="button" onclick="search()" class="schIcon"
+								style='cursor: pointer;'>
+								<span class="material-symbols-outlined">search</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<!-- 로고 및 검색창 -->
-			<div id="schBox">
-				<!-- 로고 -->
-				<img alt="로고"
-					src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
-				<!-- 검색 박스 -->
-				<div class="schBar">
-					<!-- 검색창 -->
-					<span class="icon"><i class="fa fa-search"></i></span> <input
-						type="search" id="search" placeholder="Search" />
-					<!-- 검색 아이콘 -->
-					<a href="#"><span class="material-symbols-outlined">search</span></a>
-				</div>
+			<!-- 메뉴바 -->
+			<div id="nav">
+				<ul id="gnb">
+					<li><a href="#">냉장제품</a></li>
+					<li><a href="#">냉동제품</a></li>
+					<li><a href="#">즉석조리제품</a></li>
+					<li><a href="#">기타</a></li>
+				</ul>
 			</div>
 		</div>
-		<!-- 메뉴바 -->
-		<div id="nav">
-			<ul id="gnb">
-				<li><a href="#">냉장제품</a></li>
-				<li><a href="#">냉동제품</a></li>
-				<li><a href="#">즉석조리제품</a></li>
-				<li><a href="#">기타</a></li>
-			</ul>
-		</div>
-	</div>
 
 		<div id="container">
 			<div id="productInfo">
@@ -86,7 +91,7 @@
 				</div>
 				<div class="proMoreInfo">
 					<div class="moreInfo">
-						<p class="includedAll">알레르기 유발 성분 개 포함</p>
+						<!-- <p class="includedAll">알레르기 유발 성분 개 포함</p> -->
 						<p class="company">${product.pro_maker}</p>
 						<p>
 							<span class="proSubject">${product.pro_name}</span><span
@@ -109,11 +114,10 @@
 			</div>
 			<div id="containerMenu">
 				<ul class="innerConmenu">
-					<li><span><a href="#">포함된 알레르기 성분</a></span></li>
-					<li><span><a href="#">영양성분</a></span></li>
-					<li><span><a href="#">세부 원재료명 및 함량</a></span></li>
-					<li><span><a href="#">추천상품</a></span></li>
-					<li><span><a href="#">리뷰</a></span></li>
+					<li><span><a>포함된 알레르기 성분</a></span></li>
+					<li><span><a>영양성분</a></span></li>
+					<li><span><a>세부 원재료명 및 함량</a></span></li>
+					<li><span><a>리뷰</a></span></li>
 				</ul>
 			</div>
 
@@ -145,6 +149,7 @@
 					<p></p>
 
 				</div>
+				<!--  
 				<div class="chucheon">
 					<div class="chuTitle">
 						<h2>추천 상품</h2>
@@ -165,6 +170,7 @@
 							</div>
 						</div>
 					</div>
+					-->
 					<!-- 슬라이드 영역 
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
@@ -219,31 +225,24 @@
 				</div>-->
 
 				</div>
+			
 
 				<!-- 리뷰 영역 -->
 				<div class="review">
 					<p>Review</p>
 					<div class="reviewBox">
 						<div class="proReview">
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
+							<c:forEach var="r_list" items="${r_list}" varStatus="status">	
+								<p class="reviewContent">
+									<span>${r_list.id}</span> <span>${r_list.rv_content}</span>
+								</p>
+							</c:forEach>
 						</div>
 					</div>
 					<form action="#" method="post">
 						<div class="inputReview">
-							<span>사용자명</span>
-							<input type="text" name="reviewData" id="reviewInput">
-							<input type="submit" value="등록하기">
+							<span>사용자명</span><input type="text" name="reviewData"> <input
+								type="submit" value="등록하기">
 						</div>
 					</form>
 				</div>
@@ -281,6 +280,8 @@
 
 
 			<script>
+			
+	
 		
 		// 상단 이동 버튼
  		$(window).scroll(function(){
@@ -292,6 +293,15 @@
  			$('html, body').animate({scrollTop:0},400);
  			return false;
  		});
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
 		</script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script

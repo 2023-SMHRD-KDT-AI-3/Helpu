@@ -200,6 +200,16 @@ li {
 	 box-shadow: 0 0px 14px -8px rgba(0, 0, 0, 1);
 }
 
+/* 버튼 호버 효과 */
+#editData:hover{
+	background-color: rgb(76, 76, 76);
+	transition: 0.4s;
+}
+
+#autoApply:hover{
+	background-color: rgb(76, 76, 76);
+	transition: 0.4s;
+}
 
 /* 알레르기 추가 체크 서비스 버튼 */
 .leftmenuBtn3 {
@@ -237,6 +247,13 @@ li {
     font-weight: 700;
     font-size: 14px;
 }
+
+
+#checkSubmit:hover{
+	background-color: rgb(76, 76, 76);
+	transition: 0.4s;
+}
+
 
 /* 검색 내용 위치 영역 지정 */
 
@@ -287,11 +304,14 @@ li {
 	margin-right: 30px;
     float: left;
     width: 130px;
-    height: 180px;
+    height: 130px;
     background: yellow;
 
 }
 
+.textImg>img{
+	width: 100%;
+}
 
 /* 제품 정보 */
 .Info{
@@ -321,7 +341,7 @@ li {
 .Info > p:nth-child(3){
 	font-weight: 600;
     margin: 8px 0 8px 0;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
