@@ -22,8 +22,8 @@
 				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 				<div id="topBtn">
 					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do">장바구니</a><br>
+						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do?id=${info.id}">마이페이지</a>
+						<span>|</span> <a href="gobasket.do?id=${info.id}">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
 					<p class="username">${info.mem_name}님 환영합니다!</p>
@@ -51,8 +51,8 @@
 			<div id="nav">
 				<ul id="gnb">
 					<li><a href="#">상품 검색 페이지</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">장바구니</a></li>
+					<li><a href="gomypage.do?id=${info.id}">마이페이지</a></li>
+					<li><a href="gobasket.do?id=${info.id}">장바구니</a></li>
 					<li><a href="#">구매내역</a></li>
 				</ul>
 			</div>
