@@ -22,6 +22,7 @@
 		<mapper resource="model/joinMapper.xml" />
 		<mapper resource="model/searchMapper.xml" />
 		<mapper resource="model/cartMapper.xml" />
-		<mapper resource="model/reviewMapper.xml"/>
+		<mapper resource="model/reviewMapper.xml" />
+		<mapper resource="model/orderMapper.xml" />
 	</mappers>
 </configuration>
