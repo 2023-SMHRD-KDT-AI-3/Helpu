@@ -36,7 +36,7 @@
 					<div class="schBar">
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="검색할 상품을 입력해주세요." />
+							type="search" id="search" placeholder="검색할 상품을 입력해주세요." onkeypress="if( event.keyCode == 13 ){search();}" />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
 							<button type="button" onclick="search()" class="schIcon"
