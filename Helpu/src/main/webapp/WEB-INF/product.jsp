@@ -52,12 +52,12 @@
 						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
-					<p>000님 환영합니다!</p>
+					<p class="username">${info.mem_name}님 환영합니다!</p>
 				</div>
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
 					<!-- 로고 -->
-					<img alt="로고" src="imgs/logo.png">
+					<a href="gomain.do"><img alt="로고" src="imgs/logo.png"></a>
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
