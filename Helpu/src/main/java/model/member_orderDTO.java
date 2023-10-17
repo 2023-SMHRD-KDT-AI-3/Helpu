@@ -16,6 +16,7 @@ public class member_orderDTO {
 	private int pro_price;
 	private String order_at;
 	private int od_cnt;
+	private String pro_img;
 	
 	
 }

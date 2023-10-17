@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import controller.Command;
 import model.memberDTO;
 import model.member_orderDTO;
@@ -23,6 +25,7 @@ public class gohistory implements Command {
 		String id = mem.getId();
 		
 		ArrayList<member_orderDTO> order_list = dao.selectOrderList(id);
+
 		
 		request.setAttribute("olist", order_list);
 		
