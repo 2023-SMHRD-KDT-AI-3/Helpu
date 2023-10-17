@@ -31,13 +31,12 @@
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
 					<!-- 로고 -->
-					<img alt="로고"
-						src="imgs/logo.png">
+					<a href="gomain.do"><img alt="로고" src="imgs/logo.png"></a>
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
+							type="search" id="search" placeholder="Search" onkeypress="if( event.keyCode == 13 ){search();}" />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
 							<button type="button" onclick="search()" class="schIcon"
