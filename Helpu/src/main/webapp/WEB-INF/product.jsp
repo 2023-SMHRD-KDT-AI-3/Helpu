@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html>
 
@@ -51,12 +52,12 @@
 						<span>|</span> <a href="gobasket.do">장바구니</a><br>
 					</div>
 					<!-- 사용자 방문 환영 글 -->
-					<p class="username">${info.mem_name}님 환영합니다!</p>
+					<p>000님 환영합니다!</p>
 				</div>
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
 					<!-- 로고 -->
-					<a href="gomain.do"><img alt="로고" src="imgs/logo.png"></a>
+					<img alt="로고" src="imgs/logo.png">
 					<!-- 검색 박스 -->
 					<div class="schBar">
 						<!-- 검색창 -->
@@ -132,17 +133,9 @@
 				</div>
 				<div class="nutrient">
 					<p>하루 권장 영양정보 비교</p>
-					<div class ="chart">
-						<div class="chartbox">
-							<canvas id="Chart_calories"></canvas>
-						</div>
-						<div class="chartbox">
-							<canvas id="Chart_augars"></canvas>
-						</div>
-						<div class="chartbox">
-							<canvas id="Chart_sodium"></canvas>
-						</div>
-					</div>
+					<canvas id="Chart_calories"></canvas>
+					<canvas id="Chart_augars"></canvas>
+					<canvas id="Chart_sodium"></canvas>
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
@@ -152,22 +145,7 @@
 				<div class="chucheon">
 					<div class="chuTitle">
 						<h2>추천 상품</h2>
-						<p class="chuSubtitle">다른 고객들이 함께 구매한 상품입니다.</p>
-						
-						<div class = "slider">
-							<div class="slides"></div>
-							<div class="slides"></div>
-							<div class="slides"></div>
-							<div class="slides"></div>
-							<div class = "controls">
-								<button type="button" style='cursor: pointer;' id="prev">
-									<span class="material-symbols-outlined">chevron_left</span>
-								</button>
-								<button type="button" style='cursor: pointer;' id="next">
-									<span class="material-symbols-outlined">chevron_right</span>
-								</button>
-							</div>
-						</div>
+						<p>다른 고객들이 함께 구매한 상품입니다.</p>
 					</div>
 					<!-- 슬라이드 영역 
 					<div class="swiper-container">
@@ -229,25 +207,17 @@
 					<p>Review</p>
 					<div class="reviewBox">
 						<div class="proReview">
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
-							<p class="reviewContent">
-								<span>사용자 이름</span> <span>리뷰 내용이 들어갑니다.</span>
-							</p>
+							<c:forEach var="r_list" items="${r_list}" varStatus="status">	
+								<p class="reviewContent">
+									<span>${r_list.id}</span> <span>${r_list.rv_content}</span>
+								</p>
+							</c:forEach>
 						</div>
 					</div>
 					<form action="#" method="post">
 						<div class="inputReview">
-							<span>사용자명</span>
-							<input type="text" name="reviewData" id="reviewInput">
-							<input type="submit" value="등록하기">
+							<span>사용자명</span><input type="text" name="reviewData"> <input
+								type="submit" value="등록하기">
 						</div>
 					</form>
 				</div>
@@ -285,6 +255,8 @@
 
 
 			<script>
+			
+	
 		
 		// 상단 이동 버튼
  		$(window).scroll(function(){
@@ -296,6 +268,15 @@
  			$('html, body').animate({scrollTop:0},400);
  			return false;
  		});
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
 		</script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script
