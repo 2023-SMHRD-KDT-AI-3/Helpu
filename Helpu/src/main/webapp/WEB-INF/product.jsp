@@ -254,8 +254,8 @@
 					</div>
 					<form action="#" method="post">
 						<div class="inputReview">
-							<span>사용자명</span><input type="text" name="reviewData"> <input
-								type="submit" value="등록하기">
+							<span>${info.id}</span><input id = 'input_review' type="text" name="reviewData">
+							 <input type="button" value="등록하기" onclick='writeReview()'>
 						</div>
 					</form>
 				</div>
@@ -293,6 +293,30 @@
 
 
 			<script>
+			
+			
+			function writeReview() {
+	 			 var id='${info.id}';
+	 			 var pro_code = '${product.pro_code}';
+	 			 var content = document.getElementById("input_review").value;
+	 			 console.log(content);
+	 		     $.ajax({
+	 		        url: "reviewService.do",
+	 		        type: "post",
+	 		        data: {
+	 		            "id": id,
+	 		            "pro_code": pro_code,
+						"content": content,
+	 		        },
+	 		        success: function (response) {
+	 		                alert("성공");
+	 		               location.reload();
+	 		        },
+	 		        error: function () {
+	 		            alert("error");
+	 		        }
+	 		    }); 
+	 		}
 			
 	
 		
@@ -394,7 +418,7 @@
 		});
 				
 			</script>
-			<script src="http://code.jquery.com/jquery-latest.min.js"></script>ㄴㄴㄴ			ㄹ
+			<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 			<!-- 메인 -->
 </body>
 </html>

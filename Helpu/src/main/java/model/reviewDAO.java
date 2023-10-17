@@ -27,11 +27,11 @@ public class reviewDAO {
 	}
 
 	// 게시글을 등록하기 위한 메소드
-	public int write(reviewDTO board) {
+	public int write(reviewDTO dto) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		int cnt = sqlSession.insert("write", board);
+		int cnt = sqlSession.insert("write", dto);
 
 		sqlSession.close();
 
