@@ -571,6 +571,9 @@ li {
 .review > form > div > input[type=text]:nth-child(2){
 	width: 85%;
     margin-right: 10px;
+ 	border:none;
+ 	border-radius: 5px;
+ 	padding-left:5px;
 }
 
 

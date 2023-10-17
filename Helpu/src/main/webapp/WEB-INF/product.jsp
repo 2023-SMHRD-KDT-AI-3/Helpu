@@ -114,10 +114,10 @@
 			</div>
 			<div id="containerMenu">
 				<ul class="innerConmenu">
-					<li><span><a href="#">포함된 알레르기 성분</a></span></li>
-					<li><span><a href="#">영양성분</a></span></li>
-					<li><span><a href="#">세부 원재료명 및 함량</a></span></li>
-					<li><span><a href="#">리뷰</a></span></li>
+					<li><span><a>포함된 알레르기 성분</a></span></li>
+					<li><span><a>영양성분</a></span></li>
+					<li><span><a>세부 원재료명 및 함량</a></span></li>
+					<li><span><a>리뷰</a></span></li>
 				</ul>
 			</div>
 
