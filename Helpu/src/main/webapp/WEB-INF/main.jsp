@@ -385,22 +385,18 @@
 		<div id="banner">
 			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
 			<div class="recent">
-				<a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
-				<ul class="recentbox">
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						<hr></li>
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						<hr></li>
-					<li><a href="#"><img alt="임시이미지"
-						src="https://image.nongshim.com/non/pro/1594682430086.jpg">
-						<p>제품명</p></a>
-						</li>
-				</ul>
-			</div>
+							<p>최근 담은 상품</p>
+							<ul class="recentbox">
+								<!-- 최근 담은 상품들을 나타내는 부분 -->
+								<c:forEach var="recentProduct" items="${recentProducts}">
+								<!-- 	<li><a href="#"> <img alt="상품 이미지"
+											src="${recentProduct.pro_img}">
+											<p>${recentProduct.pro_name}</p>
+									</a>
+										<hr></li>  -->
+								</c:forEach>
+							</ul>
+						</div>
 			<!-- 상단으로 다시 올라가는 버튼 -->
 			<div id = "bannerTopbtn">
 				<button type="button"style='cursor: pointer;'>
@@ -760,7 +756,34 @@
  		        }
  		    }); 
  		}
-	 		
+ 	// 장바구니 배너 
+	 	
+	 	 $(document).ready(function() {
+   $.ajax({
+       url: "recentProductService.do",
+       type: "post",
+       data: {
+           "id": "${info.id}"
+       },
+       dataType: "json",
+       success: function(recentProducts) { 
+       	// console.log(recentProducts[0].pro_img);
+           var recentProductsContainer = $(".recentbox");          
+           for (var i = 0; i < 3 && i < recentProducts.length; i++) {       
+           	var product = recentProducts[i].pro_img;
+           	var productName = recentProducts[i].pro_name;
+           	// console.log(product)
+           	var productHTML = 
+           		'<li><img alt="상품 이미지" src="'+product+'"><p>'+productName+'</p><hr></li>';
+				//console.log(productHTML)
+               recentProductsContainer.append(productHTML);
+           }
+       },
+       error: function() {
+           // 에러 시 처리할 내용
+       }
+   });
+});
 	 		
 		</script>
 	
