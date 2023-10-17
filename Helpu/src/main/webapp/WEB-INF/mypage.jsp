@@ -23,11 +23,11 @@
 			<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
 			<div id="topBtn">
 				<div id="innerTopbtn">
-					<a href="#">로그아웃</a> <span>|</span> <a href="#">마이페이지</a> <span>|</span>
-					<a href="#">장바구니</a><br>
+					<a href="gologin.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a> <span>|</span>
+					<a href="gobasket.do">장바구니</a><br>
 				</div>
 				<!-- 사용자 방문 환영 글 -->
-				<p>000님 환영합니다!</p>
+				<p>님 환영합니다!</p>
 			</div>
 			<!-- 로고 및 검색창 -->
 			<div id="schBox">
@@ -129,7 +129,7 @@
 							String gender = request.getParameter("gender");
 							String maleChecked = "";
 							String femaleChecked = "";
-
+  
 							if (gender != null) {
 								if (gender.equals("m")) {
 									maleChecked = "checked";
