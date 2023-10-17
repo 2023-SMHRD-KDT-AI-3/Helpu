@@ -371,6 +371,12 @@ li {
 	border: none;
 }
 
+/* 호버시 컬러 변경 */
+.bskBtn:hover{
+	color:#ff3b42;
+	transition: 0.2s;
+}
+
 /* 구분선 및 태그 영역 */
 
 /* 구분선 */
