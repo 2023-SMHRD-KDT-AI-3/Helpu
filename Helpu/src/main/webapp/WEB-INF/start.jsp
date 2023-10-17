@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/start.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	
@@ -18,8 +19,8 @@
 			손쉽게 <span>Check In!</span>
 		</h2>
 		<div class="mainBtn">
-			<a href="gologin.do"><p class="loginBtn">로그인</p></a> 
-			<a href="gojoin.do"><p class="joinBtn">회원가입</p></a>
+			<a href="gologin.do"><p class="loginBtn"><span class="loginContent">로그인</span><span class="material-symbols-outlined innerBtn">chevron_right</span></p></a> 
+			<a href="gojoin.do"><p class="joinBtn"><span class="joinContent">회원가입</span><span class="material-symbols-outlined innerBtn">chevron_right</span></p></a>
 		</div>
 	</div>
 

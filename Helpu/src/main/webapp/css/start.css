@@ -5,6 +5,16 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
 /* 전체 적용 */
 
 body {
@@ -43,7 +53,7 @@ h2 {
 }
 
 /* 타이틀 제목 컬러 */
-span {
+h2>span {
     color: #FF6060;
 }
 
@@ -51,7 +61,7 @@ p {
    /* 옆으로 붙이기 위해서 inline-block 처리 */
     display: inline-block;
     float: left;
-    width: 80px;
+    width: 100px;
     background-color: black;
     padding: 10px 20px 10px 20px;
     /* 폰트 가운데 정렬 */
@@ -66,14 +76,44 @@ a {
 
 /* 로그인 버튼 기준 오른쪽 여백 */
 .loginBtn {
+	height: 45px;
+    width: 140px;
+    box-sizing: border-box;
+    position: relative;
     margin-right: 20px;
 }
+
+.loginContent{
+	margin-right: 10px;
+}
+
+
+
+.joinBtn{
+	height: 45px;
+    width: 140px;
+	box-sizing: border-box;
+}
+
+.joinContent{
+	margin-right: 10px;
+}
+
 
 /* 버튼 여백처리 */
 .mainBtn {
     margin-top: 2%;
+    position: relative;
 }
 
+.btnContent{
+	position: absolute;
+}
+
+
+.innerBtn{
+	position: absolute;
+}
 
 
 /* 화이트 배경 */

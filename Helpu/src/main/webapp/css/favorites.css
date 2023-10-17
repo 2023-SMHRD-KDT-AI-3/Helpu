@@ -8,10 +8,21 @@
 /* -----------------Header----------------- */
 
 /* 전체 폰트 적용 및 기본 여백 삭제*/
-body {
+* {
 	margin: 0;
 	padding: 0;
 	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* a태그 기본 스타일 리셋 */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+li {
+	list-style-type: none;
 }
 
 /* 전체 중앙 정렬 */
@@ -24,7 +35,6 @@ body {
 #header {
 	position: relative;
 	width: 100%;
-	background-color: gray;
 }
 
 /* 안쪽 header 크기 정의 및 중앙 정렬 */
@@ -37,43 +47,66 @@ body {
 /* 로그아웃, 마이페이지, 장바구니 버튼 및 사용자 환영 안내글*/
 #topBtn {
 	position: absolute;
-	width: 100%;
-	background-color: red;
+	width: 98%;
 	text-align: right;
 }
+
+/* 사용자 환영 안내글 상단 여백 */
+#topBtn>p {
+	margin-top: 15px;
+}
+
+
+/* 사용자 이름 영역 */
+.username{
+	color: #ff3b42;
+	font-weight:800;
+}
+
 
 /* 로고 및 검색창 */
 #schBox {
 	position: absolute;
 	width: 100%;
 	height: 90px;
-	top: 80px;
-	background: blue;
+	top: 60px;
+	
+	align-items: center;
+    justify-content: center;
+    display: flex;
+	
 }
 
+#schBox > a{
+	position: relative;
+}
+
+
 /* 로고 */
-#schBox>img {
-	transform: translate(15%, 30%);
-	margin-right: 50px;
-	line-height: 90px;
+#schBox>a>img {
+	margin-top: 20px;
 }
 
 /* 검색창 박스 전체 속성 변경 */
 .schBar {
+	margin-top: 30px;
+    flex-basis: 80%;
+    position: relative;
+    margin-left: 20px;
 	display: inline;
 }
 
 
 /* 검색바 설정*/
 #search {
-	width: 78%;
+	width: 100%;
 	border: 1px solid #bbb;
 	border-radius: 100px;
 	padding: 10px 12px;
 	font-size: 14px;
 }
 
-/* 외부에서 끌어온 아이콘 css 전체 속성 */
+/* 외부에서 끌어온 돋보기 아이콘 css 전체 속성 */
 .material-symbols-outlined {
 	font-variation-settings:
 		'FILL' 0,
@@ -82,18 +115,24 @@ body {
 		'opsz' 24
 }
 
-#schBox>div>a>span {
+.iconBox {
+	display: inline-block;
 	position: absolute;
-	top: 47%;
-	bottom: 50%;
-	right: 4.5%;
+    top: 8px;
+    right: 10px;
 }
+
+.schIcon {
+	background: white;
+	border: none;
+}
+
 
 /* 메뉴바 */
 #nav {
 	position: absolute;
 	width: 100%;
-	background-color: yellow;
+	background-color: #8ED881;
 	top: 170px;
 	display: flex;
 	justify-content: center;
@@ -116,8 +155,8 @@ body {
 
 /* 메뉴 안쪽 a태그 속성 정리 */
 #gnb>li>a {
-	color: black;
-	text-decoration: none;
+	color: white;
+	font-weight: 500;
 }
 
 /* -----------------container----------------- */
@@ -145,93 +184,132 @@ h2 {
 	margin-top: 250px;
 }
 
+/* 선택 버튼 */
 #container>div {
 
 	padding: 0px;
-	margin-top: 10px;
-	margin-left: 16.5%;
-	width: 68%;
+	margin: 0 auto;
+	width: 60%;
 }
 
-
+/* 구분선 */
 hr {
-
+	margin: 0 auto;
+    margin-top: 10px;
 	padding: 0px;
-	margin-top: 10px;
-	margin-left: 16.5%;
-	width: 67%;
+	width: 60%;
 }
+
+
+/* 즐겨찾기 제품이 출력되는 전체 영역 */
+.fvrContents{
+	
+}
+
+/* 즐겨찾기 제품 영역 */
 
 .fvrProduct {
 	display: flex;
 	align-items: center;
 	border-radius: 10px;
+	box-sizing: border-box;
 	border: 2px solid #d7d7d7;
-	margin: 15px;
-	margin-top: 0px;
-	margin-left: 15%;
-	width: 68%;
+	padding: 25px;
+    margin: 0 auto;
+    margin-top: 25px;
+	width: 60%;
+}
+
+
+/* 제품 이미지 감싸는 div */
+.fvrProduct  > div:nth-child(2){
+	
+	flex-basis: 30%;
+	text-align: center;
+	
 }
 
 
 
+.fvrProduct  > input[type=checkbox]{
+    flex-basis: 10%;
+}
+ 	
 
-.fvrProduct>div{
-	
-	flex-basis: 70%;
-	
-	text-align: center;
-	
-	
-} 	
-
-
+/* 제품 이미지 */
 .fvrProduct>div>.fvrImg {
 	width: 120px;
 	height: 180px;
 	background-color: red;
-	/*margin-left: 20%;*/
 	
 }
 
-
-.fvrProduct>.fvrProductInfo {
-	font-size: 15px;
+/* 제품명 및 가격 영역 */
+.fvrProductInfo {
 	padding: 15px;
-	margin-left: 10%;
-}
-
-.pagination-container {
-	display: flex;
-	justify-content: center;
-}
-
-.fvrProduct>.fvrselectBtn {
 	font-size: 15px;
-	padding: 15px;
-	margin-left: 10%;
+    text-align: left;
+    flex-basis: 35%;
 }
 
+/* 제품명 */
+.fvrProductInfo > a {
+	font-weight: 600;
+    font-size: 16px;
+}
+
+/* 가격 */
+.fvrProductInfo > p{
+	font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* 장바구니 버튼 및 바로 구매 버튼 */
 .fvrselectBtn {
+	font-size: 15px;
+	padding: 15px;
+	margin-left: 10%;
 	display: flex;
 	flex-basis: 20%;
 	flex-direction: column;
 	align-items: center;
 	height: 100px;
+	justify-content: center;
 }
 
+/* 바로구매 버튼 */
 #btn1 {
 	flex-basis: 30%;
 	width: 100px;
 	background-color: white;
 	margin: 3%;
+	background-color: white;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
+
+/* 장바구니 버튼 */
 
 #btn2 {
 	flex-basis: 30%;
 	width: 100px;
 	background-color: white;
 	margin: 3%;
+	background-color: white;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+
+/* 페이징 버튼 영역 */
+/* 페이징용 버튼 */
+.pagination-container {
+	display: flex;
+	justify-content: center;
 }
 
 
