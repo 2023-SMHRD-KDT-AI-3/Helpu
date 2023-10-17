@@ -56,4 +56,12 @@ public class memberDAO {
 
 		return cnt;
 	}
+	// 아이디 중복 체크
+	public String idcheck(String id) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		String cnt = sqlSession.selectOne("check", id);
+		sqlSession.close();
+
+		return cnt;
+	}
 }

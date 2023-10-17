@@ -15,20 +15,19 @@
 		<div class="joinBox">
 			<form action="JoinService.do" method="post">
 				<div class="userData">
-					<p>회원아이디</p>
+						<p>회원아이디</p>
 
-					<input type="text" name="id" placeholder="사용할 아이디를 입력해주세요.">
+						<input id="check" type="text" name="id"	placeholder="사용할 아이디를 입력해주세요.">
+						<div id="idCheck"></div>
+						
+						<label for="password">비밀번호</label> <input id="password"
+							type="password" name="pw" placeholder="사용할 비밀번호를 입력하세요." required>
 
-					<p>비밀번호</p>
-
-					<input type="password" name="pw" placeholder="사용할 비밀번호를 입력해주세요.">
-
-					<p>
-						비밀번호 확인<span class = "passwordStar">*</span>
-					</p>
-
-					<input type="password" name="pw" placeholder="사용할 비밀번호를 다시 입력해주세요.">
-
+						
+						<label for="confirmPassword">비밀번호 확인<span class="passwordStar">*</span></label> <input
+							id="confirmPassword" type="password" placeholder="사용할 비밀번호를 다시 입력하세요." required> 
+						<div id="passwordMatchError" class="error"></div>
+						
 					<p>이름</p>
 
 					<input type="text" name="mem_name" placeholder="사용자의 이름을 입력해주세요.">
@@ -89,5 +88,68 @@
 
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript">
+		// 아이디 중복 체크 기능
+		$(document).ready(function() {
+			var input = $('#check')
+			input.on('input', idCheck);
+
+		});
+
+		function idCheck() {
+			var value = $(this).val();
+			$.ajax({
+				url : 'idCheckService.do',
+				type : 'post',
+				data : {
+					id : value
+				},
+				success : function(res) {
+					//성공에 대한 처리
+
+					// 태그의 위치 찾아오기
+					var p = $('#idCheck');
+
+					if (res == "false") {
+						p.html("사용이 가능한 아이디 입니다.").css("color", "black");
+					} else {
+						p.html("사용이 불가능한 아이디 입니다.").css("color", "red");
+					}
+				},
+				error : function(e) {
+					alert("통신실패")
+				}
+
+			});
+
+		}
+		// 비밀번호 중복 체크
+		// 비밀번호 확인 및 오류 메시지 표시
+		function checkPasswordMatch() {
+			var password = document.getElementById("password").value;
+			var confirmPassword = document.getElementById("confirmPassword").value;
+			var passwordMatchError = document
+					.getElementById("passwordMatchError");
+
+			if (confirmPassword === "") {
+				passwordMatchError.innerHTML = "비밀번호를 한번 더 입력하세요.";
+				passwordMatchError.style.display = "block";
+				document.getElementById("signUpButton").disabled = true;
+			} else if (password !== confirmPassword) {
+				passwordMatchError.innerHTML = "비밀번호가 일치하지 않습니다.";
+				passwordMatchError.style.display = "block";
+				document.getElementById("signUpButton").disabled = true;
+			} else {
+				passwordMatchError.style.display = "none";
+				document.getElementById("signUpButton").disabled = false;
+			}
+		}
+		//비밀번호입력란 값이 변경될 때 함수 호출
+		document.getElementById("password").addEventListener("input",
+				checkPasswordMatch);
+		document.getElementById("confirmPassword").addEventListener("input",
+				checkPasswordMatch);
+	</script>
 </body>
 </html>

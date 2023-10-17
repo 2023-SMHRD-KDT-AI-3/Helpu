@@ -30,5 +30,9 @@
 	<update id="banner" parameterType="model.memberDTO">
 		update tb_member set m_allergy=#{m_allergy} where id=#{id}
 	</update>
+	<!-- 회원 아이디 중복 체크 sql문장  -->
+	<select id = "idcheck" parameterType="string" resultType="model.memberDTO" >
+		select * from tb_member where id=#{id}
+	</select>
 	
 </mapper>

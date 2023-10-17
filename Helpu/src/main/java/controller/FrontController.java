@@ -137,6 +137,9 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("recentProductService.do")) {
 		    recentProductService recentService = new recentProductService();
 		    url = recentService.execute(request, response);
+		} else if (result.equals("idCheckService.do")) {
+			idCheckService idcheckservice = new idCheckService();
+			url = idcheckservice.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동
