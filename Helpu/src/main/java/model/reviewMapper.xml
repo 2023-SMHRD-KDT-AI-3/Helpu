@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="model.reviewMapper"></mapper>
+
+	<!-- 게시판 전체 내용을 조회할 수 있는 sql문장 -->
+	<select id="allList" resultType="model.reviewDTO">
+		select * from tb_review
+	</select>
+
+	<!-- 게시판에 게시글을 등록할 수 있는 sql 문장 -->
+	<insert id="write" parameterType="model.reviewDTO">
+		insert into tb_review values(#{rv_code},#{id},#{pro_code},#{rv_content},#{created_at},#{ratings},sysdate())
+	</insert>
