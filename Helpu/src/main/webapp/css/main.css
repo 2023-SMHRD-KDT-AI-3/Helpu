@@ -414,6 +414,14 @@ li {
 	width: 80px;
 	margin-top: 10px;
 }
+
+/* 배너 상품 이름 너비 고정 */
+.bannerProname{
+	width:120px;
+	margin: 0 auto;
+}
+
+
 /* 구분선 길이 */
 .recentbox>li>hr {
 	margin: 0 auto;
