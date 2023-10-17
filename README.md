@@ -1,4 +1,4 @@
-# 📎 건강정포를 입력받아 필터링을 통한 식품 알레르기 피해 예방 수단 (팀명 : Helpu)
+# 📎 건강정보를 입력받아 필터링을 통한 식품 알레르기 피해 예방 수단 (팀명 : Helpu)
 ![image]()
 
 
@@ -55,7 +55,7 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            <img>
+            <img src="https://img.shields.io/badge/chartdotjs-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white"/>
         </td>
     </tr>
     <tr>
