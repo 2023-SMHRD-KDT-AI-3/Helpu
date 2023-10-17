@@ -121,12 +121,12 @@
 		<button id="btn8">5</button>
 		<a href="#"></a>
 		
-		<button id="btn3"> <span class="material-symbols-outlined">chevron_right</span> </button>
+		<button id="btn9"> <span class="material-symbols-outlined">chevron_right</span> </button>
 		<a href="#"></a>
 	</div>
 	
 	
 	
-	
+	<script src="WEB-INF/pagination.js"></script>	
 </body>
 </html>
