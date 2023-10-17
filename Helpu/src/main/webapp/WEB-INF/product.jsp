@@ -274,12 +274,6 @@
 					</div>
 				</div>
 		
-				<!-- 상단으로 다시 올라가는 버튼 -->
-				<div id="bannerTopbtn">
-					<button type="button" style='cursor: pointer;'>
-						<span class="material-symbols-outlined">arrow_upward</span>
-					</button>
-				</div>
 			</div>
 
 
