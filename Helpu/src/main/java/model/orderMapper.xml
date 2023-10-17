@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="model.searchMapper">
+
+<!-- 검색기능을 위한 sql문 -->
+<!-- search타입이 string 타입이니 parameterType도 string 써준다. -->
+<!-- resultType(보내는값)은 searchDTO으로 보내준다. -->
+	
+	<insert id="orderInsert" parameterType="model.orderDTO">
+		insert into tb_order values (null,now(),#{id},#{price})
+	</insert>
+
+	<select id="selectCode" resultType="Integer">
+		select order_code from tb_order order by order_at DESC limit 1
+	</select>
+
+	<insert id="insertOrderDetail" parameterType="model.orderDetailDTO">
+		insert into tb_order_detail values (null,#{order_code},#{pro_code},#{od_cnt})
+	</insert>
+
+
+
+
+
+
+</mapper>

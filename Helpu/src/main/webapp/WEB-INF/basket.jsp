@@ -205,79 +205,70 @@
 
     
     
-    function calculateTotalPrice() {
-    	
-        var total = 0;
-        $("input[name='select']:checked").each(function () {        	 
-            index = $('input:checkbox[name=select]').index(this);          
-            if(index!=0) {
-             var productCode = $("#productCode"+index);
-             var quantity = parseInt($("#productCode"+index).val());
-             var price = parseInt($("#price"+index).val());            
-             total += price;
-            }
-        });
-
-        $('#totalProductPrice').text(total + '원');       
-        
-    }
-    
-    function selectAll() {
-        var checkboxes = document.getElementsByName('select'); // 5
-        var selectAllCheckbox = checkboxes[0]; // 전체선택
-        var totalprice=0;
-        for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
-            checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
-            
-            
-        }
-       
-    }   
-    
-    function updateFinalPrice() {
-        var totalProductPrice = parseInt($('#totalProductPrice').text());
-        var finalPrice = totalProductPrice + 3000;
-        $('#updateFinalPrice').text(finalPrice + '원');
-    }
-    
-    function deleteCartItem(id, productCode) {
-        $.ajax({
-            type: "POST",
-            url: "deleteCartItem.do",
-            data: {
-                id: id,
-                productCode: productCode
-            },
-            success: function (response) {
-                console.log("상품이 성공적으로 삭제되었습니다.");
-                $('#product_' + productCode).remove(); 
-                location.reload();
-            },    
-            error: function() {
-                console.log("상품 삭제에 실패했습니다.");
-            }
-        });
-    }
- 
-   
+    function requestPay() {
+    	pro_name = document.getElementsByClassName("proName");
+    	pro_name1 = pro_name[0].innerHTML;
+		pro_code = document.getElementsByClassName("pro_code");
+		pro_codes = "";
+		pro_su = document.getElementsByClassName("su");
+		pro_sus = "";
+    	for(let i = 0; i<pro_name.length; i++){
+			pro_codes += pro_code[i].value+",";
+			pro_sus += pro_su[i].innerHTML+",";
+		}
 		
-	    function requestPay() {
-	    	alert("결제");
-		var IMP = window.IMP;
-		IMP.init("imp07245851"); 
-	      IMP.request_pay({ 
-	          pg: "html5_inicis",
-	          pay_method: "card",
-	          merchant_uid: "ORD20180131-0000011",
-	          name: "asd",
-	          amount: 100,
-	          buyer_name: "er",
-	          buyer_tel: "010-4242-4242",
-	          buyer_addr: "서울특별시 강남구 신사동",
-	      });
-	    }
-	  
-				</script>
+		
+    	
+    	final_price = document.getElementById("updateFinalPrice").innerText;
+
+        //가맹점 식별코드
+        IMP.init('imp07245851');
+        IMP.request_pay({
+           pg : "html5_inicis",
+           pay_method : 'card',
+           merchant_uid : 'merchant_' + new Date().getTime(),
+           name : pro_name1, //결제창에서 보여질 이름
+           amount : 100//final_price, //실제 결제되는 가격
+        }, function(rsp) {
+           console.log(rsp);
+           if (rsp.success) {
+              var msg = '결제가 완료되었습니다.';
+              msg += '고유ID : ' + rsp.imp_uid;
+              msg += '상점 거래ID : ' + rsp.merchant_uid;
+              msg += '결제 금액 : ' + rsp.paid_amount;
+              msg += '카드 승인번호 : ' + rsp.apply_num;
+
+              $.ajax({
+				url : "historyService.do",
+				type : "post",
+				data : {
+					"payment" : rsp.paid_amount,
+					"pro_codes" : pro_codes,
+					"pro_sus" : pro_sus,
+				},
+				success : function(){
+					alert("성공");
+					let container_HTML="";
+					let container = document.getElementById("container");
+					container_HTML+="<h4> 결제 완료</h4>";
+					container_HTML+="<a href='gohistory.do'> 구매내역페이지로 이동</a>"
+
+					container.innerHTML=container_HTML;
+					
+				},
+				error : function() {
+					alert("error");
+				}
+			});
+              
+           } else {
+              var msg = '결제에 실패하였습니다.';
+              msg += '에러내용 : ' + rsp.error_msg;
+           }
+           alert(msg);
+        });
+     }
+	</script>
 
 
 </body>

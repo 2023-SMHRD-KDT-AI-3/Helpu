@@ -131,6 +131,9 @@ public class FrontController extends HttpServlet {
 		} else if (result.equals("deleteCartItem.do")) {
 		    deleteCartItemService deleteService = new deleteCartItemService();
 		    url = deleteService.execute(request, response);
+		} else if (result.equals("historyService.do")) {
+		    historyService historyService = new historyService();
+		    url = historyService.execute(request, response);
 		}
 
 		// 각각의 기능에서 받은 url로 이동
