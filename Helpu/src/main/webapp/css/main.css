@@ -368,7 +368,7 @@ li {
 	border-radius: 5px;
 	text-align: center;
 	padding: 7px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background:  #A2DD98;;
 	
 	color: white;
@@ -436,7 +436,7 @@ li {
 	
 }
 #bannerTopbtn>button{
-	margin-top: 25px;
+	margin-top: 15px;
     background: white;
     color: white;
     border: none;
