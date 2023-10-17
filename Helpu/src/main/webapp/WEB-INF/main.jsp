@@ -103,13 +103,13 @@
 					<div class="innerproBox innerproBox1">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기0.jpg">						
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 2개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>3분 데리야끼치킨</p>
+									<p>2,680 원</p>
 								</div>
 						</div>
 							
@@ -128,7 +128,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#우유</span><span>#돼지고기</span>
 							</div>
 						</div>
 					</div>
@@ -136,13 +136,13 @@
 					<div class="innerproBox innerproBox2">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기74.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 1개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>오감포차 칠리새우</p>
+									<p>7,580 원</p>
 								</div>
 						</div>
 							
@@ -161,7 +161,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#새우</span>
 							</div>
 						</div>
 					</div>
@@ -169,13 +169,13 @@
 					<div class="innerproBox innerproBox3">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기16.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
+									<p>알레르기 유발 성분 1개 포함</p>
 									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>돼지고기 김치찌개</p>
+									<p>3,680 원</p>
 								</div>
 						</div>
 							
@@ -194,7 +194,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#돼지고기</span>
 							</div>
 						</div>
 					</div>
@@ -202,13 +202,13 @@
 					<div class="innerproBox innerproBox4">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기45.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 1개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>쇠고기무국</p>
+									<p>5,580 원</p>
 								</div>
 						</div>
 							
@@ -227,7 +227,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#소고기</span>
 							</div>
 						</div>
 					</div>
@@ -235,13 +235,13 @@
 					<div class="innerproBox innerproBox5">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기110.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 3개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>의정부식 부대찌개</p>
+									<p>5,980 원</p>
 								</div>
 						</div>
 							
@@ -260,7 +260,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#우유</span><span>#돼지고기</span><span>#소고기</span>
 							</div>
 						</div>
 					</div>
@@ -268,13 +268,13 @@
 					<div class="innerproBox innerproBox6">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/한우물18.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 1개 포함</p>
+									<p>농업회사법인 주식회사 한우물</p>
+									<p>곤약야채 게살볶음밥</p>
+									<p>3,900 원</p>
 								</div>
 						</div>
 							
@@ -293,7 +293,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#새우</span>>
 							</div>
 						</div>
 					</div>
@@ -301,13 +301,13 @@
 					<div class="innerproBox innerproBox7">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기15.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 3개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>데미글라스 햄버그 스테이크</p>
+									<p>5,480 원</p>
 								</div>
 						</div>
 							
@@ -326,7 +326,7 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#돼지고기</span><span>#소고기</span><span>#닭고기</span>
 							</div>
 						</div>
 					</div>
@@ -336,13 +336,13 @@
 					<div class="innerproBox innerproBox8">
 						<div class="product">
 							<div class="textImg">
-							
+							<img alt="" src="imgs/오뚜기33.jpg">
 							</div>
 								<div class="Info">
-									<p>알레르기 유발 성분 n개 포함</p>
-									<p>농심</p>
-									<p>새우깡</p>
-									<p>1,400 원</p>
+									<p>알레르기 유발 성분 3개 포함</p>
+									<p>주식회사 오뚜기</p>
+									<p>머쉬룸스프</p>
+									<p>8,980 원</p>
 								</div>
 						</div>
 							
@@ -361,11 +361,13 @@
 						<div class = "tag">
 							<hr />
 							<div class="innerTag">
-								<span>#새우</span><span>#밀</span>
+								<span>#대두</span><span>#밀</span><span>#닭고기</span>
 							</div>
 						</div>
 						
 					</div>
+							
+						
 				<!-- 제품 단락 끝 : 페이징 실행 시 초기화 -->
 			</div>
 			
