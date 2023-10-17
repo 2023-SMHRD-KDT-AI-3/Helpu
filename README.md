@@ -56,6 +56,8 @@
         <td>라이브러리</td>
         <td>
             <img src="https://img.shields.io/badge/chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white"/>
+            <img src="https://img.shields.io/badge/apachemaven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
+            <img src="https://img.shields.io/badge/jstl-007054?style=for-the-badge&logo=jstl&logoColor=white"/>
         </td>
     </tr>
     <tr>
