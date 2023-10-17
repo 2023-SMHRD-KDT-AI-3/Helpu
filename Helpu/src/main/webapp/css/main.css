@@ -377,7 +377,7 @@ li {
 }
 
 /* 최근 본 상품 버튼 */
-#banner>div>p {
+.recent > p {
 	border-radius: 5px 5px 0 0;
     width: 130px;
     text-align: center;
@@ -410,12 +410,10 @@ li {
 }
 
 /* 배너 상품이미지 사이즈 고정 */
-.recentbox>li>img {
+.bannerImg {
 	width: 80px;
 	margin-top: 10px;
 }
-
-
 /* 구분선 길이 */
 .recentbox>li>hr {
 	margin: 0 auto;

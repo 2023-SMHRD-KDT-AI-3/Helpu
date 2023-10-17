@@ -773,7 +773,7 @@
            	var productName = recentProducts[i].pro_name;
            	// console.log(product)
            	var productHTML = 
-           		'<li><img alt="상품 이미지" src="'+product+'"><p>'+productName+'</p><hr></li>';
+           		'<li><img class="bannerImg" alt="상품 이미지" src="'+product+'"><p>'+productName+'</p><hr></li>';
 				//console.log(productHTML)
                recentProductsContainer.append(productHTML);
            }
