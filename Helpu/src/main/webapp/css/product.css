@@ -652,6 +652,14 @@ li {
     font-size: 14px;
 }
 
+
+/* 배너 호버 시 효과 */
+#banner>a>p:hover{
+	background-color: rgb(76, 76, 76);
+	transition: 0.4s;
+} 
+
+
 /* 최근 본 상품 버튼 */
 .recent > p {
 	border-radius: 5px 5px 0 0;
