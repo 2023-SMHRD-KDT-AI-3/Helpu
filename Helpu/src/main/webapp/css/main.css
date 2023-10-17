@@ -371,6 +371,12 @@ li {
 	border: none;
 }
 
+/* 호버시 컬러 변경 */
+.bskBtn:hover{
+	color:#ff3b42;
+	transition: 0.2s;
+}
+
 /* 구분선 및 태그 영역 */
 
 /* 구분선 */
@@ -415,6 +421,14 @@ li {
 	font-weight: 600;
     font-size: 14px;
 }
+
+/* 배너 호버 시 효과 */
+#banner>a>p:hover{
+	background-color: rgb(130, 130, 130);
+	transition: 0.4s;
+} 
+
+
 
 /* 최근 본 상품 버튼 */
 .recent > p {

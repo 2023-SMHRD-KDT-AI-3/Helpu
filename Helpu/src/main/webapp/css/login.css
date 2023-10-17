@@ -75,3 +75,9 @@
     cursor: pointer;
 }
 
+.dataBox > input[type=submit]:nth-child(6):hover{
+	transition: 0.4s;
+	color: #A2DD98;
+	background: white;
+	border: 1px solid #A2DD98;
+}

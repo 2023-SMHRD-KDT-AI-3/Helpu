@@ -36,7 +36,7 @@
 					<div class="schBar">
 						<!-- 검색창 -->
 						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
+							type="search" id="search" placeholder="검색할 상품을 입력해주세요." />
 						<!-- 검색 돋보기 아이콘 -->
 						<div class="iconBox">
 							<button type="button" onclick="search()" class="schIcon"
@@ -50,10 +50,10 @@
 			<!-- 메뉴바 -->
 			<div id="nav">
 				<ul id="gnb">
-					<li><a href="#">냉장제품</a></li>
-					<li><a href="#">냉동제품</a></li>
-					<li><a href="#">즉석조리제품</a></li>
-					<li><a href="#">기타</a></li>
+					<li><a href="#">상품 검색 페이지</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">장바구니</a></li>
+					<li><a href="#">구매내역</a></li>
 				</ul>
 			</div>
 		</div>
@@ -114,10 +114,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -147,10 +147,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -180,10 +180,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -213,10 +213,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -246,10 +246,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -279,10 +279,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -312,10 +312,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -347,10 +347,10 @@
 						</div>
 							
 						<!-- 클릭 시 즐겨찾기에 추가해주는 버튼 -->
-						<div class="fvrbtnBox">
+						<!--  <div class="fvrbtnBox">
 							<button type="submit" class="fvrBtn" value="test" style='cursor: pointer;'>
 							<span class="material-symbols-outlined"> favorite </span></button>	
-						</div>
+						</div> -->
 						<!-- 클릭 시 장바구니에 추가해주는 버튼 -->
 						<div class="bskbtnBox">
 							<button type="submit" class="bskBtn" style='cursor: pointer;'>
@@ -383,28 +383,30 @@
 			
 			
 			<!-- 배너 영역 -->
-		<div id="banner">
-			<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
-			<div class="recent">
-							<p>최근 담은 상품</p>
-							<ul class="recentbox">
-								<!-- 최근 담은 상품들을 나타내는 부분 -->
-								<c:forEach var="recentProduct" items="${recentProducts}">
-								<!-- 	<li><a href="#"> <img alt="상품 이미지"
-											src="${recentProduct.pro_img}">
-											<p>${recentProduct.pro_name}</p>
-									</a>
-										<hr></li>  -->
-								</c:forEach>
-							</ul>
-						</div>
-			<!-- 상단으로 다시 올라가는 버튼 -->
-			<div id = "bannerTopbtn">
-				<button type="button"style='cursor: pointer;'>
-					<span class="material-symbols-outlined">arrow_upward</span>		
-				</button>	
+			<div id="banner">
+				<a href="gomypage.do"><p>마이페이지</p></a> 
+				<!-- <a href="gofavoites.do"><p>즐겨찾기</p></a> -->
+				<a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
+				<div class="recent">
+								<p>최근 담은 상품</p>
+								<ul class="recentbox">
+									<!-- 최근 담은 상품들을 나타내는 부분 -->
+									<c:forEach var="recentProduct" items="${recentProducts}">
+									<!-- 	<li><a href="#"> <img alt="상품 이미지"
+												src="${recentProduct.pro_img}">
+												<p>${recentProduct.pro_name}</p>
+										</a>
+											<hr></li>  -->
+									</c:forEach>
+								</ul>
+							</div>
+				<!-- 상단으로 다시 올라가는 버튼 -->
+				<div id = "bannerTopbtn">
+					<button type="button"style='cursor: pointer;'>
+						<span class="material-symbols-outlined">arrow_upward</span>		
+					</button>	
+				</div>
 			</div>
-		</div>
 		
 		
 			
@@ -589,9 +591,6 @@
 			html += "<p>" + data[i-1].pro_name + "</p>";
 			html += "<p>" + data[i-1].pro_price + "원</p></div></div>";
 			html += "</a>";
-			html += "<div class='fvrbtnBox'>";
-			html += "<button type='submit' class='fvrBtn' value='test' style='cursor:pointer;'><span class='material-symbols-outlined'> favorite </span></button>";
-			html += "</div>";
 			html += "<div class='bskbtnBox'>";
 			html+="<button type='button' class='bskBtn' style='cursor:pointer;' onclick='addToBasket("+data[i-1].pro_code+")'><span class='material-symbols-outlined'>shopping_cart_checkout </span></button>";
 			html += "</div>";
