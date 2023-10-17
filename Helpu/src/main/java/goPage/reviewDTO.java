@@ -1,4 +1,4 @@
-package model;
+package goPage;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
