@@ -69,16 +69,16 @@
 					<a href="gomypage.do">마이페이지</a>
 				</button>
 				<br>
-				<button style='cursor: pointer;'>
-					<a href="gomypage.do">회원 정보 수정</a>
+				<button style='cursor: pointer;' id="edit">
+					<a href="gomypage.do" class="mybannerBtn">회원 정보 수정</a>
 				</button>
 				<br>
-				<button style='cursor: pointer;'>
-					<a href="gohistory.do">구매내역</a>
+				<button style='cursor: pointer;' id="purchase">
+					<a href="gohistory.do" class="mybannerBtn">구매내역</a>
 				</button>
 				<br>
-				<button style='cursor: pointer;'>
-					<a href="gofavorites.do">즐겨찾기</a>
+				<button style='cursor: pointer;' id="favorite">
+					<a href="gofavorites.do" class="mybannerBtn">즐겨찾기</a>
 				</button>
 
 			</div>
@@ -114,6 +114,12 @@
 					<hr>
 				</div>
 
+
+				<!-- 회원 정보 수정 밑에 내용 -->
+				<div class="myPage3">
+					<h6>이곳에서 회원 정보를 수정하실 수 있습니다.</h6>
+				</div>
+
 				<!-- 회원 정보 내용 박스 -->
 				<div class="modify">
 					<div id="modify1">
@@ -137,10 +143,10 @@
 							}
 							%>
 
-							<input type="radio" class="gender" name="gender" value="m"
-								<%=maleChecked%> disabled>남성 <input type="radio"
-								class="gender" name="gender" value="f" <%=femaleChecked%>
-								disabled>여성
+							<input type="radio" class="gender" name="gender" value="m" <%=maleChecked%> disabled>남성
+							<input type="radio" class="gender" name="gender" value="f" <%=femaleChecked%> disabled>여성
+								
+								
 						</div>
 
 
@@ -153,28 +159,21 @@
 
 						<p>비밀번호<span class="required">*</span></p>
 						<!-- <p>비밀번호</p> -->
-						<input type="password" name="pw" id="pw1"
-							value="<%=request.getParameter("pw")%>">
-
-
-
-
+						<input type="password" name="pw" id="pw1" value="<%=request.getParameter("pw")%>">
+							
 						<p>주소<span class="required">*</span></p>
-						<input type="text" name="m_address" id="m_address"
-							value="<%=request.getParameter("m_address")%>">
-
-
+						<input type="text" name="m_address" id="m_address" value="<%=request.getParameter("m_address")%>">
+							
 						<p>전화번호<span class="required">*</span></p>
-						<input type="text" name="phone_number" id="phone_number"
-							value="<%=request.getParameter("phone_number")%>">
-
+						<input type="text" name="phone_number" id="phone_number" value="<%=request.getParameter("phone_number")%>">
+							
 					</div>
 
-					<!-- 비밀번호확인 따로 -->
+					<!-- 비밀번호 확인 따로 -->
 					<div id="modify2">
 						<p id="pwCheck">비밀번호 확인<span class="required">*</span></p>
-						<input type="password" name="pw" id="pw2"
-							value="<%=request.getParameter("pw")%>">
+						<input type="password" name="pw" id="pw2" value="<%=request.getParameter("pw")%>">
+							
 						<p id="pwMatchMessage"></p>
 
 						<!-- 비밀번호, 비밀번호확인 일치 여부 -->
@@ -220,36 +219,66 @@
 
 				<!-- 알레르기 정보 수정 체크 리스트 -->
 				<div class="checkboxList">
-					<input type="checkbox" id="cb1" name="food" value="난류가금류"><label
-						for="cb1"></label>난류(가금류) <input type="checkbox" id="cb2"
-						name="food" value="소고기"><label for="cb2"></label>소고기 <input
-						type="checkbox" id="cb3" name="food" value="돼지고기"><label
-						for="cb3"></label>돼지고기 <input type="checkbox" id="cb4" name="food"
-						value="닭고기"><label for="cb4"></label>닭고기 <input
-						type="checkbox" id="cb5" name="food" value="새우"><label
-						for="cb5"></label>새우 <br> <input type="checkbox" id="cb6"
-						name="food" value="게"><label for="cb6"></label>게 <input
-						type="checkbox" id="cb7" name="food" value="오징어"><label
-						for="cb7"></label>오징어 <input type="checkbox" id="cb8" name="food"
-						value="고등어"><label for="cb8"></label>고등어 <input
-						type="checkbox" id="cb9" name="food" value="조개류"><label
-						for="cb9"></label>조개류 <input type="checkbox" id="cb10" name="food"
-						value="우유"><label for="cb10"></label>우유 <br> <input
-						type="checkbox" id="cb11" name="food" value="땅콩"><label
-						for="cb11"></label>땅콩 <input type="checkbox" id="cb12" name="food"
-						value="호두"><label for="cb12"></label>호두 <input
-						type="checkbox" id="cb13" name="food" value="잣"><label
-						for="cb13"></label>잣 <input type="checkbox" id="cb14" name="food"
-						value="대두"><label for="cb14"></label>대두 <input
-						type="checkbox" id="cb15" name="food" value="복숭아"><label
-						for="cb15"></label>복숭아 <br> <input type="checkbox" id="cb16"
-						name="food" value="토마토"><label for="cb16"></label>토마토 <input
-						type="checkbox" id="cb17" name="food" value="밀"><label
-						for="cb17"></label>밀 <input type="checkbox" id="cb18" name="food"
-						value="메밀"><label for="cb18"></label>메밀 <input
-						type="checkbox" id="cb19" name="food" value="아황산류"><label
-						for="cb19"></label>아황산류
-				</div>
+						<div class = "innerCheckbox">
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb1" name="food" value="난류가금류"><label for="cb1"></label>난류(가금류)
+							</div>
+							<div class="checkboxItem">	
+								<input type="checkbox" class="checkbtn" id="cb2" name="food" value="소고기"><label for="cb2"></label>소고기
+							</div>
+							<div class="checkboxItem">	
+								<input type="checkbox" class="checkbtn" id="cb3" name="food" value="돼지고기"><label for="cb3"></label>돼지고기
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb4" name="food" value="닭고기"><label for="cb4"></label>닭고기
+							</div><br>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb5" name="food" value="새우"><label for="cb5"></label>새우
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb6" name="food" value="게"><label for="cb6"></label>게
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb7" name="food" value="오징어"><label for="cb7"></label>오징어
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb8" name="food" value="고등어"><label for="cb8"></label>고등어
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb9" name="food" value="조개류"><label for="cb9"></label>조개류
+							</div><br>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb10" name="food" value="우유"><label for="cb10"></label>우유
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb11" name="food" value="땅콩"><label for="cb11"></label>땅콩
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb12" name="food" value="호두"><label for="cb12"></label>호두
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb13" name="food" value="잣"><label for="cb13"></label>잣
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb14" name="food" value="대두"><label for="cb14"></label>대두
+							</div><br>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb15" name="food" value="복숭아"><label for="cb15"></label>복숭아
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb16" name="food" value="토마토"><label for="cb16"></label>토마토
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb17" name="food" value="밀"><label for="cb17"></label>밀
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb18" name="food" value="메밀"><label for="cb18"></label>메밀
+							</div>
+							<div class="checkboxItem">
+								<input type="checkbox" class="checkbtn" id="cb19" name="food" value="아황산류"><label for="cb19"></label>아황산류
+							</div>
+						</div>
+					</div>
 
 
 
@@ -258,18 +287,13 @@
 				<!-- 맨 밑 버튼 -->
 				<div class="btn">
 
-
 					<button id="backBtn" style='cursor: pointer;'>
 						<a href="gomain.do">저장하지 않고 돌아가기</a>
 					</button> 
 
-			
-
-
 					<button id="saveBtn" style='cursor: pointer;'>
 						<a href="">회원정보 수정 후 저장</a>
 					</button>
-
 
 				</div>
 			
