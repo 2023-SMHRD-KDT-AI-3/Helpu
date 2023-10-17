@@ -19,33 +19,10 @@
 
 		<!-- 헤더 부분 -->
 		<div id="header">
-			<div id="innerHeader">
-				<!-- 상단 로그아웃, 마이페이지, 장바구니 버튼 -->
-				<div id="topBtn">
-					<div id="innerTopbtn">
-						<a href="logout.do">로그아웃</a> <span>|</span> <a href="gomypage.do">마이페이지</a>
-						<span>|</span> <a href="gobasket.do">장바구니</a><br>
-					</div>
-					<!-- 사용자 방문 환영 글 -->
-					<p class="username">${info.mem_name}님 환영합니다!</p>
-				</div>
+
 				<!-- 로고 및 검색창 -->
 				<div id="schBox">
-					<!-- 로고 -->
-					<a href="gomain.do"><img alt="로고" src="imgs/logo.png"></a>
-					<!-- 검색 박스 -->
-					<div class="schBar">
-						<!-- 검색창 -->
-						<span class="icon"><i class="fa fa-search"></i></span> <input
-							type="search" id="search" placeholder="Search" />
-						<!-- 검색 돋보기 아이콘 -->
-						<div class="iconBox">
-							<button type="button" onclick="search()" class="schIcon"
-								style='cursor: pointer;'>
-								<span class="material-symbols-outlined">search</span>
-							</button>
-						</div>
-					</div>
+
 				</div>
 			</div>
 			<!-- 메뉴바 -->
@@ -133,7 +110,7 @@
 							String gender = request.getParameter("gender");
 							String maleChecked = "";
 							String femaleChecked = "";
-
+  
 							if (gender != null) {
 								if (gender.equals("m")) {
 									maleChecked = "checked";
