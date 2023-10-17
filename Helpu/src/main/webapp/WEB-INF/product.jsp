@@ -1,3 +1,5 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="model.productDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
@@ -127,7 +129,17 @@
 				<div class="allergyInfo">
 					<p>제품에 포함된 알레르기 유발 성분</p>
 					<div class="innerAllergy">
-						<span>#새우</span> <span>#밀</span>
+					<%
+					productDTO product = (productDTO) request.getAttribute("product");
+					
+					String[] allergy = product.getPro_haveIngredients().split(",");
+					
+					for(int i =0; i<allergy.length; i++){
+						if(allergy[i]!=""){
+							out.print("<span>#"+allergy[i]+"</span>");
+						}
+					}
+					%>
 					</div>
 
 				</div>
@@ -147,7 +159,7 @@
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
-					<p></p>
+					<p>${product.pro_ingredients}</p>
 
 				</div>
 				<!--  
