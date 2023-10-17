@@ -24,12 +24,11 @@ public class productService implements Command {
 		
 		ArrayList<reviewDTO> review_list = new ArrayList<reviewDTO>();
 		reviewDAO r_dao = new reviewDAO();
+		if(r_dao.reviewList(pro_code).size() != 0 ) {
 		review_list = r_dao.reviewList(pro_code);
 		
-		System.out.println(review_list.get(0).getRv_content());
-		
 		request.setAttribute("r_list", review_list);
-		
+		}
 		// 정보를 가지고 WEB-INF/product.jsp으로 넘어감
 		request.setAttribute("product", product);
 		
