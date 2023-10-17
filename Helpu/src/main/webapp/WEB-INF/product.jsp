@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -130,47 +131,14 @@
 
 				</div>
 				<div class="nutrient">
-					<p>영양성분 데이터</p>
-					<p>차트...</p>
+					<p>하루 권장 영양정보 비교</p>
+					<canvas id="Chart_calories"></canvas>
+					<canvas id="Chart_augars"></canvas>
+					<canvas id="Chart_sodium"></canvas>
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
-					<p>Contrary to popular belief, Lorem Ipsum is not simply random
-						text. It has roots in a piece of classical Latin literature from
-						45 BC, making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.
-						Contrary to popular belief, Lorem Ipsum is not simply random text.
-						It has roots in a piece of classical Latin literature from 45 BC,
-						making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.
-						Contrary to popular belief, Lorem Ipsum is not simply random text.
-						It has roots in a piece of classical Latin literature from 45 BC,
-						making it over 2000 years old. Richard McClintock, a Latin
-						professor at Hampden-Sydney College in Virginia, looked up one of
-						the more obscure Latin words, consectetur, from a Lorem Ipsum
-						passage, and going through the cites of the word in classical
-						literature, discovered the undoubtable source. Lorem Ipsum comes
-						from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-						Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-						BC. This book is a treatise on the theory of ethics, very popular
-						during the Renaissance. The first line of Lorem Ipsum, "Lorem
-						ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					<p></p>
 
 				</div>
 				<div class="chucheon">
@@ -305,8 +273,6 @@
  			return false;
  		});
 		</script>
-
-		</div>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
@@ -325,7 +291,7 @@
 			}
 		});											
 			</script>
-		<script>
+			<script>
 		
 				const augars = document.getElementById('Chart_augars').getContext('2d');
 				const Chart_augars = new Chart(augars, {
@@ -334,16 +300,13 @@
 							type: 'doughnut',
 							label: ${product.pro_gramper}+'g당 당류',
 							data: [${product.pro_sugars},25-${product.pro_sugars}],
-							borderWidth: 1,
-						    datalabels: {
-						          color: '#FFCE56'
-						    }
+							borderWidth: 1
 						}],
 						labels:['당류']
 					}
 				});							
 			</script>
-		<script>
+			<script>
 				
 				const sodium = document.getElementById('Chart_sodium').getContext('2d');
 				const Chart_sodium = new Chart(sodium, {
@@ -358,6 +321,7 @@
 					}
 				});							
 			</script>
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+			<script src="http://code.jquery.com/jquery-latest.min.js"></script>ㄴㄴㄴ			ㄹ
+			<!-- 메인 -->
 </body>
 </html>
