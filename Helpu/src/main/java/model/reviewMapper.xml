@@ -3,7 +3,7 @@
 <mapper namespace="model.reviewMapper">
 
 	<!-- 게시판 전체 내용을 조회할 수 있는 sql문장 -->
-	<select id="allList" resultType="model.reviewDTO">
+	<select id="Review_List" resultType="model.reviewDTO">
 		select * from tb_review
 	</select>
 

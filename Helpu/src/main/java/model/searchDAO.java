@@ -16,7 +16,7 @@ public class searchDAO {
 	// 게시글 전체조회 메소드 생성
 	
 	// ArrayList 미리 생성
-	ArrayList<productDTO> list = new ArrayList<productDTO>();
+	ArrayList<productDTO> Search_List = new ArrayList<productDTO>();
 	
 	// ArrayList<searchDTO> 메소드 생성
 	public ArrayList<productDTO> allList(String search) {
@@ -30,7 +30,7 @@ public class searchDAO {
 		// search 값을 가지고 allList sql(searchMapper.xml)문으로 간다. 
 		// 이유? : 나도 모름 .
 		
-		list = (ArrayList) sqlSession.selectList("allList",search);
+		Search_List = (ArrayList) sqlSession.selectList("Search_List",search);
 		// 		리스트로 형변환
 		
 		// SqlSession 닫아줌
@@ -38,7 +38,7 @@ public class searchDAO {
 		sqlSession.close();
 		
 
-		return list;
+		return Search_List;
 	}
 
 }

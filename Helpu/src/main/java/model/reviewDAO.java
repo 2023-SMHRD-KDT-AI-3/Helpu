@@ -13,16 +13,16 @@ public class reviewDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
 	// 게시글 전체조회 메소드 생성
-	ArrayList<reviewDTO> list = new ArrayList<reviewDTO>();
+	ArrayList<reviewDTO> Review_List = new ArrayList<reviewDTO>();
 
 	public ArrayList<reviewDTO> allList() {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		list = (ArrayList) sqlSession.selectList("allList");
+		Review_List = (ArrayList) sqlSession.selectList("Review_List");
 
 		sqlSession.close();
 
-		return list;
+		return Review_List;
 	}
 
 	// 게시글을 등록하기 위한 메소드
