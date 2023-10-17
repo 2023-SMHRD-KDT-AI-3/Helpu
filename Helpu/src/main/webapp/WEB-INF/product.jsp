@@ -91,7 +91,7 @@
 				</div>
 				<div class="proMoreInfo">
 					<div class="moreInfo">
-						<p class="includedAll">알레르기 유발 성분 개 포함</p>
+						<!-- <p class="includedAll">알레르기 유발 성분 개 포함</p> -->
 						<p class="company">${product.pro_maker}</p>
 						<p>
 							<span class="proSubject">${product.pro_name}</span><span
@@ -117,7 +117,6 @@
 					<li><span><a href="#">포함된 알레르기 성분</a></span></li>
 					<li><span><a href="#">영양성분</a></span></li>
 					<li><span><a href="#">세부 원재료명 및 함량</a></span></li>
-					<li><span><a href="#">추천상품</a></span></li>
 					<li><span><a href="#">리뷰</a></span></li>
 				</ul>
 			</div>
@@ -150,6 +149,7 @@
 					<p></p>
 
 				</div>
+				<!--  
 				<div class="chucheon">
 					<div class="chuTitle">
 						<h2>추천 상품</h2>
@@ -170,6 +170,7 @@
 							</div>
 						</div>
 					</div>
+					-->
 					<!-- 슬라이드 영역 
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
