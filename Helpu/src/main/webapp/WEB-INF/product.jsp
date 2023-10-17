@@ -133,9 +133,17 @@
 				</div>
 				<div class="nutrient">
 					<p>하루 권장 영양정보 비교</p>
-					<canvas id="Chart_calories"></canvas>
-					<canvas id="Chart_augars"></canvas>
-					<canvas id="Chart_sodium"></canvas>
+					<div class ="chart">
+						<div class="chartbox">
+							<canvas id="Chart_calories"></canvas>
+						</div>
+						<div class="chartbox">
+							<canvas id="Chart_augars"></canvas>
+						</div>
+						<div class="chartbox">
+							<canvas id="Chart_sodium"></canvas>
+						</div>
+					</div>
 				</div>
 				<div class="details">
 					<p>세부 원재료명 및 함량</p>
@@ -145,7 +153,22 @@
 				<div class="chucheon">
 					<div class="chuTitle">
 						<h2>추천 상품</h2>
-						<p>다른 고객들이 함께 구매한 상품입니다.</p>
+						<p class="chuSubtitle">다른 고객들이 함께 구매한 상품입니다.</p>
+						
+						<div class = "slider">
+							<div class="slides"></div>
+							<div class="slides"></div>
+							<div class="slides"></div>
+							<div class="slides"></div>
+							<div class = "controls">
+								<button type="button" style='cursor: pointer;' id="prev">
+									<span class="material-symbols-outlined">chevron_left</span>
+								</button>
+								<button type="button" style='cursor: pointer;' id="next">
+									<span class="material-symbols-outlined">chevron_right</span>
+								</button>
+							</div>
+						</div>
 					</div>
 					<!-- 슬라이드 영역 
 					<div class="swiper-container">
@@ -201,6 +224,7 @@
 				</div>-->
 
 				</div>
+			
 
 				<!-- 리뷰 영역 -->
 				<div class="review">
