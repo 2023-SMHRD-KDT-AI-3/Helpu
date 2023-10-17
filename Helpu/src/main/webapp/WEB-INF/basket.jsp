@@ -59,7 +59,7 @@
 			</div>
 		</div>
 
-		<div class="bskWrap">
+		<div id = container class="bskWrap">
 			<div class="basket">
 				<h2>장바구니</h2>
 
@@ -76,20 +76,22 @@
 				    <input type="hidden" id="productCode${status.index+1}" value="${clist.pro_code}"/>
 			        <input type="hidden" id="quantity${status.index+1}" value="${clist.su}"/>
 			        <input type="hidden" id="price${status.index+1}" value="${clist.pro_price * clist.su}"/>
+			        <input type="hidden" class="pro_code" value="${clist.pro_code}"/>
+			        
 					<div class="container">
-						<p class="proInfo proCheckbox">
+						<p class="proInfo${clist.pro_code} proCheckbox">
 							<input class="select_asd" type="checkbox" name="select"
 								value="select">
 						</p>
 						<img class="productImg" src="${clist.pro_img}" alt="제품이미지">
 
-						<p class="proInfo productName">
-						<p id="proName">${clist.pro_name}</p>
+						<p class="proInfo productName"></p>
+						<p class="proName">${clist.pro_name}</p>
 
 						<div class="proInfo cntbox">
 							<button type="button" class="minus"
 								onclick="updateQuantity('${clist.pro_code}', -1, ${clist.pro_price})">-</button>
-							<span id="quantity_${clist.pro_code}">${clist.su}</span>
+							<span id="quantity_${clist.pro_code}" class="su">${clist.su}</span>
 							<button type="button" class="plus"
 								onclick="updateQuantity('${clist.pro_code}', 1, ${clist.pro_price})">+</button>
 						</div>
@@ -128,16 +130,10 @@
 					<div class="total">
 						<span>결제 예정 금액</span>
 						<div>
-							<p id="updateFinalPrice" class="won3"></p>
+							<p id="updateFinalPrice" class="won3"></p><p>원</p>
 						</div>
 					</div>
 				</div>
-
-
-
-
-
-
 			</form>
 			<!-- 선택 상품 결제, 전체 상품 결제 -->
 			<div class="pagination-container">
@@ -146,206 +142,207 @@
 				<button id="btn3" style='cursor: pointer;'>선택 상품 결제</button>
 
 
-				<button onclick="requestPay()" id="btn4" style='cursor: pointer;'>전체
-					상품 결제</button>
 
+				<button onclick="requestPay();" id="btn4" style='cursor: pointer;'>전체 상품 결제</button>
 			</div>
 		</div>
 
 	</div>
 
-	<script>				
+	<script>
+	
 	 $(document).ready(function() {
-		 console.log("바로 시작");
-		 selectAll();
-		 console.log("바로 시작");
-		$('input[name="select"]').change(function () {
-			            calculateTotalPrice();
-			            updateFinalPrice();
-			        });
-			    });
-
-
-
-
-	var userId = "${info.id}";
-console.log(userId);
+			 console.log("바로 시작");
+			 selectAll();
+			 console.log("바로 시작");
+			$('input[name="select"]').change(function () {
+				            calculateTotalPrice();
+				            updateFinalPrice();
+				        });
+				    });
 	
-function updateQuantity(productCode, amount, price) {
-    // 현재 수량 가져오기
-    var currentQuantity = parseInt($('#quantity_' + productCode).text());
-
-    // 변경된 수량 계산
-    var newQuantity = currentQuantity + amount;
-
-    // 최소 수량이 1로 제한되도록 설정
-    if (newQuantity < 1) {
-        newQuantity = 1;
-    }
-
-    // HTML 업데이트
-    $('#quantity_' + productCode).text(newQuantity);
-
-    // 가격 업데이트
-    var newPrice = price * newQuantity;
-    $('#price_' + productCode).text(newPrice + '원');
-
-    // 서버에 업데이트 요청 보내기
-    $.ajax({
-        type: "POST",
-        url: "updateProductQuantity.do",
-        data: {
-            productCode: productCode,
-            su: newQuantity,
-            id: userId
-        },
-        success: function (response) {
-            // 성공적으로 업데이트되었을 때 수행할 작업
-            console.log("성공!");
-            calculateTotalPrice();
-        },
-        error: function (xhr, status, error) {
-            // 실패했을 때 수행할 작업
-            console.log("실패..");
-        }
-    });
-}
-
-
-
-function calculateTotalPrice() {
 	
-    var total = 0;
-    $("input[name='select']:checked").each(function () {        	 
-        index = $('input:checkbox[name=select]').index(this);          
-        if(index!=0) {
-         var productCode = $("#productCode"+index);
-         var quantity = parseInt($("#productCode"+index).val());
-         var price = parseInt($("#price"+index).val());            
-         total += price;
-        }
-    });
-
-    $('#totalProductPrice').text(total);       
-    
-}
-
-function selectAll() {
-    var checkboxes = document.getElementsByName('select'); // 5
-    var selectAllCheckbox = checkboxes[0]; // 전체선택
-    var totalprice=0;
-    for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
-        checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
-        
-        
-    }
-   
-}   
-
-function updateFinalPrice() {
-    var totalProductPrice = parseInt($('#totalProductPrice').text());
-    var finalPrice = totalProductPrice + 3000;
-    $('#updateFinalPrice').text(finalPrice);
-}
-
-function deleteCartItem(id, productCode) {
-    $.ajax({
-        type: "POST",
-        url: "deleteCartItem.do",
-        data: {
-            id: id,
-            productCode: productCode
-        },
-        success: function (response) {
-            console.log("상품이 성공적으로 삭제되었습니다.");
-            $('#product_' + productCode).remove(); 
-            location.reload();
-        },    
-        error: function() {
-            console.log("상품 삭제에 실패했습니다.");
-        }
-    });
-}
-/*
-$.ajax({
-		url : "historyService.do",
-		type : "post",
-		data : {
-			"search" : search,
-			"allergy" : check_allergies
-		},
-		dataType : "json",
-		success : pagination,
-		error : function() {
-			alert("error");
-		}
-	});
-  */
 	
-  function requestPay() {
-  	pro_name = document.getElementsByClassName("proName");
-  	pro_name1 = pro_name[0].innerHTML;
-		pro_code = document.getElementsByClassName("pro_code");
-		pro_codes = "";
-		pro_su = document.getElementsByClassName("su");
-		pro_sus = "";
-  	for(let i = 0; i<pro_name.length; i++){
-			pro_codes += pro_code[i].value+",";
-			pro_sus += pro_su[i].innerHTML+",";
-		}
-		
-		
+	
+  	var userId = "${info.id}";
+	console.log(userId);
   	
-  	final_price = document.getElementById("updateFinalPrice").innerText;
+    function updateQuantity(productCode, amount, price) {
+        // 현재 수량 가져오기
+        var currentQuantity = parseInt($('#quantity_' + productCode).text());
 
-      //가맹점 식별코드
-      IMP.init('imp07245851');
-      IMP.request_pay({
-         pg : "html5_inicis",
-         pay_method : 'card',
-         merchant_uid : 'merchant_' + new Date().getTime(),
-         name : pro_name1, //결제창에서 보여질 이름
-         amount : 100//final_price, //실제 결제되는 가격
-      }, function(rsp) {
-         console.log(rsp);
-         if (rsp.success) {
-            var msg = '결제가 완료되었습니다.';
-            msg += '고유ID : ' + rsp.imp_uid;
-            msg += '상점 거래ID : ' + rsp.merchant_uid;
-            msg += '결제 금액 : ' + rsp.paid_amount;
-            msg += '카드 승인번호 : ' + rsp.apply_num;
+        // 변경된 수량 계산
+        var newQuantity = currentQuantity + amount;
 
-            $.ajax({
-				url : "historyService.do",
-				type : "post",
-				data : {
-					"payment" : rsp.paid_amount,
-					"pro_codes" : pro_codes,
-					"pro_sus" : pro_sus,
-				},
-				success : function(){
-					alert("성공");
-					let container_HTML="";
-					let container = document.getElementById("container");
-					container_HTML+="<h4> 결제 완료</h4>";
-					container_HTML+="<a href='gohistory.do'> 구매내역페이지로 이동</a>"
+        // 최소 수량이 1로 제한되도록 설정
+        if (newQuantity < 1) {
+            newQuantity = 1;
+        }
 
-					container.innerHTML=container_HTML;
-					
-				},
-				error : function() {
-					alert("error");
-				}
-			});
+        // HTML 업데이트
+        $('#quantity_' + productCode).text(newQuantity);
+
+        // 가격 업데이트
+        var newPrice = price * newQuantity;
+        $('#price_' + productCode).text(newPrice + '원');
+
+        // 서버에 업데이트 요청 보내기
+        $.ajax({
+            type: "POST",
+            url: "updateProductQuantity.do",
+            data: {
+                productCode: productCode,
+                su: newQuantity,
+                id: userId
+            },
+            success: function (response) {
+                // 성공적으로 업데이트되었을 때 수행할 작업
+                console.log("성공!");
+                calculateTotalPrice();
+            },
+            error: function (xhr, status, error) {
+                // 실패했을 때 수행할 작업
+                console.log("실패..");
+            }
+        });
+    }
+
+    
+    
+    function calculateTotalPrice() {
+    	
+        var total = 0;
+        $("input[name='select']:checked").each(function () {        	 
+            index = $('input:checkbox[name=select]').index(this);          
+            if(index!=0) {
+             var productCode = $("#productCode"+index);
+             var quantity = parseInt($("#productCode"+index).val());
+             var price = parseInt($("#price"+index).val());            
+             total += price;
+            }
+        });
+
+        $('#totalProductPrice').text(total);       
+        
+    }
+    
+    function selectAll() {
+        var checkboxes = document.getElementsByName('select'); // 5
+        var selectAllCheckbox = checkboxes[0]; // 전체선택
+        var totalprice=0;
+        for (var i = 1; i < checkboxes.length; i++) { // 5번회전(0~4)
+            checkboxes[i].checked = selectAllCheckbox.checked; // 1,2,3,4
             
-         } else {
-            var msg = '결제에 실패하였습니다.';
-            msg += '에러내용 : ' + rsp.error_msg;
-         }
-         alert(msg);
-      });
-   }
-	</script>
+            
+        }
+       
+    }   
+    
+    function updateFinalPrice() {
+        var totalProductPrice = parseInt($('#totalProductPrice').text());
+        var finalPrice = totalProductPrice + 3000;
+        $('#updateFinalPrice').text(finalPrice);
+    }
+    
+    function deleteCartItem(id, productCode) {
+        $.ajax({
+            type: "POST",
+            url: "deleteCartItem.do",
+            data: {
+                id: id,
+                productCode: productCode
+            },
+            success: function (response) {
+                console.log("상품이 성공적으로 삭제되었습니다.");
+                $('#product_' + productCode).remove(); 
+                location.reload();
+            },    
+            error: function() {
+                console.log("상품 삭제에 실패했습니다.");
+            }
+        });
+    }
+    /*
+	$.ajax({
+			url : "historyService.do",
+			type : "post",
+			data : {
+				"search" : search,
+				"allergy" : check_allergies
+			},
+			dataType : "json",
+			success : pagination,
+			error : function() {
+				alert("error");
+			}
+		});
+      */
+		
+      function requestPay() {
+      	pro_name = document.getElementsByClassName("proName");
+      	pro_name1 = pro_name[0].innerHTML;
+  		pro_code = document.getElementsByClassName("pro_code");
+  		pro_codes = "";
+  		pro_su = document.getElementsByClassName("su");
+  		pro_sus = "";
+      	for(let i = 0; i<pro_name.length; i++){
+  			pro_codes += pro_code[i].value+",";
+  			pro_sus += pro_su[i].innerHTML+",";
+  		}
+  		
+  		
+      	
+      	final_price = document.getElementById("updateFinalPrice").innerText;
+
+          //가맹점 식별코드
+          IMP.init('imp07245851');
+          IMP.request_pay({
+             pg : "html5_inicis",
+             pay_method : 'card',
+             merchant_uid : 'merchant_' + new Date().getTime(),
+             name : pro_name1, //결제창에서 보여질 이름
+             amount : 100//final_price, //실제 결제되는 가격
+          }, function(rsp) {
+             console.log(rsp);
+             if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;
+                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                msg += '결제 금액 : ' + rsp.paid_amount;
+                msg += '카드 승인번호 : ' + rsp.apply_num;
+
+                $.ajax({
+  				url : "historyService.do",
+  				type : "post",
+  				data : {
+  					"payment" : rsp.paid_amount,
+  					"pro_codes" : pro_codes,
+  					"pro_sus" : pro_sus,
+  				},
+  				success : function(){
+  					alert("성공");
+  					let container_HTML="";
+  					let container = document.getElementById("container");
+  					container_HTML+="<h4> 결제 완료</h4>";
+  					container_HTML+="<a href='gohistory.do'> 구매내역페이지로 이동</a>"
+
+  					container.innerHTML=container_HTML;
+  					
+  				},
+  				error : function() {
+  					alert("error");
+  				}
+  			});
+                
+             } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+             }
+             alert(msg);
+          });
+       }
+	  
+</script>
 
 
 </body>
