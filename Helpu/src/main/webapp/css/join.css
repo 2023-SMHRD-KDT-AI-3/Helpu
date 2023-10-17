@@ -57,7 +57,7 @@ h3{
 /* 각 정보값 별 제목 */
 .userData>p {
 	text-align: left;
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .userData>input {

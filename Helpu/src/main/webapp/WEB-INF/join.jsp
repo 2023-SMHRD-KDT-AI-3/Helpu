@@ -20,11 +20,11 @@
 						<input id="check" type="text" name="id"	placeholder="사용할 아이디를 입력해주세요.">
 						<div id="idCheck"></div>
 						
-						<label for="password">비밀번호</label> <input id="password"
+						<p><label for="password">비밀번호</label></p> <input id="password"
 							type="password" name="pw" placeholder="사용할 비밀번호를 입력하세요." required>
 
 						
-						<label for="confirmPassword">비밀번호 확인<span class="passwordStar">*</span></label> <input
+						<p><label for="confirmPassword">비밀번호 확인<span class="passwordStar">*</span></label></p><input
 							id="confirmPassword" type="password" placeholder="사용할 비밀번호를 다시 입력하세요." required> 
 						<div id="passwordMatchError" class="error"></div>
 						
