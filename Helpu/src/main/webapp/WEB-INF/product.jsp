@@ -252,7 +252,9 @@
 
 				<!-- 배너 영역 -->
 				<div id="banner">
-					<a href="gomypage.do"><p>마이페이지</p></a> <a href="gofavoites.do"><p>즐겨찾기</p></a> <a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
+					<a href="gomypage.do"><p>마이페이지</p></a> 
+					<!-- <a href="gofavoites.do"><p>즐겨찾기</p></a> -->
+					<a href="gobasket.do?id=${info.id}"><p>장바구니</p></a>
 					<div class="recent">
 									<p>최근 담은 상품</p>
 									<ul class="recentbox">
