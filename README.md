@@ -147,7 +147,7 @@
   <tr>
     <td align="center"><b>프로젝트 총괄(PM), DB 설계, UI 구성, 기획</b></td>
     <td align="center"><b>Back-end, DB 설계, 크롤링</b></td>
-    <td align="center"><b>Back-end, 크롤링</b></td>
+    <td align="center"><b>Back-end, DB 설계, 크롤링</b></td>
     <td align="center"><b>Fron-end, UI 설계</b></td>
     <td align="center"><b>Fron-end</b></td>
   </tr>
