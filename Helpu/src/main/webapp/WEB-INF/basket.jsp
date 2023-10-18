@@ -325,9 +325,14 @@
   					alert("성공");
   					let container_HTML="";
   					let container = document.getElementById("container");
-  					container_HTML+="<h4> 결제 완료</h4>";
-  					container_HTML+="<a href='gohistory.do'> 구매내역페이지로 이동</a>"
-
+  					container_HTML+=`
+  						<div class = "paymentSubjectbox">
+  							<h2 class="paymentSubject">결제가 완료되었습니다!</h2>
+  						</div>
+  				        <div class="successIconbox">
+  				        	<span class="material-symbols-outlined successIcon">done_outline</span>
+  				        </div>
+  				        <div class = "movehistoryBtn"><a href = "gohistory.do">구매내역 페이지로 이동</a></div>`;
   					container.innerHTML=container_HTML;
   					
   				},
