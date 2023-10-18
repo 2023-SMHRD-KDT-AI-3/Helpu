@@ -118,7 +118,7 @@
 					<div class="pa">
 						<span>상품 금액</span>
 						<div>
-							<p id="totalProductPrice" class="won1"></p>
+							<span id="totalProductPrice" class="won1"></span><span>원</span>
 						</div>
 					</div>
 					+
@@ -132,7 +132,7 @@
 					<div class="total">
 						<span>결제 예정 금액</span>
 						<div>
-							<p id="updateFinalPrice" class="won3"></p><p>원</p>
+							<span id="updateFinalPrice" class="won3"></span><span>원</span>
 						</div>
 					</div>
 				</div>
