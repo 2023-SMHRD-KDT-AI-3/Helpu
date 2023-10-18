@@ -15,8 +15,7 @@
 
 </head>
 <body>
-
-	<form action="#" method="post">
+	<form action="ChangeService.do" method="post">
 
 		<!-- 헤더 부분 -->
 		<div id="header">
@@ -47,6 +46,7 @@
 								<span class="material-symbols-outlined">search</span>
 							</button>
 						</div>
+					</div>
 				</div>
 			</div>
 			<!-- 메뉴바 -->
@@ -103,7 +103,7 @@
 
 
 
-
+		
 				<!-- 회원 정보 수정 태그-->
 				<div class="h4member">
 					<h4>회원 정보 수정</h4>
@@ -163,20 +163,20 @@
 
 						<p>비밀번호<span class="required">*</span></p>
 						<!-- <p>비밀번호</p> -->
-						<input type="password" name="pw" id="pw1" value="<%=request.getParameter("pw")%>">
+						<input type="password" name="pw" id="pw1">
 							
 						<p>주소<span class="required">*</span></p>
-						<input type="text" name="m_address" id="m_address" value="<%=request.getParameter("m_address")%>">
+						<input type="text" name="address" id="m_address" placeholder="${info.address}">
 							
 						<p>전화번호<span class="required">*</span></p>
-						<input type="text" name="phone_number" id="phone_number" value="<%=request.getParameter("phone_number")%>">
+						<input type="text" name="number" id="phone_number" placeholder="${info.phone_number}">
 							
 					</div>
 
 					<!-- 비밀번호 확인 따로 -->
 					<div id="modify2">
 						<p id="pwCheck">비밀번호 확인<span class="required">*</span></p>
-						<input type="password" name="pw" id="pw2" value="<%=request.getParameter("pw")%>">
+						<input type="password" name="check" id="pw2">
 							
 						<p id="pwMatchMessage"></p>
 
@@ -284,24 +284,32 @@
 						</div>
 					</div>
 
-
-
-
-
 				<!-- 맨 밑 버튼 -->
 				<div class="btn">
-
-					<button id="backBtn" style='cursor: pointer;'>
+					<button type="button" id="backBtn" style='cursor: pointer;'>
 						<a href="gomain.do">저장하지 않고 돌아가기</a>
 					</button> 
+					<button type="submit" id="saveBtn" style='cursor: pointer;'>회원정보 수정 후 저장</button>
+					
+				</div>	
+			</form>
 
-					<button id="saveBtn" style='cursor: pointer;'>
-						<a href="">회원정보 수정 후 저장</a>
-					</button>
-
-				</div>
-			
+	<script type="text/javascript">
+		// 체크박스 회원 알레르기 선택해놓기
+		var checkbox = document.getElementsByName("food");
 		
-	</form>
+		let info = "${info.m_allergy}";
+		let allergy = info.split(",");
+		
+		let plus_allergy = "";
+ 		for(let i = 0; i<checkbox.length; i++){
+			for(let j = 0; j<allergy.length; j++){
+				if(checkbox[i].getAttribute("value")==allergy[j]){
+					checkbox[i].setAttribute("checked",true);
+				}
+			}
+	 	}
+
+	</script>	
 </body>
 </html>
