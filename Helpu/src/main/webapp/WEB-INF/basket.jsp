@@ -303,7 +303,7 @@
              pay_method : 'card',
              merchant_uid : 'merchant_' + new Date().getTime(),
              name : pro_name1, //결제창에서 보여질 이름
-             amount : 100//final_price, //실제 결제되는 가격
+             amount : final_price, //실제 결제되는 가격
           }, function(rsp) {
              console.log(rsp);
              if (rsp.success) {

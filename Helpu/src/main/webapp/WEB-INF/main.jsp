@@ -521,7 +521,6 @@
    // 검색기능 
    function search() {
       var search = $("#search").val();
-      alert(search);
       $.ajax({
          url : "SearchService.do",
          type : "post",
@@ -538,9 +537,9 @@
 
    // 재검색기능 
    function reSearch() {
-          let search = $("#search").val();
+         let search = $("#search").val();
          let check_allergies="";
-          var check_allergy = document.getElementsByName("allergy");
+         var check_allergy = document.getElementsByName("allergy");
          check_allergy.forEach((element) => {
             if(element.checked){
                check_allergies+=element.value+",";
@@ -610,7 +609,7 @@
          html += "</div>";
          html += "</div>";
          };
-         console.log("여기까지 옴?");
+         
          //alert(data);
          $(".productbox").html(html);
 
@@ -664,9 +663,9 @@
       const prevButton = document.querySelector('.prev-button'); // 이전 페이지 버튼
       prevButton.addEventListener('click', function(){
         if (currentPage > 1) {
-          currentPage -= 1;
-         search();
-          moveSelectedPageHighlight();
+        	currentPage -= 1;
+			search();
+          	moveSelectedPageHighlight();
         }
       })
       
@@ -748,7 +747,8 @@
                    if (response) {
                        alert("장바구니에 상품이 추가되었습니다.");
                    } else {
-                       alert("장바구니 추가 실패");
+                       alert("장바구니 추가 실패하였습니다.
+                    		   ");
                    }
                },
                error: function () {
