@@ -78,9 +78,6 @@
 					<a href="gohistory.do" class="mybannerBtn">구매내역</a>
 				</button>
 				<br>
-				<button style='cursor: pointer;' id="favorite">
-					<a href="gofavorites.do" class="mybannerBtn">즐겨찾기</a>
-				</button>
 
 			</div>
 
