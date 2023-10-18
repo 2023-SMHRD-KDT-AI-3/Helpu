@@ -103,8 +103,8 @@
 						<p class="proPrice">${product.pro_price}원</p>
 					</div>
 					<div class="productBtn">
-						<a href="#"><span class="proBtn">장바구니</span></a> <a href="#"><span
-							class="proBtn proPurchase">구매하기</span></a>
+						<a href="#" id="basketBtn"><span class="proBtn">장바구니 추가</span></a>
+						<a href="gobasket.do?id=${info.id}"><span class="proBtn proPurchase">장바구니 이동</span></a>
 					</div>
 				</div>
 				<div class="bestReview">
@@ -295,6 +295,7 @@
 			<script>
 			
 			
+			
 			function writeReview() {
 	 			 var id='${info.id}';
 	 			 var pro_code = '${product.pro_code}';
@@ -416,6 +417,34 @@
 		       }
 		   });
 		});
+
+		let bascketBtn=document.getElementById("basketBtn");
+		bascketBtn.addEventListener("click",function(){
+			
+			var id='${info.id}';
+			var pro_code='${product.pro_code}'
+			$.ajax({
+			   url: "basketService.do",
+			   type: "post",
+			   data: {
+				   "id": id,
+				   "pro_code": pro_code	         
+			   },
+			   success: function (response) {
+				   if (response) {
+					   alert("장바구니에 상품이 추가되었습니다.");
+					   location.reload();
+				   } else {
+					   alert("장바구니 추가 실패");
+				   }
+			   },
+			   error: function () {
+				   alert("error");
+			   }
+		   }); 
+
+		})				
+ 		
 				
 			</script>
 			<script src="http://code.jquery.com/jquery-latest.min.js"></script>
