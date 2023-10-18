@@ -114,7 +114,7 @@
 					if (res == "false") {
 						p.html("사용이 가능한 아이디 입니다.").css("color", "black");
 					} else {
-						p.html("사용이 불가능한 아이디 입니다.").css("color", "red");
+						p.html("중복된 아이디 입니다.").css("color", "red");
 					}
 				},
 				error : function(e) {
