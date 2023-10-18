@@ -598,7 +598,7 @@ li {
 }
 
 /* 리뷰 등록 버튼 */
-.inputReview > input[type=submit]:nth-child(3){
+#reviewBtn{
 	font-weight: 600;
     padding: 2px 10px 2px 10px;
     border-radius: 5px;

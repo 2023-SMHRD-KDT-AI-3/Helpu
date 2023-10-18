@@ -255,7 +255,7 @@
 					<form action="#" method="post">
 						<div class="inputReview">
 							<span>${info.id}</span><input id = 'input_review' type="text" name="reviewData">
-							 <input type="button" value="등록하기" onclick='writeReview()'>
+							 <input id="reviewBtn" type="button" value="등록하기" onclick='writeReview()'>
 						</div>
 					</form>
 				</div>
