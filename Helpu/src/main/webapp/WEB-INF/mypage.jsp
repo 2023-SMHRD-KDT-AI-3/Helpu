@@ -135,20 +135,20 @@
 							memberDTO member = (memberDTO)session.getAttribute("info");
 							String gender = member.getGender();
 							
-							boolean maleChecked = false;
-							boolean femaleChecked = false;
+							String maleChecked = null;
+							String femaleChecked = null;
   
 							if (gender != null) {
 								if (gender.equals("m")) {
-									maleChecked = true;
+									maleChecked = "checked";
 								} else if (gender.equals("f")) {
-									femaleChecked = true;
+									femaleChecked = "checked";
 								}
 							}
 							%>
 
-							<input type="radio" class="gender" name="gender" value="m" checked=<%=maleChecked%> disabled>남성
-							<input type="radio" class="gender" name="gender" value="f" checked=<%=femaleChecked%> disabled>여성
+							<input type="radio" class="gender" name="gender" value="m" <%=maleChecked %> disabled>남성
+							<input type="radio" class="gender" name="gender" value="f" <%=femaleChecked %> disabled>여성
 								
 								
 						</div>
