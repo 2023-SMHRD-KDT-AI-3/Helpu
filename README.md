@@ -8,7 +8,7 @@
 <br>
 
 ## 📅 프로젝트 기간
-2023.07.00 ~ 2023.08.19 (6주)
+2023.09.11 ~ 2023.10.19 (6주)
 <br>
 
 ## ⭐ 주요 기능
@@ -58,6 +58,11 @@
             <img src="https://img.shields.io/badge/chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white"/>
             <img src="https://img.shields.io/badge/apachemaven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
             <img src="https://img.shields.io/badge/jstl-007054?style=for-the-badge&logo=jstl&logoColor=white"/>
+            <img src="https://img.shields.io/badge/lombok-4285F4?style=for-the-badge&logo=lombok&logoColor=white"/>
+            <img src="https://img.shields.io/badge/mybatis-ECD53F?style=for-the-badge&logo=mybatis&logoColor=white"/>
+            <img src="https://img.shields.io/badge/cos-55C2E1?style=for-the-badge&logo=cos&logoColor=white"/>
+            <img src="https://img.shields.io/badge/gson-000000?style=for-the-badge&logo=gson&logoColor=white"/>
+            <img src="https://img.shields.io/badge/IAMPORT REST API-BE95FF?style=for-the-badge&logo=IAMPORT REST API&logoColor=white"/>
         </td>
     </tr>
     <tr>
@@ -142,7 +147,7 @@
   <tr>
     <td align="center"><b>프로젝트 총괄(PM), DB 설계, UI 구성, 기획</b></td>
     <td align="center"><b>Back-end, DB 설계, 크롤링</b></td>
-    <td align="center"><b>Back-end, 크롤링</b></td>
+    <td align="center"><b>Back-end, DB 설계, 크롤링</b></td>
     <td align="center"><b>Fron-end, UI 설계</b></td>
     <td align="center"><b>Fron-end</b></td>
   </tr>
