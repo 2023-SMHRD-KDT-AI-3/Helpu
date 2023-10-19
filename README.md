@@ -116,13 +116,16 @@
 
 ## 🖥 화면 구성
 
-### 시작페이지/로그인/회원가입/마이페이지
+### 시작페이지
 ![image](https://user-images.githubusercontent.com/140151892/276472766-7bc3e36b-77b3-46dc-9fd8-c0f040732d98.PNG)
 <br>
+### 로그인
 ![image](https://user-images.githubusercontent.com/140151892/276472756-f4f29934-2006-4ecb-85ff-4b195c044e77.PNG)
 <br>
+### 회원가입
 ![image](https://user-images.githubusercontent.com/140151892/276475457-3adfd918-39ee-4132-9b8d-9c19e602daa2.PNG)
 <br>
+### 마이페이지
 ![image](https://user-images.githubusercontent.com/140151892/276475341-1d1fafb4-b64a-4c3e-b3d5-25ecd5525cb1.PNG)
 <br>
 
@@ -139,7 +142,7 @@
 <br>
 
 ### 구매내역
-<p>![image](https://user-images.githubusercontent.com/140151892/276472750-509c8efa-3166-4649-ad47-84cc0df234bd.PNG)</p>
+<p>![image](https://user-images.githubusercontent.com/140151892/276487120-36d833bd-6e40-4c4b-bc86-b96d85d6747e.PNG)</p>
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
