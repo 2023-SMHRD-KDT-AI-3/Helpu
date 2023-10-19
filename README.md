@@ -1,4 +1,4 @@
-# 📎 건강정보를 입력받아 필터링을 통한 식품 알레르기 피해 예방 수단 (팀명 : Helpu)
+# 📎 식품 알레르기 필터링 전자상거래 웹서비스 (팀명 : Helpu)
 ![image]()
 
 
@@ -99,15 +99,15 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조) 예시 
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![서비스 아키텍처](https://user-images.githubusercontent.com/140151892/276470138-03fa5bae-a4d7-4f2b-9414-7f52b7195b4c.PNG)
 <br>
 
 ## 📌 SW유스케이스
-![image](https://user-images.githubusercontent.com/25995055/178401023-9a015e66-aa6e-4d74-8564-9b1f9d306649.png)
+![image](https://user-images.githubusercontent.com/140151892/276475582-07a82bfe-2340-4e13-9c18-0580c069d2fc.png)
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://user-images.githubusercontent.com/25995055/178401048-d6484bda-a2d7-40e1-998b-2bd195cd9f89.png)
+![image](https://user-images.githubusercontent.com/140151892/276469786-0ace9a62-8941-4364-ac17-c047b36f85da.PNG)
 <br>
 
 ## 📌 ER다이어그램
@@ -116,16 +116,30 @@
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
+### 시작페이지/로그인/회원가입/마이페이지
+![image](https://user-images.githubusercontent.com/140151892/276472766-7bc3e36b-77b3-46dc-9fd8-c0f040732d98.PNG)
+<br>
+![image](https://user-images.githubusercontent.com/140151892/276472756-f4f29934-2006-4ecb-85ff-4b195c044e77.PNG)
+<br>
+![image](https://user-images.githubusercontent.com/140151892/276475457-3adfd918-39ee-4132-9b8d-9c19e602daa2.PNG)
+<br>
+![image](https://user-images.githubusercontent.com/140151892/276475341-1d1fafb4-b64a-4c3e-b3d5-25ecd5525cb1.PNG)
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+### 메인페이지
+![image](https://user-images.githubusercontent.com/140151892/276475351-c3956559-b358-40ec-90e3-b6f6907fcf53.PNG)
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 제품 상세페이지
+![image](https://user-images.githubusercontent.com/140151892/276474455-858be9e6-aaf2-4aff-8381-76f26970c79c.PNG)
+<br>
+
+### 장바구니
+![image](https://user-images.githubusercontent.com/140151892/276472767-ffdcdb6d-85ea-41b7-ba4d-26cd18110f95.PNG)
+<br>
+
+### 구매내역
+![image](https://user-images.githubusercontent.com/140151892/276472750-509c8efa-3166-4649-ad47-84cc0df234bd.PNG)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
@@ -161,11 +175,5 @@
 </table>
 
 ## 🤾‍♂️ 트러블슈팅
-개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
-프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
-  
-* 문제1<br>
- 문제점 설명 및 해결방안
- 
-* 문제2<br>
- 문제점 설명 및 해결방안
+![image](https://user-images.githubusercontent.com/140151892/276470487-b8e132b4-8a24-4903-b8aa-1fb3468c8e7b.PNG)
+<br>
