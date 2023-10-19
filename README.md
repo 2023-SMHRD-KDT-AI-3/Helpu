@@ -139,7 +139,7 @@
 <br>
 
 ### 구매내역
-![image](https://user-images.githubusercontent.com/140151892/276472750-509c8efa-3166-4649-ad47-84cc0df234bd.PNG)
+<p>![image](https://user-images.githubusercontent.com/140151892/276472750-509c8efa-3166-4649-ad47-84cc0df234bd.PNG)</p>
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
